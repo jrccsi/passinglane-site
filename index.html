@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Passing Lane — CA Permit Test Prep for Teens</title>
+  <meta name="description" content="The smartest way for California teens to pass the DMV written permit test. Gamified practice, real questions, bilingual." />
+  <meta property="og:title" content="Passing Lane — CA Permit Test Prep for Teens" />
+  <meta property="og:description" content="The smartest way for California teens to pass the DMV written permit test." />
+  <meta property="og:image" content="https://passinglane.app/icon.png" />
+  <meta name="theme-color" content="#1a4a3a" />
+  <link rel="icon" type="image/png" href="/icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-dark:   #1a4a3a;
+      --green-mid:    #2d6b52;
+      --green-bright: #3ecf6e;
+      --yellow:       #f5c842;
+      --text:         #f0f4f2;
+      --text-muted:   #8ab09a;
+      --card-bg:      rgba(255,255,255,0.07);
+      --card-border:  rgba(255,255,255,0.12);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--green-dark);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(26, 74, 58, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-logo img {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+    }
+
+    .nav-logo span {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.3px;
+    }
+
+    .nav-badge {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--green-bright);
+      background: rgba(62, 207, 110, 0.15);
+      border: 1px solid rgba(62, 207, 110, 0.3);
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.3px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 24px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Road perspective background */
+    .hero::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 180px solid transparent;
+      border-right: 180px solid transparent;
+      border-bottom: 420px solid rgba(0,0,0,0.18);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 12px;
+      height: 400px;
+      background: repeating-linear-gradient(
+        to top,
+        var(--yellow) 0px,
+        var(--yellow) 40px,
+        transparent 40px,
+        transparent 60px
+      );
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    .hero-icon {
+      width: 96px;
+      height: 96px;
+      border-radius: 22px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      margin-bottom: 32px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--green-bright);
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: clamp(36px, 7vw, 68px);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -2px;
+      color: var(--text);
+      max-width: 780px;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 span {
+      color: var(--green-bright);
+    }
+
+    .hero-sub {
+      font-size: clamp(17px, 2.5vw, 20px);
+      color: var(--text-muted);
+      max-width: 520px;
+      line-height: 1.6;
+      margin-bottom: 48px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .coming-soon-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 50px;
+      padding: 14px 28px;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+      position: relative;
+      z-index: 1;
+    }
+
+    .coming-soon-pill .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green-bright);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+
+    /* ── Features ── */
+    .features {
+      padding: 80px 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--green-bright);
+      text-align: center;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      text-align: center;
+      margin-bottom: 56px;
+      color: var(--text);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .feature-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 28px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .feature-card:hover {
+      border-color: rgba(62, 207, 110, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .feature-icon {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+
+    .feature-title {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .feature-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ── Stats ── */
+    .stats {
+      padding: 80px 24px;
+      background: rgba(0,0,0,0.2);
+      border-top: 1px solid var(--card-border);
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .stats-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: clamp(36px, 5vw, 52px);
+      font-weight: 800;
+      color: var(--green-bright);
+      letter-spacing: -1px;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* ── CA specific ── */
+    .ca-section {
+      padding: 80px 24px;
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .ca-section p {
+      font-size: 17px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .ca-section p strong {
+      color: var(--text);
+    }
+
+    /* ── Footer ── */
+    footer {
+      padding: 48px 24px;
+      border-top: 1px solid var(--card-border);
+      text-align: center;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 20px;
+      text-decoration: none;
+    }
+
+    .footer-logo img {
+      width: 28px;
+      height: 28px;
+      border-radius: 7px;
+    }
+
+    .footer-logo span {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: var(--text-muted);
+      opacity: 0.6;
+    }
+
+    @media (max-width: 600px) {
+      .stats-inner { grid-template-columns: 1fr; }
+      .hero::before, .hero::after { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="/icon.png" alt="Passing Lane" />
+      <span>Passing Lane</span>
+    </a>
+    <div class="nav-badge">Coming Soon</div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <img src="/icon.png" alt="Passing Lane" class="hero-icon" />
+    <p class="hero-eyebrow">California Permit Test Prep</p>
+    <h1>The fast lane to your <span>CA permit.</span></h1>
+    <p class="hero-sub">Real DMV questions, gamified practice, and bilingual support — built for California teens who want to pass the first time.</p>
+    <div class="coming-soon-pill">
+      <div class="dot"></div>
+      Coming to iPhone &amp; Android
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <p class="section-label">How it works</p>
+    <h2 class="section-title">Everything you need. Nothing you don't.</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🛑</div>
+        <div class="feature-title">Real DMV Questions</div>
+        <div class="feature-desc">800+ questions built from the official California Driver's Handbook — the same material as the actual test.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🏆</div>
+        <div class="feature-title">Gamified Practice</div>
+        <div class="feature-desc">Earn XP, level up, maintain streaks, and compete with friends on a leaderboard as you study.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📋</div>
+        <div class="feature-title">Permit Simulation</div>
+        <div class="feature-desc">Timed simulations that mirror the real 46-question DMV written test — weighted by category, just like the real thing.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌎</div>
+        <div class="feature-title">English &amp; Spanish</div>
+        <div class="feature-desc">Full bilingual support — every question, answer, and explanation available in English and Spanish.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🚦</div>
+        <div class="feature-title">Sign Recognition</div>
+        <div class="feature-desc">Visual questions with real sign images so you recognize them on sight — not just from a description.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📱</div>
+        <div class="feature-title">Study Anywhere</div>
+        <div class="feature-desc">Offline-ready with smart caching. Study during lunch, in the car, or anywhere without an internet connection.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats">
+    <div class="stats-inner">
+      <div>
+        <div class="stat-number">800+</div>
+        <div class="stat-label">Practice Questions</div>
+      </div>
+      <div>
+        <div class="stat-number">13</div>
+        <div class="stat-label">Test Categories</div>
+      </div>
+      <div>
+        <div class="stat-number">2</div>
+        <div class="stat-label">Languages</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CA Context -->
+  <section class="ca-section">
+    <p class="section-label">Built for California</p>
+    <h2 class="section-title">Know the road before you're on it.</h2>
+    <p>The California DMV written test is <strong>46 questions</strong>. You need to get <strong>38 correct (83%) to pass</strong>. Most teens who fail do so because they studied the wrong material or ran out of time. Passing Lane fixes both.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <a href="/" class="footer-logo">
+      <img src="/icon.png" alt="Passing Lane" />
+      <span>Passing Lane</span>
+    </a>
+    <div class="footer-links">
+      <a href="/drivers-ed">Driver's Ed</a>
+      <a href="/driving-school">Driving Schools</a>
+      <a href="/insurance">Teen Insurance</a>
+    </div>
+    <p class="footer-copy">© 2025 Passing Lane. All rights reserved. · passinglane.app</p>
+  </footer>
+
+</body>
+</html>
