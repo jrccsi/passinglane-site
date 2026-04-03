@@ -120,8 +120,10 @@
       transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
       display: flex;
       flex-direction: column;
-      padding: 80px 24px 40px;
-      gap: 6px;
+      align-items: stretch;
+      justify-content: flex-start;
+      padding: 72px 12px 40px;
+      gap: 2px;
     }
 
     .nav-drawer.open { transform: translateX(0); }
@@ -130,8 +132,8 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      padding: 13px 16px;
-      border-radius: 12px;
+      padding: 10px 14px;
+      border-radius: 10px;
       text-decoration: none;
       color: var(--text-muted);
       font-size: 15px;
@@ -149,7 +151,7 @@
     .nav-drawer-divider {
       height: 1px;
       background: var(--card-border);
-      margin: 10px 0;
+      margin: 6px 2px;
     }
 
     .drawer-overlay {
