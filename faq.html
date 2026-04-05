@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ — Passing Lane</title>
+  <meta name="description" content="Frequently asked questions about Passing Lane — badges, features, and how the app works." />
+  <link rel="icon" type="image/png" href="/icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green-dark: #1a4a3a;
+      --green-bright: #3ecf6e;
+      --text: #f0f4f2;
+      --text-muted: #8ab09a;
+      --card-bg: rgba(255,255,255,0.07);
+      --card-border: rgba(255,255,255,0.12);
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--green-dark); color: var(--text); min-height: 100vh; }
+
+    /* ── Nav ── */
+    nav {
+      padding: 18px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      border-bottom: 1px solid var(--card-border);
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(26, 74, 58, 0.92); backdrop-filter: blur(12px);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { width: 30px; height: 30px; border-radius: 7px; }
+    .nav-logo span { font-size: 16px; font-weight: 700; color: var(--text); }
+    .nav-back { font-size: 14px; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .nav-back:hover { color: var(--text); }
+
+    /* ── Hamburger ── */
+    .hamburger {
+      background: none; border: none; cursor: pointer; padding: 6px;
+      display: flex; flex-direction: column; gap: 5px; z-index: 200;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px; background: var(--text);
+      border-radius: 2px; transition: transform 0.25s ease, opacity 0.25s ease;
+      transform-origin: center;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-drawer {
+      position: fixed; top: 0; left: 0; width: 260px; height: 100vh;
+      background: #112e25; border-right: 1px solid var(--card-border);
+      z-index: 150; transform: translateX(-100%);
+      transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex; flex-direction: column; align-items: stretch;
+      justify-content: flex-start; padding: 72px 12px 40px; gap: 2px;
+    }
+    .nav-drawer.open { transform: translateX(0); }
+    .nav-drawer a {
+      display: flex; align-items: center; gap: 12px; padding: 10px 14px;
+      border-radius: 10px; text-decoration: none; color: var(--text-muted);
+      font-size: 15px; font-weight: 500; transition: background 0.15s, color 0.15s;
+    }
+    .nav-drawer a:hover, .nav-drawer a.active { background: rgba(255,255,255,0.07); color: var(--text); }
+    .nav-drawer a .icon { font-size: 18px; width: 24px; text-align: center; }
+    .nav-drawer-divider { height: 1px; background: var(--card-border); margin: 6px 2px; }
+    .drawer-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.5); z-index: 140; backdrop-filter: blur(2px);
+    }
+    .drawer-overlay.open { display: block; }
+
+    /* ── Page layout ── */
+    .page { max-width: 720px; margin: 0 auto; padding: 56px 24px 80px; }
+
+    .page-eyebrow {
+      font-size: 12px; font-weight: 600; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--green-bright); margin-bottom: 12px;
+    }
+    h1 {
+      font-size: clamp(30px, 5vw, 44px); font-weight: 800;
+      letter-spacing: -1px; margin-bottom: 12px; line-height: 1.1;
+    }
+    .page-intro {
+      font-size: 17px; color: var(--text-muted); line-height: 1.7; margin-bottom: 56px;
+    }
+
+    /* ── Section headers ── */
+    .faq-section { margin-bottom: 48px; }
+    .faq-section-header {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 20px; padding-bottom: 14px;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .faq-section-title {
+      font-size: 20px; font-weight: 700; color: var(--text);
+    }
+    .faq-section-desc {
+      font-size: 13px; color: var(--text-muted); margin-top: 2px;
+    }
+
+    /* ── Tier badge ── */
+    .tier-pill {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.8px;
+      text-transform: uppercase; padding: 3px 10px; border-radius: 20px;
+      white-space: nowrap;
+    }
+    .tier-common    { background: rgba(255,255,255,0.08); color: var(--text-muted); border: 1px solid rgba(255,255,255,0.12); }
+    .tier-uncommon  { background: rgba(62, 207, 110, 0.12); color: #6dd98a; border: 1px solid rgba(62,207,110,0.25); }
+    .tier-rare      { background: rgba(96, 165, 250, 0.12); color: #7fb8f8; border: 1px solid rgba(96,165,250,0.25); }
+    .tier-legendary { background: rgba(251, 191, 36, 0.12); color: #f5c842; border: 1px solid rgba(251,191,36,0.25); }
+
+    /* ── Badge cards ── */
+    .badge-grid { display: flex; flex-direction: column; gap: 12px; }
+
+    .badge-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 18px 20px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .badge-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+
+    .badge-info { flex: 1; }
+    .badge-name {
+      font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 4px;
+    }
+    .badge-desc {
+      font-size: 14px; color: var(--text-muted); line-height: 1.6;
+    }
+
+    /* ── Notes box ── */
+    .notes-box {
+      background: rgba(62, 207, 110, 0.06);
+      border: 1px solid rgba(62, 207, 110, 0.2);
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin-top: 48px;
+    }
+    .notes-box h3 {
+      font-size: 14px; font-weight: 700; color: var(--green-bright);
+      margin-bottom: 12px; letter-spacing: 0.3px;
+    }
+    .notes-box ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .notes-box li {
+      font-size: 14px; color: var(--text-muted); padding-left: 18px;
+      position: relative; line-height: 1.5;
+    }
+    .notes-box li::before {
+      content: '✓'; position: absolute; left: 0;
+      color: var(--green-bright); font-weight: 700; font-size: 12px; top: 1px;
+    }
+
+    /* ── Footer ── */
+    footer { padding: 32px 24px; border-top: 1px solid var(--card-border); text-align: center; }
+    .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 16px; }
+    .footer-links a { font-size: 13px; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text); }
+    .footer-copy { font-size: 12px; color: var(--text-muted); opacity: 0.6; }
+  </style>
+</head>
+<body>
+
+  <div class="drawer-overlay" id="overlay" onclick="closeDrawer()"></div>
+  <nav class="nav-drawer" id="drawer">
+    <a href="/"><span class="icon">🏠</span> Home</a>
+    <div class="nav-drawer-divider"></div>
+    <a href="/drivers-ed"><span class="icon">📚</span> Driver's Ed</a>
+    <a href="/driving-school"><span class="icon">🚗</span> Driving Schools</a>
+    <a href="/insurance"><span class="icon">🛡</span> Insurance</a>
+    <div class="nav-drawer-divider"></div>
+    <a href="/faq" class="active"><span class="icon">❓</span> FAQ</a>
+  </nav>
+
+  <nav>
+    <button class="hamburger" id="hamburger" onclick="toggleDrawer()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="/" class="nav-logo">
+      <img src="/icon.png" alt="Passing Lane" />
+      <span>Passing Lane</span>
+    </a>
+    <a href="/" class="nav-back">← Home</a>
+  </nav>
+
+  <div class="page">
+    <p class="page-eyebrow">Help</p>
+    <h1>Frequently Asked Questions</h1>
+    <p class="page-intro">Everything you need to know about how Passing Lane works.</p>
+
+    <!-- Badge Definitions -->
+    <div class="faq-section">
+      <div class="faq-section-header">
+        <div>
+          <div class="faq-section-title">🏅 Badge Definitions</div>
+          <div class="faq-section-desc">15 badges across 4 tiers — here's exactly how to earn each one.</div>
+        </div>
+      </div>
+
+      <!-- Common -->
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px; margin-top:24px;">
+        <span class="tier-pill tier-common">Common</span>
+        <span style="font-size:13px; color:var(--text-muted);">Earned early. Recognizes first steps and daily habits.</span>
+      </div>
+      <div class="badge-grid">
+        <div class="badge-card">
+          <div class="badge-icon">🟢</div>
+          <div class="badge-info">
+            <div class="badge-name">First Green Light</div>
+            <div class="badge-desc">Awarded when you answer your first question correctly. Everyone starts here — this is your first win.</div>
+          </div>
+        </div>
+        <div class="badge-card">
+          <div class="badge-icon">📖</div>
+          <div class="badge-info">
+            <div class="badge-name">Handbook Hero</div>
+            <div class="badge-desc">Awarded when you complete every question in any single module. You've fully covered one topic from the CA Driver's Handbook.</div>
+          </div>
+        </div>
+        <div class="badge-card">
+          <div class="badge-icon">🔥</div>
+          <div class="badge-info">
+            <div class="badge-name">On Fire</div>
+            <div class="badge-desc">Awarded when you answer 10 questions correctly in a single practice session without stopping.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Uncommon -->
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px; margin-top:28px;">
+        <span class="tier-pill tier-uncommon">Uncommon</span>
+        <span style="font-size:13px; color:var(--text-muted);">Earned through consistency and skill. Takes real effort.</span>
+      </div>
+      <div class="badge-grid">
+        <div class="badge-card">
+          <div class="badge-icon">📚</div>
+          <div class="badge-info">
+            <div class="badge-name">Bookworm</div>
+            <div class="badge-desc">Awarded when you study across 5 or more different modules. You're not cherry-picking — you're covering the whole handbook.</div>
+          </div>
+        </div>
+        <div class="badge-card">
+          <div class="badge-icon">🦉</div>
+          <div class="badge-info">
+            <div class="badge-name">Night Owl</div>
+            <div class="badge-desc">Awarded when you complete a practice session after 10 PM. Late-night studier, we see you.</div>
+          </div>
+        </div>
+        <div class="badge-card">
+          <div class="badge-icon">💪</div>
+          <div class="badge-info">
+            <div class="badge-name">Comeback Kid</div>
+            <div class="badge-desc">Awarded when you answer a question correctly after previously getting it wrong. You learned from your mistake.</div>
+          </div>
+        </div>
+        <div class="badge-card">
+          <div class="badge-icon">⚡</div>
+          <div class="badge-info">
+            <div class="badge-name">Speed Demon</div>
+            <div class="badge-desc">Awarded when you complete a full module in under 3 minutes. Fast and accurate — that's the goal.</div>
+          </div>
+        </div>
+        <div class="badge-card">
+          <div class="badge-icon">🎯</div>
+          <div class="badge-info">
+            <div class="badge-name">Sharpshooter</div>
+            <div class="badge-desc">Awarded when you achieve 90% or higher accuracy in a single practice session of at least 20 questions.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rare -->
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px; margin-top:28px;">
+        <span class="tier-pill tier-rare">Rare</span>
+        <span style="font-size:13px; color:var(--text-muted);">Earned through sustained effort over time. Most users won't have all of these.</span>
+      </div>
+      <div class="badge-grid">
+        <div class="badge-card">
+          <div class="badge-icon">📅</div>
+          <div class="badge-info">
+            <div class="badge-name">Month on Fire</div>
+            <div class="badge-desc">Awarded when you maintain a 30-day study streak. Thirty days in a row — no breaks, no excuses.</div>
+          </div>
+        </div>
+        <div class="badge-card">
+          <div class="badge-icon">✅</div>
+          <div class="badge-info">
+            <div class="badge-name">Perfect Run</div>
+            <div class="badge-desc">Awarded when you complete a full module with 100% correct answers on the first try — no wrong answers, no retakes.</div>
+          </div>
+        </div>
+        <div class="badge-card">
+          <div class="badge-icon">📆</div>
+          <div class="badge-info">
+            <div class="badge-name">Week Warrior</div>
+            <div class="badge-desc">Awarded when you study every day for 7 consecutive days. A full week of daily practice.</div>
+          </div>
+        </div>
+        <div class="badge-card">
+          <div class="badge-icon">🧠</div>
+          <div class="badge-info">
+            <div class="badge-name">Big Brain</div>
+            <div class="badge-desc">Awarded when you reach 80% or higher mastery across all 13 categories simultaneously. You know the whole handbook cold.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Legendary -->
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px; margin-top:28px;">
+        <span class="tier-pill tier-legendary">Legendary</span>
+        <span style="font-size:13px; color:var(--text-muted);">The hardest to earn. Only the most dedicated users will hold all three.</span>
+      </div>
+      <div class="badge-grid">
+        <div class="badge-card">
+          <div class="badge-icon">💎</div>
+          <div class="badge-info">
+            <div class="badge-name">Flawless</div>
+            <div class="badge-desc">Awarded when you pass a Permit Test Simulation with a perfect score — 46 out of 46 questions correct.</div>
+          </div>
+        </div>
+        <div class="badge-card">
+          <div class="badge-icon">🪪</div>
+          <div class="badge-info">
+            <div class="badge-name">Licensed</div>
+            <div class="badge-desc">Awarded when you report that you passed your real California DMV written test. This is what it's all for. Comes with the gold plate.</div>
+          </div>
+        </div>
+        <div class="badge-card">
+          <div class="badge-icon">🥇</div>
+          <div class="badge-info">
+            <div class="badge-name">First in Class</div>
+            <div class="badge-desc">Awarded when you reach #1 on your friends leaderboard. You've outscored everyone in your crew.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Notes -->
+      <div class="notes-box">
+        <h3>Good to know</h3>
+        <ul>
+          <li>Badges are permanent once earned — they can't be lost.</li>
+          <li>All badges are visible on your profile whether earned or not, so you always know what you're working toward.</li>
+          <li>The Licensed badge requires self-reporting your DMV pass — we trust you.</li>
+          <li>Badge names are translated in Spanish in the app, but the icons and tiers are the same.</li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- End badge section — more FAQ sections will follow -->
+
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/drivers-ed">Driver's Ed</a>
+      <a href="/driving-school">Driving Schools</a>
+      <a href="/insurance">Insurance</a>
+      <a href="/faq">FAQ</a>
+    </div>
+    <p class="footer-copy">© 2025 Passing Lane Solutions LLC. All rights reserved. · passinglane.app</p>
+  </footer>
+
+  <script>
+    function toggleDrawer() {
+      const open = document.getElementById('drawer').classList.toggle('open');
+      document.getElementById('hamburger').classList.toggle('open', open);
+      document.getElementById('overlay').classList.toggle('open', open);
+    }
+    function closeDrawer() {
+      document.getElementById('drawer').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+      document.getElementById('overlay').classList.remove('open');
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+  </script>
+</body>
+</html>
