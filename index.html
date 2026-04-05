@@ -282,6 +282,15 @@
       animation: pulse 2s ease-in-out infinite;
     }
 
+    .launch-states {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 14px;
+      letter-spacing: 0.2px;
+      position: relative;
+      z-index: 1;
+    }
+
     @keyframes pulse {
       0%, 100% { opacity: 1; transform: scale(1); }
       50% { opacity: 0.5; transform: scale(0.8); }
@@ -348,6 +357,26 @@
       font-size: 14px;
       color: var(--text-muted);
       line-height: 1.6;
+    }
+
+    /* ── Guide callout ── */
+    .guide-callout {
+      padding: 80px 24px;
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .guide-body {
+      font-size: 18px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .guide-body strong {
+      color: var(--text);
     }
 
     /* ── Stats ── */
@@ -493,6 +522,7 @@
       <div class="dot"></div>
       Coming to iPhone &amp; Android
     </div>
+    <p class="launch-states">Launching in California &nbsp;·&nbsp; Florida and Texas coming soon</p>
   </section>
 
   <!-- Features -->
@@ -530,7 +560,19 @@
         <div class="feature-title">Study Anywhere</div>
         <div class="feature-desc">Offline-ready with smart caching. Study during lunch, in the car, or anywhere without an internet connection.</div>
       </div>
+      <div class="feature-card">
+        <div class="feature-icon">🗺</div>
+        <div class="feature-title">Complete Licensing Guide</div>
+        <div class="feature-desc">Step-by-step guidance for the entire CA licensing journey — from driver's ed to provisional license. Separate tracks for teens and parents.</div>
+      </div>
     </div>
+  </section>
+
+  <!-- Guide callout -->
+  <section class="guide-callout">
+    <p class="section-label">More than a question bank</p>
+    <h2 class="section-title">The full road to your license, mapped out.</h2>
+    <p class="guide-body">Passing Lane walks teens and parents through every step — driver's education, the permit application, behind-the-wheel training, the road test, and provisional license rules. Both tracks. No guesswork.</p>
   </section>
 
   <!-- Stats -->
