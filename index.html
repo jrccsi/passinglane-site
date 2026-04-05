@@ -254,7 +254,7 @@
       color: var(--text-muted);
       max-width: 520px;
       line-height: 1.6;
-      margin-bottom: 48px;
+      margin-bottom: 24px;
       position: relative;
       z-index: 1;
     }
@@ -289,6 +289,29 @@
       letter-spacing: 0.2px;
       position: relative;
       z-index: 1;
+    }
+
+    .hero-features {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 28px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-feature-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(62, 207, 110, 0.1);
+      border: 1px solid rgba(62, 207, 110, 0.25);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px 18px;
+      border-radius: 50px;
     }
 
     @keyframes pulse {
@@ -518,6 +541,10 @@
     <p class="hero-eyebrow">California Permit Test Prep for Teens</p>
     <h1>The fast lane to your <span>CA permit.</span></h1>
     <p class="hero-sub">Real DMV questions, gamified practice, and bilingual support — built for California teens who want to pass the first time.</p>
+    <div class="hero-features">
+      <div class="hero-feature-pill">🛑 800+ Real DMV Questions</div>
+      <div class="hero-feature-pill">🗺 Complete Licensing Guide</div>
+    </div>
     <div class="coming-soon-pill">
       <div class="dot"></div>
       Coming to iPhone &amp; Android
@@ -559,11 +586,6 @@
         <div class="feature-icon">📱</div>
         <div class="feature-title">Study Anywhere</div>
         <div class="feature-desc">Offline-ready with smart caching. Study during lunch, in the car, or anywhere without an internet connection.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🗺</div>
-        <div class="feature-title">Complete Licensing Guide</div>
-        <div class="feature-desc">Step-by-step guidance for the entire CA licensing journey — from driver's ed to provisional license. Separate tracks for teens and parents.</div>
       </div>
     </div>
   </section>
