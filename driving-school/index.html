@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Driving Schools — Passing Lane</title>
+  <meta name="description" content="Find licensed behind-the-wheel driving schools in California. Required 6 hours of professional BTW training before your road test." />
+  <link rel="icon" type="image/png" href="/icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green-dark: #1a4a3a;
+      --green-bright: #3ecf6e;
+      --text: #f0f4f2;
+      --text-muted: #8ab09a;
+      --card-bg: rgba(255,255,255,0.07);
+      --card-border: rgba(255,255,255,0.12);
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--green-dark); color: var(--text); min-height: 100vh; }
+    nav {
+      padding: 18px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { width: 30px; height: 30px; border-radius: 7px; }
+    .nav-logo span { font-size: 16px; font-weight: 700; color: var(--text); }
+    .nav-back { font-size: 14px; color: var(--text-muted); text-decoration: none; }
+    .nav-back:hover { color: var(--text); }
+    .hamburger {
+      background: none; border: none; cursor: pointer; padding: 6px;
+      display: flex; flex-direction: column; gap: 5px; z-index: 200;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px; background: var(--text);
+      border-radius: 2px; transition: transform 0.25s ease, opacity 0.25s ease;
+      transform-origin: center;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-drawer {
+      position: fixed; top: 0; left: 0; width: 260px; height: 100vh;
+      background: #112e25; border-right: 1px solid var(--card-border);
+      z-index: 150; transform: translateX(-100%);
+      transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex; flex-direction: column; align-items: stretch;
+      justify-content: flex-start; padding: 72px 12px 40px; gap: 2px;
+    }
+    .nav-drawer.open { transform: translateX(0); }
+    .nav-drawer a {
+      display: flex; align-items: center; gap: 12px; padding: 10px 14px;
+      border-radius: 10px; text-decoration: none; color: var(--text-muted);
+      font-size: 15px; font-weight: 500; transition: background 0.15s, color 0.15s; width: 100%;
+    }
+    .nav-drawer a:hover, .nav-drawer a.active { background: rgba(255,255,255,0.07); color: var(--text); }
+    .nav-drawer a .icon { font-size: 18px; width: 24px; text-align: center; }
+    .nav-drawer-divider { height: 1px; background: var(--card-border); margin: 6px 0; }
+    .drawer-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.5); z-index: 140; backdrop-filter: blur(2px);
+    }
+    .drawer-overlay.open { display: block; }
+
+    .page { max-width: 720px; margin: 0 auto; padding: 64px 24px 80px; }
+    .breadcrumb { font-size: 13px; color: var(--text-muted); margin-bottom: 32px; }
+    .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--text); }
+    .page-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green-bright); margin-bottom: 14px; }
+    h1 { font-size: clamp(30px, 5vw, 48px); font-weight: 800; letter-spacing: -1px; margin-bottom: 20px; line-height: 1.1; }
+    .page-intro { font-size: 17px; color: var(--text-muted); line-height: 1.7; margin-bottom: 48px; }
+    .page-intro strong { color: var(--text); }
+
+    .info-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-left: 3px solid var(--green-bright);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 32px;
+    }
+    .info-card h2 { font-size: 17px; font-weight: 700; margin-bottom: 12px; }
+    .info-card ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .info-card li { font-size: 15px; color: var(--text-muted); padding-left: 20px; position: relative; line-height: 1.5; }
+    .info-card li::before { content: '✓'; position: absolute; left: 0; color: var(--green-bright); font-weight: 700; font-size: 13px; top: 1px; }
+    .info-card li strong { color: var(--text); }
+
+    .coming-soon-box {
+      background: rgba(62, 207, 110, 0.08);
+      border: 1px solid rgba(62, 207, 110, 0.25);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .coming-soon-box .icon { font-size: 40px; margin-bottom: 16px; }
+    .coming-soon-box h2 { font-size: 22px; font-weight: 700; margin-bottom: 10px; }
+    .coming-soon-box p { font-size: 15px; color: var(--text-muted); line-height: 1.6; }
+
+    .dmv-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      border: 1px solid var(--card-border); border-radius: 10px;
+      padding: 14px 20px; text-decoration: none; color: var(--text-muted);
+      font-size: 14px; transition: color 0.2s, border-color 0.2s;
+    }
+    .dmv-link:hover { color: var(--text); border-color: rgba(255,255,255,0.25); }
+
+    .disclosure { font-size: 12px; color: var(--text-muted); opacity: 0.6; margin-top: 48px; line-height: 1.6; }
+
+    footer { padding: 32px 24px; border-top: 1px solid var(--card-border); text-align: center; }
+    .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+    .footer-links a { font-size: 13px; color: var(--text-muted); text-decoration: none; }
+    .footer-links a:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+
+  <div class="drawer-overlay" id="overlay" onclick="closeDrawer()"></div>
+  <nav class="nav-drawer" id="drawer">
+    <a href="/"><span class="icon">🏠</span> Home</a>
+    <div class="nav-drawer-divider"></div>
+    <a href="/drivers-ed"><span class="icon">📚</span> Driver's Ed</a>
+    <a href="/driving-school" class="active"><span class="icon">🚗</span> Driving Schools</a>
+    <a href="/insurance"><span class="icon">🛡</span> Insurance</a>
+    <div class="nav-drawer-divider"></div>
+    <a href="/faq"><span class="icon">❓</span> FAQ</a>
+  </nav>
+  <nav>
+    <button class="hamburger" id="hamburger" onclick="toggleDrawer()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="/" class="nav-logo">
+      <img src="/icon.png" alt="Passing Lane" />
+      <span>Passing Lane</span>
+    </a>
+    <a href="/" class="nav-back">← Back</a>
+  </nav>
+
+  <div class="page">
+    <div class="breadcrumb"><a href="/">Home</a> / Driving Schools</div>
+    <p class="page-eyebrow">Step 3</p>
+    <h1>Behind-the-Wheel Training</h1>
+    <p class="page-intro">After getting your permit, California requires <strong>at least 6 hours of professional behind-the-wheel training</strong> with a licensed instructor before you can take the road test. Your instructor must sign your permit — no signature, no road test.</p>
+
+    <div class="info-card">
+      <h2>What you need to know</h2>
+      <ul>
+        <li>Minimum <strong>6 hours</strong> of professional BTW training required by law</li>
+        <li>Typically done in <strong>three 2-hour sessions</strong> — spread out as needed</li>
+        <li>Instructor must sign your permit after <strong>at least 1 hour</strong> is complete</li>
+        <li>That signature is required before <strong>any supervised practice with a parent</strong></li>
+        <li>Expect to pay <strong>$50–$100 per hour</strong> — shop around for packages</li>
+        <li>Make sure the school is <strong>licensed by the California DMV</strong></li>
+      </ul>
+    </div>
+
+    <div class="coming-soon-box">
+      <div class="icon">🚗</div>
+      <h2>School recommendations coming soon</h2>
+      <p>Passing Lane will connect teens with licensed driving schools directly in the app. Until then, verify any school's license through the DMV before booking.</p>
+    </div>
+
+    <a href="https://www.dmv.ca.gov/portal/driver-education-and-safety/educational-materials/teen-driver/" target="_blank" rel="noopener" class="dmv-link">
+      🔗 Verify a Driving School License at dmv.ca.gov →
+    </a>
+
+    <p class="disclosure">Passing Lane may earn a referral fee when you book through a partner school. This never affects recommendations — we only partner with DMV-licensed programs.</p>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/drivers-ed">Driver's Ed</a>
+      <a href="/driving-school">Driving Schools</a>
+      <a href="/insurance">Insurance</a>
+    </div>
+    <p style="font-size:12px;color:var(--text-muted);opacity:0.6;margin-top:16px;">© 2025 Passing Lane Solutions LLC. All rights reserved. · passinglane.app</p>
+  </footer>
+
+  <script>
+    function toggleDrawer() {
+      const open = document.getElementById('drawer').classList.toggle('open');
+      document.getElementById('hamburger').classList.toggle('open', open);
+      document.getElementById('overlay').classList.toggle('open', open);
+    }
+    function closeDrawer() {
+      document.getElementById('drawer').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+      document.getElementById('overlay').classList.remove('open');
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+  </script>
+</body>
+</html>
