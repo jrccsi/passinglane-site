@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seguro de Auto para Jóvenes — Passing Lane</title>
+  <meta name="description" content="Compara tarifas de seguro de auto para conductores jóvenes en California. Lo que los padres necesitan saber antes de agregar a un nuevo conductor a su póliza." />
+  <link rel="icon" type="image/png" href="/icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --green-dark: #1a4a3a; --green-bright: #3ecf6e; --text: #f0f4f2; --text-muted: #8ab09a; --card-bg: rgba(255,255,255,0.07); --card-border: rgba(255,255,255,0.12); }
+    body { font-family: 'Inter', sans-serif; background: var(--green-dark); color: var(--text); min-height: 100vh; }
+    nav { padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--card-border); }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { width: 30px; height: 30px; border-radius: 7px; }
+    .nav-logo span { font-size: 16px; font-weight: 700; color: var(--text); }
+    .nav-right { display: flex; align-items: center; gap: 12px; }
+    .nav-back { font-size: 14px; color: var(--text-muted); text-decoration: none; }
+    .nav-back:hover { color: var(--text); }
+    .lang-toggle { display: flex; align-items: center; gap: 2px; background: rgba(255,255,255,0.06); border: 1px solid var(--card-border); border-radius: 20px; padding: 3px; font-size: 12px; font-weight: 600; }
+    .lang-toggle a { padding: 3px 10px; border-radius: 16px; text-decoration: none; color: var(--text-muted); transition: all 0.15s; }
+    .lang-toggle a.active { background: var(--green-bright); color: #0f2d22; }
+    .lang-toggle a:not(.active):hover { color: var(--text); }
+    .hamburger { background: none; border: none; cursor: pointer; padding: 6px; display: flex; flex-direction: column; gap: 5px; z-index: 200; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.25s ease, opacity 0.25s ease; transform-origin: center; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-drawer { position: fixed; top: 0; left: 0; width: 260px; height: 100vh; background: #112e25; border-right: 1px solid var(--card-border); z-index: 150; transform: translateX(-100%); transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1); display: flex; flex-direction: column; align-items: stretch; justify-content: flex-start; padding: 72px 12px 40px; gap: 2px; }
+    .nav-drawer.open { transform: translateX(0); }
+    .nav-drawer a { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 10px; text-decoration: none; color: var(--text-muted); font-size: 15px; font-weight: 500; transition: background 0.15s, color 0.15s; }
+    .nav-drawer a:hover, .nav-drawer a.active { background: rgba(255,255,255,0.07); color: var(--text); }
+    .nav-drawer a .icon { font-size: 18px; width: 24px; text-align: center; }
+    .nav-drawer-divider { height: 1px; background: var(--card-border); margin: 6px 2px; }
+    .drawer-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 140; backdrop-filter: blur(2px); }
+    .drawer-overlay.open { display: block; }
+    .page { max-width: 720px; margin: 0 auto; padding: 64px 24px 80px; }
+    .breadcrumb { font-size: 13px; color: var(--text-muted); margin-bottom: 32px; }
+    .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+    .page-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green-bright); margin-bottom: 14px; }
+    h1 { font-size: clamp(30px, 5vw, 48px); font-weight: 800; letter-spacing: -1px; margin-bottom: 20px; line-height: 1.1; }
+    .page-intro { font-size: 17px; color: var(--text-muted); line-height: 1.7; margin-bottom: 48px; }
+    .page-intro strong { color: var(--text); }
+    .info-card { background: var(--card-bg); border: 1px solid var(--card-border); border-left: 3px solid var(--green-bright); border-radius: 16px; padding: 24px; margin-bottom: 32px; }
+    .info-card h2 { font-size: 17px; font-weight: 700; margin-bottom: 12px; }
+    .info-card ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .info-card li { font-size: 15px; color: var(--text-muted); padding-left: 20px; position: relative; line-height: 1.5; }
+    .info-card li::before { content: '✓'; position: absolute; left: 0; color: var(--green-bright); font-weight: 700; font-size: 13px; top: 1px; }
+    .info-card li strong { color: var(--text); }
+    .warning-card { background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.25); border-left: 3px solid #f59e0b; border-radius: 16px; padding: 20px 24px; margin-bottom: 32px; font-size: 15px; color: var(--text-muted); line-height: 1.6; }
+    .warning-card strong { color: var(--text); }
+    .coming-soon-box { background: rgba(62, 207, 110, 0.08); border: 1px solid rgba(62, 207, 110, 0.25); border-radius: 16px; padding: 32px; text-align: center; margin-bottom: 48px; }
+    .coming-soon-box .icon { font-size: 40px; margin-bottom: 16px; }
+    .coming-soon-box h2 { font-size: 22px; font-weight: 700; margin-bottom: 10px; }
+    .coming-soon-box p { font-size: 15px; color: var(--text-muted); line-height: 1.6; }
+    .disclosure { font-size: 12px; color: var(--text-muted); opacity: 0.6; margin-top: 48px; line-height: 1.6; }
+    footer { padding: 32px 24px; border-top: 1px solid var(--card-border); text-align: center; }
+    .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+    .footer-links a { font-size: 13px; color: var(--text-muted); text-decoration: none; }
+    .footer-links a:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+  <div class="drawer-overlay" id="overlay" onclick="closeDrawer()"></div>
+  <nav class="nav-drawer" id="drawer">
+    <a href="/es/"><span class="icon">🏠</span> Inicio</a>
+    <div class="nav-drawer-divider"></div>
+    <a href="/es/drivers-ed"><span class="icon">📚</span> Educación Vial</a>
+    <a href="/es/driving-school"><span class="icon">🚗</span> Escuelas de Manejo</a>
+    <a href="/es/insurance" class="active"><span class="icon">🛡</span> Seguro</a>
+    <div class="nav-drawer-divider"></div>
+    <a href="/es/faq"><span class="icon">❓</span> Preguntas Frecuentes</a>
+  </nav>
+  <nav>
+    <button class="hamburger" id="hamburger" onclick="toggleDrawer()" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="/es/" class="nav-logo">
+      <img src="/icon.png" alt="Passing Lane" />
+      <span>Passing Lane</span>
+    </a>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <a href="/insurance">EN</a>
+        <a href="/es/insurance" class="active">ES</a>
+      </div>
+      <a href="/es/" class="nav-back">← Inicio</a>
+    </div>
+  </nav>
+
+  <div class="page">
+    <div class="breadcrumb"><a href="/es/">Inicio</a> / Seguro</div>
+    <p class="page-eyebrow">Para Padres</p>
+    <h1>Seguro de Auto para Jóvenes</h1>
+    <p class="page-intro">En el momento en que tu hijo comienza a practicar bajo supervisión, tu aseguradora necesita saberlo. Agregar a un conductor joven aumenta las tarifas — pero <strong>no declararlo puede anular tu cobertura</strong> en caso de accidente. Aquí te explicamos qué hacer y cuándo.</p>
+
+    <div class="info-card">
+      <h2>Cuándo contactar a tu aseguradora</h2>
+      <ul>
+        <li><strong>Antes de que comience la práctica supervisada</strong> — reporta a tu hijo como conductor ocasional una vez que tenga el permiso</li>
+        <li><strong>Nuevamente cuando obtenga la licencia</strong> — agrégalo como conductor nombrado cuando se emita la licencia provisional</li>
+        <li>Las tarifas aumentarán — <strong>este es un buen momento para comparar</strong> entre proveedores</li>
+        <li>Los conductores jóvenes suelen agregar <strong>$1,000–$3,000 al año</strong> a una póliza según el vehículo y la ubicación</li>
+        <li>Los descuentos para buenos estudiantes (promedio B o superior) pueden reducir el aumento en <strong>10–25%</strong></li>
+      </ul>
+    </div>
+
+    <div class="warning-card">
+      <strong>Importante para los padres:</strong> La mayoría de las pólizas exigen declarar a los miembros del hogar que manejan tu vehículo. No agregar a tu hijo antes de un accidente podría resultar en un reclamo denegado o la cancelación de la póliza.
+    </div>
+
+    <div class="coming-soon-box">
+      <div class="icon">🛡</div>
+      <h2>Comparación de tarifas próximamente</h2>
+      <p>Passing Lane ayudará a los padres a comparar tarifas de seguro para conductores jóvenes directamente en la app. Mientras tanto, contacta primero a tu aseguradora actual — quedarse con tu proveedor existente suele ser más económico que cambiar.</p>
+    </div>
+
+    <p class="disclosure">Passing Lane puede recibir una comisión de referido cuando obtienes una cotización a través de una aseguradora asociada. Esto no afecta las cotizaciones que recibes ni nuestras recomendaciones. No somos asesores de seguros con licencia — consulta directamente a tu aseguradora para decisiones de cobertura.</p>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="/es/">Inicio</a>
+      <a href="/es/drivers-ed">Educación Vial</a>
+      <a href="/es/driving-school">Escuelas de Manejo</a>
+      <a href="/es/insurance">Seguro</a>
+    </div>
+    <p style="font-size:12px;color:var(--text-muted);opacity:0.6;margin-top:16px;">© 2025 Passing Lane Solutions LLC. Todos los derechos reservados. · passinglane.app</p>
+  </footer>
+
+  <script>
+    function toggleDrawer() { const open = document.getElementById('drawer').classList.toggle('open'); document.getElementById('hamburger').classList.toggle('open', open); document.getElementById('overlay').classList.toggle('open', open); }
+    function closeDrawer() { document.getElementById('drawer').classList.remove('open'); document.getElementById('hamburger').classList.remove('open'); document.getElementById('overlay').classList.remove('open'); }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+  </script>
+</body>
+</html>

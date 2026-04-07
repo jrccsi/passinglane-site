@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Passing Lane — Preparación para el Examen de Manejo de California</title>
+  <meta name="description" content="La forma más inteligente para que los adolescentes de California pasen el examen escrito del DMV. Práctica gamificada, preguntas reales, bilingüe." />
+  <meta property="og:title" content="Passing Lane — Preparación para el Examen de Manejo de California" />
+  <meta property="og:description" content="La forma más inteligente para que los adolescentes de California pasen el examen escrito del DMV." />
+  <meta property="og:image" content="https://passinglane.app/icon.png" />
+  <meta name="theme-color" content="#1a4a3a" />
+  <link rel="icon" type="image/png" href="/icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green-dark: #1a4a3a; --green-mid: #2d6b52; --green-bright: #3ecf6e;
+      --yellow: #f5c842; --text: #f0f4f2; --text-muted: #8ab09a;
+      --card-bg: rgba(255,255,255,0.07); --card-border: rgba(255,255,255,0.12);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background-color: var(--green-dark); color: var(--text); min-height: 100vh; overflow-x: hidden; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 18px 24px; display: flex; align-items: center; justify-content: space-between;
+      background: rgba(26, 74, 58, 0.85); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--card-border);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { width: 32px; height: 32px; border-radius: 8px; }
+    .nav-logo span { font-size: 17px; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
+    .nav-right { display: flex; align-items: center; gap: 12px; }
+    .nav-badge {
+      font-size: 12px; font-weight: 600; color: var(--green-bright);
+      background: rgba(62, 207, 110, 0.15); border: 1px solid rgba(62, 207, 110, 0.3);
+      padding: 4px 12px; border-radius: 20px; letter-spacing: 0.3px;
+    }
+    .lang-toggle {
+      display: flex; align-items: center; gap: 2px;
+      background: rgba(255,255,255,0.06); border: 1px solid var(--card-border);
+      border-radius: 20px; padding: 3px; font-size: 12px; font-weight: 600;
+    }
+    .lang-toggle a {
+      padding: 3px 10px; border-radius: 16px; text-decoration: none;
+      color: var(--text-muted); transition: all 0.15s;
+    }
+    .lang-toggle a.active { background: var(--green-bright); color: #0f2d22; }
+    .lang-toggle a:not(.active):hover { color: var(--text); }
+
+    .hamburger { background: none; border: none; cursor: pointer; padding: 6px; display: flex; flex-direction: column; gap: 5px; z-index: 200; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.25s ease, opacity 0.25s ease; transform-origin: center; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .nav-drawer {
+      position: fixed; top: 0; left: 0; width: 260px; height: 100vh;
+      background: #112e25; border-right: 1px solid var(--card-border);
+      z-index: 150; transform: translateX(-100%);
+      transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex; flex-direction: column; align-items: stretch;
+      justify-content: flex-start; padding: 72px 12px 40px; gap: 2px;
+    }
+    .nav-drawer.open { transform: translateX(0); }
+    .nav-drawer a { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 10px; text-decoration: none; color: var(--text-muted); font-size: 15px; font-weight: 500; transition: background 0.15s, color 0.15s; }
+    .nav-drawer a:hover, .nav-drawer a.active { background: rgba(255,255,255,0.07); color: var(--text); }
+    .nav-drawer a .icon { font-size: 18px; width: 24px; text-align: center; }
+    .nav-drawer-divider { height: 1px; background: var(--card-border); margin: 6px 2px; }
+    .drawer-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 140; backdrop-filter: blur(2px); }
+    .drawer-overlay.open { display: block; }
+
+    .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 120px 24px 80px; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 180px solid transparent; border-right: 180px solid transparent; border-bottom: 420px solid rgba(0,0,0,0.18); pointer-events: none; }
+    .hero::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 12px; height: 400px; background: repeating-linear-gradient(to top, var(--yellow) 0px, var(--yellow) 40px, transparent 40px, transparent 60px); opacity: 0.4; pointer-events: none; }
+    .hero-icon { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); margin-bottom: 32px; position: relative; z-index: 1; }
+    .hero-eyebrow { font-size: 15px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green-bright); margin-bottom: 16px; position: relative; z-index: 1; }
+    h1 { font-size: clamp(36px, 7vw, 68px); font-weight: 800; line-height: 1.05; letter-spacing: -2px; color: var(--text); max-width: 780px; margin-bottom: 24px; position: relative; z-index: 1; }
+    h1 span { color: var(--green-bright); }
+    .hero-sub { font-size: clamp(17px, 2.5vw, 20px); color: var(--text-muted); max-width: 520px; line-height: 1.6; margin-bottom: 12px; position: relative; z-index: 1; }
+    .hero-guide { font-size: clamp(14px, 1.8vw, 16px); color: var(--text-muted); max-width: 480px; line-height: 1.6; margin-bottom: 32px; opacity: 0.8; position: relative; z-index: 1; }
+    .coming-soon-pill { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 50px; padding: 14px 28px; font-size: 16px; font-weight: 600; color: var(--text); position: relative; z-index: 1; }
+    .coming-soon-pill .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green-bright); animation: pulse 2s ease-in-out infinite; }
+    .launch-states { font-size: 13px; color: var(--text-muted); margin-top: 14px; letter-spacing: 0.2px; position: relative; z-index: 1; }
+    @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.8); } }
+
+    .features { padding: 80px 24px; max-width: 1000px; margin: 0 auto; }
+    .section-label { font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green-bright); text-align: center; margin-bottom: 14px; }
+    .section-title { font-size: clamp(28px, 4vw, 40px); font-weight: 800; letter-spacing: -1px; text-align: center; margin-bottom: 56px; color: var(--text); }
+    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .feature-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 20px; padding: 28px; transition: border-color 0.2s, transform 0.2s; }
+    .feature-card:hover { border-color: rgba(62, 207, 110, 0.3); transform: translateY(-2px); }
+    .feature-icon { font-size: 32px; margin-bottom: 16px; }
+    .feature-title { font-size: 17px; font-weight: 700; margin-bottom: 8px; color: var(--text); }
+    .feature-desc { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+    .guide-callout { padding: 80px 24px; max-width: 720px; margin: 0 auto; text-align: center; }
+    .guide-body { font-size: 18px; color: var(--text-muted); line-height: 1.7; max-width: 600px; margin: 0 auto; }
+    .guide-body strong { color: var(--text); }
+
+    .stats { padding: 80px 24px; background: rgba(0,0,0,0.2); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border); }
+    .stats-inner { max-width: 800px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
+    .stat-number { font-size: clamp(36px, 5vw, 52px); font-weight: 800; color: var(--green-bright); letter-spacing: -1px; margin-bottom: 6px; }
+    .stat-label { font-size: 14px; color: var(--text-muted); font-weight: 500; }
+
+    .ca-section { padding: 80px 24px; max-width: 700px; margin: 0 auto; text-align: center; }
+    .ca-section p { font-size: 17px; color: var(--text-muted); line-height: 1.7; }
+    .ca-section p strong { color: var(--text); }
+
+    footer { padding: 48px 24px; border-top: 1px solid var(--card-border); text-align: center; }
+    .footer-logo { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 20px; text-decoration: none; }
+    .footer-logo img { width: 28px; height: 28px; border-radius: 7px; }
+    .footer-logo span { font-size: 16px; font-weight: 700; color: var(--text); }
+    .footer-links { display: flex; justify-content: center; gap: 24px; margin-bottom: 20px; flex-wrap: wrap; }
+    .footer-links a { font-size: 13px; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text); }
+    .footer-copy { font-size: 12px; color: var(--text-muted); opacity: 0.6; }
+    @media (max-width: 600px) { .stats-inner { grid-template-columns: 1fr; } .hero::before, .hero::after { display: none; } }
+  </style>
+</head>
+<body>
+
+  <div class="drawer-overlay" id="overlay" onclick="closeDrawer()"></div>
+  <nav class="nav-drawer" id="drawer">
+    <a href="/es/" class="active"><span class="icon">🏠</span> Inicio</a>
+    <div class="nav-drawer-divider"></div>
+    <a href="/es/drivers-ed"><span class="icon">📚</span> Educación Vial</a>
+    <a href="/es/driving-school"><span class="icon">🚗</span> Escuelas de Manejo</a>
+    <a href="/es/insurance"><span class="icon">🛡</span> Seguro</a>
+    <div class="nav-drawer-divider"></div>
+    <a href="/es/faq"><span class="icon">❓</span> Preguntas Frecuentes</a>
+  </nav>
+
+  <nav>
+    <button class="hamburger" id="hamburger" onclick="toggleDrawer()" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="/es/" class="nav-logo">
+      <img src="/icon.png" alt="Passing Lane" />
+      <span>Passing Lane</span>
+    </a>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <a href="/">EN</a>
+        <a href="/es/" class="active">ES</a>
+      </div>
+      <div class="nav-badge">Próximamente</div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <img src="/icon.png" alt="Passing Lane" class="hero-icon" />
+    <p class="hero-eyebrow">Preparación para el Permiso de Conducir en California</p>
+    <h1>El camino rápido a tu <span>permiso de CA.</span></h1>
+    <p class="hero-sub">Preguntas reales del DMV, práctica gamificada y apoyo bilingüe — diseñado para que los adolescentes de California pasen a la primera.</p>
+    <p class="hero-guide">Más una guía completa paso a paso del proceso de licencia para adolescentes y padres — desde la educación vial hasta la licencia provisional.</p>
+    <div class="coming-soon-pill">
+      <div class="dot"></div>
+      Disponible próximamente para iPhone y Android
+    </div>
+    <p class="launch-states">Lanzamiento en California &nbsp;·&nbsp; Florida y Texas próximamente</p>
+  </section>
+
+  <section class="features">
+    <p class="section-label">Cómo funciona</p>
+    <h2 class="section-title">Todo lo que necesitas. Nada que no.</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🛑</div>
+        <div class="feature-title">Preguntas Reales del DMV</div>
+        <div class="feature-desc">Más de 800 preguntas del Manual del Automovilista de California — el mismo material que el examen real.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🏆</div>
+        <div class="feature-title">Práctica Gamificada</div>
+        <div class="feature-desc">Gana XP, sube de nivel, mantén rachas y compite con amigos en una tabla de clasificación mientras estudias.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📋</div>
+        <div class="feature-title">Simulación del Examen</div>
+        <div class="feature-desc">Simulaciones cronometradas que replican el examen escrito real del DMV con 46 preguntas — ponderadas por categoría, igual que el examen de verdad.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌎</div>
+        <div class="feature-title">Inglés y Español</div>
+        <div class="feature-desc">Soporte bilingüe completo — cada pregunta, respuesta y explicación disponible en inglés y español.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🚦</div>
+        <div class="feature-title">Reconocimiento de Señales</div>
+        <div class="feature-desc">Preguntas visuales con imágenes reales de señales para que las reconozcas a primera vista — no solo por descripción.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📱</div>
+        <div class="feature-title">Estudia Donde Sea</div>
+        <div class="feature-desc">Listo para uso sin conexión con caché inteligente. Estudia durante el almuerzo, en el carro o en cualquier lugar sin internet.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="guide-callout">
+    <p class="section-label">Más que un banco de preguntas</p>
+    <h2 class="section-title">El camino completo a tu licencia, trazado.</h2>
+    <p class="guide-body">Passing Lane guía a adolescentes y padres en cada paso — educación vial, la solicitud del permiso, entrenamiento práctico de manejo, el examen de conducir y las reglas de la licencia provisional. Ambas rutas. Sin dudas.</p>
+  </section>
+
+  <section class="stats">
+    <div class="stats-inner">
+      <div>
+        <div class="stat-number">800+</div>
+        <div class="stat-label">Preguntas de Práctica</div>
+      </div>
+      <div>
+        <div class="stat-number">13</div>
+        <div class="stat-label">Categorías del Examen</div>
+      </div>
+      <div>
+        <div class="stat-number">2</div>
+        <div class="stat-label">Idiomas</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ca-section">
+    <p class="section-label">Diseñado para California</p>
+    <h2 class="section-title">Conoce la carretera antes de estar en ella.</h2>
+    <p>El examen escrito del DMV de California tiene <strong>46 preguntas</strong>. Necesitas responder correctamente <strong>38 (83%) para pasar</strong>. La mayoría de los adolescentes que reprueban lo hacen porque estudiaron el material equivocado o se les acabó el tiempo. Passing Lane resuelve ambos problemas.</p>
+  </section>
+
+  <footer>
+    <a href="/es/" class="footer-logo">
+      <img src="/icon.png" alt="Passing Lane" />
+      <span>Passing Lane</span>
+    </a>
+    <div class="footer-links">
+      <a href="/es/drivers-ed">Educación Vial</a>
+      <a href="/es/driving-school">Escuelas de Manejo</a>
+      <a href="/es/insurance">Seguro</a>
+    </div>
+    <p class="footer-copy">© 2025 Passing Lane Solutions LLC. Todos los derechos reservados. · passinglane.app</p>
+  </footer>
+
+  <script>
+    function toggleDrawer() {
+      const open = document.getElementById('drawer').classList.toggle('open');
+      document.getElementById('hamburger').classList.toggle('open', open);
+      document.getElementById('overlay').classList.toggle('open', open);
+    }
+    function closeDrawer() {
+      document.getElementById('drawer').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+      document.getElementById('overlay').classList.remove('open');
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+  </script>
+</body>
+</html>
