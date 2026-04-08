@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidad — Passing Lane</title>
+  <meta name="description" content="Política de Privacidad de Passing Lane, una aplicación de preparación para el examen de permiso del DMV de California." />
+  <link rel="icon" type="image/png" href="/icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green-dark: #1a4a3a; --green-mid: #2d6b52; --green-bright: #3ecf6e;
+      --yellow: #f5c842; --text: #f0f4f2; --text-muted: #8ab09a;
+      --card-bg: rgba(255,255,255,0.07); --card-border: rgba(255,255,255,0.12);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background-color: var(--green-dark); color: var(--text); min-height: 100vh; }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 18px 24px; display: flex; align-items: center; justify-content: space-between;
+      background: rgba(26, 74, 58, 0.92); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--card-border);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { width: 32px; height: 32px; border-radius: 8px; }
+    .nav-logo span { font-size: 17px; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
+    .legal-wrap { max-width: 720px; margin: 0 auto; padding: 120px 24px 80px; }
+    .legal-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green-bright); margin-bottom: 12px; }
+    h1 { font-size: 36px; font-weight: 800; letter-spacing: -0.5px; line-height: 1.15; margin-bottom: 8px; }
+    .legal-date { font-size: 14px; color: var(--text-muted); margin-bottom: 48px; }
+    h2 { font-size: 18px; font-weight: 700; color: var(--text); margin-top: 40px; margin-bottom: 12px; }
+    p { font-size: 15px; line-height: 1.75; color: #c8ddd4; margin-bottom: 14px; }
+    ul { margin: 0 0 14px 20px; padding: 0; }
+    li { font-size: 15px; line-height: 1.75; color: #c8ddd4; margin-bottom: 6px; }
+    a { color: var(--green-bright); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .divider { border: none; border-top: 1px solid var(--card-border); margin: 40px 0; }
+    .callout { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 20px 24px; margin-bottom: 24px; }
+    .callout p { margin-bottom: 0; }
+    .lang-switch { font-size: 13px; color: var(--text-muted); }
+    .lang-switch a { color: var(--text-muted); }
+    .lang-switch a:hover { color: var(--green-bright); }
+    footer { text-align: center; padding: 32px 24px; border-top: 1px solid var(--card-border); color: var(--text-muted); font-size: 13px; }
+    footer a { color: var(--text-muted); margin: 0 8px; }
+    footer a:hover { color: var(--green-bright); }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/es/" class="nav-logo">
+      <img src="/icon.png" alt="Passing Lane" />
+      <span>Passing Lane</span>
+    </a>
+    <span class="lang-switch"><a href="/privacy">English</a></span>
+  </nav>
+
+  <div class="legal-wrap">
+    <p class="legal-eyebrow">Legal</p>
+    <h1>Política de Privacidad</h1>
+    <p class="legal-date">Fecha de vigencia: 7 de abril de 2026 &nbsp;·&nbsp; Última actualización: 7 de abril de 2026</p>
+
+    <div class="callout">
+      <p>Passing Lane está diseñado para adolescentes de California que se preparan para el examen escrito de permiso del DMV. Tomamos muy en serio la privacidad de los menores y hemos diseñado esta aplicación para recopilar únicamente la información necesaria para prestar el servicio.</p>
+    </div>
+
+    <h2>1. Quiénes Somos</h2>
+    <p>Passing Lane es operado por Passing Lane Solutions LLC, una LLC unipersonal de California ("nosotros" o "nuestro"). Puedes contactarnos en <a href="mailto:hello@passinglane.app">hello@passinglane.app</a>.</p>
+
+    <h2>2. A Quién Aplica Esta Política</h2>
+    <p>Esta política aplica a todos los usuarios de la aplicación iOS de Passing Lane y del sitio web passinglane.app. Nuestro público principal son adolescentes de California de 15 a 17 años que se preparan para el examen de permiso del DMV, así como sus padres o tutores.</p>
+    <p>No recopilamos intencionalmente información personal de menores de 13 años. Si tienes menos de 13 años, no crees una cuenta ni uses la aplicación. Si nos enteramos de que hemos recopilado información de un menor de 13 años sin querer, la eliminaremos de inmediato. Los padres o tutores que crean que su hijo menor de 13 años ha creado una cuenta deben contactarnos en <a href="mailto:hello@passinglane.app">hello@passinglane.app</a>.</p>
+
+    <h2>3. Información que Recopilamos</h2>
+    <p><strong>Información de cuenta.</strong> Cuando creas una cuenta, recopilamos tu dirección de correo electrónico y contraseña (almacenada en forma cifrada mediante Supabase Auth), así como el nombre de usuario que eliges, que se convierte en tu identificador dentro de la aplicación.</p>
+    <p><strong>Datos de perfil.</strong> Almacenamos tu preferencia de idioma (inglés o español), puntos de XP, racha de estudio, progreso de insignias y avance en las preguntas. Estos datos están asociados a tu cuenta y almacenados en nuestra base de datos.</p>
+    <p><strong>Actividad de estudio.</strong> Registramos qué preguntas has visto, si las respondiste correctamente y tus marcadores. Estos datos permiten que la aplicación personalice tu experiencia y haga seguimiento de tu progreso.</p>
+    <p><strong>Información de uso.</strong> Utilizamos PostHog para análisis de producto y Sentry para informes de errores. Estas herramientas pueden recopilar el tipo de dispositivo, versión del sistema operativo, duración de la sesión, pantallas visitadas y registros de errores. Configuramos estas herramientas para minimizar la recopilación de datos personales.</p>
+    <p><strong>Reportes que envías.</strong> Si usas la función "Reportar un Problema" dentro de la aplicación, recopilamos el tipo de reporte y la descripción que proporcionas, junto con tu ID de usuario y una marca de tiempo.</p>
+    <p><strong>Lo que no recopilamos.</strong> No recopilamos tu nombre real, número de teléfono, ubicación, fotos, contactos ni ningún documento de identidad oficial. No ejecutamos publicidad ni utilizamos SDKs publicitarios. No vendemos tus datos.</p>
+
+    <h2>4. Cómo Usamos tu Información</h2>
+    <ul>
+      <li>Para crear y autenticar tu cuenta</li>
+      <li>Para hacer seguimiento de tu progreso de estudio, XP, rachas e insignias</li>
+      <li>Para mostrarte preguntas en el idioma correcto y con la dificultad adecuada</li>
+      <li>Para habilitar la tabla de clasificación de amigos mediante tu código de invitación</li>
+      <li>Para diagnosticar errores y corregir fallas mediante reportes anónimos</li>
+      <li>Para entender cómo los usuarios navegan la aplicación y mejorarla</li>
+      <li>Para responder a solicitudes de soporte y reportes de problemas</li>
+    </ul>
+    <p>No utilizamos tu información para publicidad, elaboración de perfiles ni ningún propósito ajeno a la prestación del servicio de Passing Lane.</p>
+
+    <h2>5. Cómo Compartimos tu Información</h2>
+    <p>No vendemos tu información personal. Solo compartimos datos con los proveedores de servicios necesarios para operar la aplicación:</p>
+    <ul>
+      <li><strong>Supabase</strong> — base de datos, autenticación y almacenamiento de archivos (servidores en Estados Unidos)</li>
+      <li><strong>PostHog</strong> — análisis de producto (datos almacenados en Estados Unidos)</li>
+      <li><strong>Sentry</strong> — reporte de errores y fallas</li>
+      <li><strong>RevenueCat</strong> — gestión de compras dentro de la aplicación (no almacenamos datos financieros)</li>
+    </ul>
+    <p>Cada proveedor procesa los datos únicamente según sea necesario para cumplir su función y tiene prohibido por contrato utilizarlos para otros fines. También podemos divulgar información si la ley lo exige o para proteger los derechos y la seguridad de nuestros usuarios.</p>
+
+    <h2>6. Amigos y Tabla de Clasificación</h2>
+    <p>La tabla de clasificación de amigos muestra tu nombre de usuario y total de XP a los amigos que has conectado mediante código de invitación. Ninguna otra información del perfil es visible para otros usuarios. Tú controlas con quién te conectas — las conexiones solo se establecen cuando ambas partes usan un código de invitación.</p>
+
+    <h2>7. Compras dentro de la Aplicación</h2>
+    <p>Passing Lane ofrece una compra única dentro de la aplicación para desbloquear el banco completo de preguntas. El pago es procesado íntegramente por Apple a través del App Store. No recibimos ni almacenamos los datos de tu tarjeta de pago. RevenueCat gestiona el estado de la compra en nuestro nombre.</p>
+
+    <h2>8. Retención de Datos</h2>
+    <p>Conservamos tu cuenta y datos de estudio mientras tu cuenta esté activa. Si eliminas tu cuenta, borraremos tus datos personales en un plazo de 30 días. Las estadísticas de uso anonimizadas y agregadas pueden conservarse indefinidamente para mejorar el producto.</p>
+
+    <h2>9. Tus Derechos y Opciones</h2>
+    <p>Puedes solicitar acceso a, corrección de o eliminación de tus datos personales en cualquier momento contactándonos en <a href="mailto:hello@passinglane.app">hello@passinglane.app</a>. Los residentes de California tienen derechos adicionales bajo la Ley de Privacidad del Consumidor de California (CCPA), incluyendo el derecho a saber qué información personal recopilamos, el derecho a eliminarla y el derecho a no autorizar su venta (no vendemos datos).</p>
+
+    <h2>10. Seguridad</h2>
+    <p>Utilizamos prácticas estándar de la industria para proteger tus datos, incluyendo conexiones cifradas (TLS), contraseñas cifradas y políticas de seguridad a nivel de fila en nuestra base de datos. Ningún método de transmisión o almacenamiento es 100% seguro. En caso de una violación de datos, notificaremos a los usuarios afectados de manera oportuna según lo exija la ley aplicable.</p>
+
+    <h2>11. Enlaces a Terceros</h2>
+    <p>La aplicación y el sitio web pueden contener enlaces a servicios de terceros, incluyendo recursos del DMV, proveedores de educación vial y comparadores de seguros. Esta Política de Privacidad no aplica a esos servicios. Te recomendamos revisar sus políticas de privacidad antes de proporcionar información personal.</p>
+
+    <h2>12. Cambios a Esta Política</h2>
+    <p>Podemos actualizar esta Política de Privacidad de vez en cuando. Cuando lo hagamos, actualizaremos la fecha de "Última actualización" en la parte superior de esta página. Para cambios importantes, proporcionaremos aviso dentro de la aplicación. El uso continuo de Passing Lane después de la publicación de una actualización constituye la aceptación de los términos actualizados.</p>
+
+    <h2>13. Contacto</h2>
+    <p>Las preguntas sobre esta Política de Privacidad deben dirigirse a:<br/>
+    Passing Lane Solutions LLC<br/>
+    <a href="mailto:hello@passinglane.app">hello@passinglane.app</a></p>
+
+    <hr class="divider"/>
+    <p style="font-size:13px; color: var(--text-muted);">Ver también nuestros <a href="/es/terms">Términos de Servicio</a>.</p>
+  </div>
+
+  <footer>
+    <p>© 2026 Passing Lane Solutions LLC · <a href="/es/privacy">Privacidad</a> · <a href="/es/terms">Términos</a> · <a href="mailto:hello@passinglane.app">Contacto</a></p>
+  </footer>
+</body>
+</html>
