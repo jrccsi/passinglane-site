@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Signing you in...</title>
+  <script>
+    const hash = window.location.hash;
+    const search = window.location.search;
+    const appUrl = 'passinglane://auth/callback' + search + hash;
+    window.location.href = appUrl;
+    setTimeout(() => {
+      document.getElementById('fallback').style.display = 'block';
+    }, 2000);
+  </script>
+  <style>
+    body { font-family: -apple-system, sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; background: #000; color: #fff; text-align: center; }
+    .container { padding: 24px; }
+    p { color: #888; font-size: 15px; margin-top: 8px; }
+    #fallback { display: none; margin-top: 24px; }
+    a { color: #4A90D9; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Signing you in...</h2>
+    <p>Returning you to Passing Lane.</p>
+    <div id="fallback">
+      <p>If the app did not open, <a href="passinglane://auth/callback">tap here</a>.</p>
+    </div>
+  </div>
+</body>
+</html>
