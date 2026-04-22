@@ -85,6 +85,15 @@
     .launch-states { font-size: 13px; color: var(--text-muted); margin-top: 14px; letter-spacing: 0.2px; position: relative; z-index: 1; }
     @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.8); } }
 
+    .services-strip { padding: 48px 24px; background: rgba(0,0,0,0.15); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border); text-align: center; }
+    .services-label { font-size: 14px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 28px; }
+    .services-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; max-width: 800px; margin: 0 auto; }
+    .service-link { display: flex; flex-direction: column; align-items: center; gap: 6px; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 24px 32px; text-decoration: none; transition: border-color 0.2s, transform 0.2s; min-width: 180px; }
+    .service-link:hover { border-color: rgba(62, 207, 110, 0.4); transform: translateY(-2px); }
+    .service-icon { font-size: 28px; }
+    .service-name { font-size: 16px; font-weight: 700; color: var(--text); }
+    .service-desc { font-size: 12px; color: var(--text-muted); }
+
     .features { padding: 80px 24px; max-width: 1000px; margin: 0 auto; }
     .section-label { font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green-bright); text-align: center; margin-bottom: 14px; }
     .section-title { font-size: clamp(28px, 4vw, 40px); font-weight: 800; letter-spacing: -1px; text-align: center; margin-bottom: 56px; color: var(--text); }
@@ -160,6 +169,28 @@
       Disponible próximamente para iPhone y Android
     </div>
     <p class="launch-states">Lanzamiento en California &nbsp;·&nbsp; Florida y Texas próximamente</p>
+  </section>
+
+  <!-- Services strip -->
+  <section class="services-strip">
+    <p class="services-label">¿Listo para comenzar? Encuentra lo que necesitas.</p>
+    <div class="services-links">
+      <a href="/es/drivers-ed" class="service-link">
+        <span class="service-icon">📚</span>
+        <span class="service-name">Educación Vial</span>
+        <span class="service-desc">Encuentra cursos aprobados por el DMV</span>
+      </a>
+      <a href="/es/driving-school" class="service-link">
+        <span class="service-icon">🚗</span>
+        <span class="service-name">Escuelas de Manejo</span>
+        <span class="service-desc">Reserva entrenamiento práctico</span>
+      </a>
+      <a href="/es/insurance" class="service-link">
+        <span class="service-icon">🛡</span>
+        <span class="service-name">Seguro</span>
+        <span class="service-desc">Agrega a tu conductor joven</span>
+      </a>
+    </div>
   </section>
 
   <section class="features">
