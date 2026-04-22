@@ -331,6 +331,65 @@
       50% { opacity: 0.5; transform: scale(0.8); }
     }
 
+    /* ── Services strip ── */
+    .services-strip {
+      padding: 48px 24px;
+      background: rgba(0,0,0,0.15);
+      border-top: 1px solid var(--card-border);
+      border-bottom: 1px solid var(--card-border);
+      text-align: center;
+    }
+
+    .services-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 28px;
+    }
+
+    .services-links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .service-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 24px 32px;
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s;
+      min-width: 180px;
+    }
+
+    .service-link:hover {
+      border-color: rgba(62, 207, 110, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .service-icon { font-size: 28px; }
+
+    .service-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .service-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
     /* ── Features ── */
     .features {
       padding: 80px 24px;
@@ -567,6 +626,28 @@
       Coming to iPhone &amp; Android
     </div>
     <p class="launch-states">Launching in California &nbsp;·&nbsp; Florida and Texas coming soon</p>
+  </section>
+
+  <!-- Services strip -->
+  <section class="services-strip">
+    <p class="services-label">Ready to get started? Find what you need.</p>
+    <div class="services-links">
+      <a href="/drivers-ed" class="service-link">
+        <span class="service-icon">📚</span>
+        <span class="service-name">Driver's Ed</span>
+        <span class="service-desc">Find DMV approved courses</span>
+      </a>
+      <a href="/driving-school" class="service-link">
+        <span class="service-icon">🚗</span>
+        <span class="service-name">Driving Schools</span>
+        <span class="service-desc">Book behind the wheel training</span>
+      </a>
+      <a href="/insurance" class="service-link">
+        <span class="service-icon">🛡</span>
+        <span class="service-name">Insurance</span>
+        <span class="service-desc">Add your teen driver</span>
+      </a>
+    </div>
   </section>
 
   <!-- Features -->
