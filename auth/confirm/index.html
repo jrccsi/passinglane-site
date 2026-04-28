@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Opening Passing Lane…</title>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #1a4a3a;
+        color: #f0f4f2;
+        text-align: center;
+        padding: 24px;
+      }
+      img { width: 72px; height: 72px; border-radius: 16px; margin-bottom: 24px; }
+      h1  { font-size: 22px; font-weight: 700; margin: 0 0 8px; }
+      p   { font-size: 15px; color: #8ab09a; margin: 0 0 32px; }
+      a   {
+        display: inline-block;
+        background: #3ecf6e;
+        color: #0d2d1e;
+        font-size: 16px;
+        font-weight: 700;
+        text-decoration: none;
+        padding: 14px 32px;
+        border-radius: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="https://passinglane.app/icon.png" alt="Passing Lane" />
+    <h1>Confirming your account…</h1>
+    <p>You will be redirected to the Passing Lane app automatically.</p>
+    <a id="openBtn" href="#">Open Passing Lane</a>
+
+    <script>
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var hash   = params.get("token_hash");
+        var type   = params.get("type") || "signup";
+
+        if (!hash) {
+          document.querySelector("h1").textContent = "Invalid confirmation link";
+          document.querySelector("p").textContent  = "This link appears to be expired or malformed. Please request a new one.";
+          document.getElementById("openBtn").style.display = "none";
+          return;
+        }
+
+        var deepLink =
+          "passinglane://auth/confirm?token_hash=" +
+          encodeURIComponent(hash) +
+          "&type=" +
+          encodeURIComponent(type);
+
+        document.getElementById("openBtn").href = deepLink;
+
+        // Auto-redirect immediately
+        window.location.href = deepLink;
+
+        // Fallback: show button if app did not open
+        setTimeout(function () {
+          document.querySelector("p").textContent =
+            "Tap the button below if the app did not open automatically.";
+        }, 2000);
+      })();
+    </script>
+  </body>
+</html>
