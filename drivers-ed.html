@@ -103,6 +103,21 @@
     .coming-soon-box h2 { font-size: 22px; font-weight: 700; margin-bottom: 10px; }
     .coming-soon-box p { font-size: 15px; color: var(--text-muted); line-height: 1.6; }
 
+    .cta-link {
+      display: block;
+      background: var(--green-bright);
+      color: #0d2d1e;
+      font-size: 17px;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 16px 28px;
+      border-radius: 12px;
+      text-align: center;
+      margin-bottom: 16px;
+      transition: opacity 0.2s;
+    }
+    .cta-link:hover { opacity: 0.88; }
+
     .dmv-link {
       display: inline-flex;
       align-items: center;
@@ -171,11 +186,9 @@
       </ul>
     </div>
 
-    <div class="coming-soon-box">
-      <div class="icon">📚</div>
-      <h2>Course recommendations coming soon</h2>
-      <p>Passing Lane will recommend DMV-approved driver's ed courses directly in the app. Check back when we launch, or visit the DMV's official list in the meantime.</p>
-    </div>
+    <a href="http://go.driversed.com/SH3C" target="_blank" rel="noopener" class="cta-link">
+      Enroll in DMV-Approved Driver's Ed →
+    </a>
 
     <a href="https://www.dmv.ca.gov/portal/teen-drivers/" target="_blank" rel="noopener" class="dmv-link">
       🔗 View DMV-Approved Courses at dmv.ca.gov →

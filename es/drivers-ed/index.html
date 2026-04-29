@@ -54,6 +54,21 @@
     .coming-soon-box .icon { font-size: 40px; margin-bottom: 16px; }
     .coming-soon-box h2 { font-size: 22px; font-weight: 700; margin-bottom: 10px; }
     .coming-soon-box p { font-size: 15px; color: var(--text-muted); line-height: 1.6; }
+    .cta-link {
+      display: block;
+      background: var(--green-bright);
+      color: #0d2d1e;
+      font-size: 17px;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 16px 28px;
+      border-radius: 12px;
+      text-align: center;
+      margin-bottom: 16px;
+      transition: opacity 0.2s;
+    }
+    .cta-link:hover { opacity: 0.88; }
+
     .dmv-link { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--card-border); border-radius: 10px; padding: 14px 20px; text-decoration: none; color: var(--text-muted); font-size: 14px; transition: color 0.2s, border-color 0.2s; }
     .dmv-link:hover { color: var(--text); border-color: rgba(255,255,255,0.25); }
     .disclosure { font-size: 12px; color: var(--text-muted); opacity: 0.6; margin-top: 48px; line-height: 1.6; }
@@ -108,11 +123,9 @@
       </ul>
     </div>
 
-    <div class="coming-soon-box">
-      <div class="icon">📚</div>
-      <h2>Recomendaciones de cursos próximamente</h2>
-      <p>Passing Lane recomendará cursos de educación vial aprobados por el DMV directamente en la app. Vuelve cuando lancemos, o visita la lista oficial del DMV mientras tanto.</p>
-    </div>
+    <a href="http://go.driversed.com/SH3C" target="_blank" rel="noopener" class="cta-link">
+      Inscríbete en Educación Vial Aprobada por el DMV →
+    </a>
 
     <a href="https://www.dmv.ca.gov/portal/teen-drivers/" target="_blank" rel="noopener" class="dmv-link">
       🔗 Ver cursos aprobados en dmv.ca.gov →

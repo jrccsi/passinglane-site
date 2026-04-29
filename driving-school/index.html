@@ -99,6 +99,21 @@
     .coming-soon-box h2 { font-size: 22px; font-weight: 700; margin-bottom: 10px; }
     .coming-soon-box p { font-size: 15px; color: var(--text-muted); line-height: 1.6; }
 
+    .cta-link {
+      display: block;
+      background: var(--green-bright);
+      color: #0d2d1e;
+      font-size: 17px;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 16px 28px;
+      border-radius: 12px;
+      text-align: center;
+      margin-bottom: 16px;
+      transition: opacity 0.2s;
+    }
+    .cta-link:hover { opacity: 0.88; }
+
     .dmv-link {
       display: inline-flex; align-items: center; gap: 8px;
       border: 1px solid var(--card-border); border-radius: 10px;
@@ -162,11 +177,9 @@
       </ul>
     </div>
 
-    <div class="coming-soon-box">
-      <div class="icon">🚗</div>
-      <h2>School recommendations coming soon</h2>
-      <p>Passing Lane will connect teens with licensed driving schools directly in the app. Until then, verify any school's license through the DMV before booking.</p>
-    </div>
+    <a href="http://go.driversed.com/SH3E" target="_blank" rel="noopener" class="cta-link">
+      Enroll in Behind the Wheel Training →
+    </a>
 
     <a href="https://www.dmv.ca.gov/portal/teen-drivers/" target="_blank" rel="noopener" class="dmv-link">
       🔗 Verify a Driving School License at dmv.ca.gov →
