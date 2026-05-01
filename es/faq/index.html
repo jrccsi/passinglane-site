@@ -450,47 +450,83 @@
         </div>
       </div>
 
-      <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px; margin-top:24px;">
-        <span class="tier-pill tier-common">Común</span>
-        <span style="font-size:13px; color:var(--text-muted);">Se obtienen pronto. Reconoce los primeros pasos y hábitos diarios.</span>
-      </div>
-      <div class="badge-grid">
-        <div class="badge-card"><div class="badge-icon">🟢</div><div class="badge-info"><div class="badge-name">Primera Luz Verde</div><div class="badge-desc">Se otorga cuando respondes correctamente tu primera pregunta. Todos empiezan aquí — esta es tu primera victoria.</div></div></div>
-        <div class="badge-card"><div class="badge-icon">📖</div><div class="badge-info"><div class="badge-name">Héroe del Manual</div><div class="badge-desc">Se otorga cuando completas todas las preguntas de cualquier módulo. Has cubierto completamente un tema del Manual del Automovilista de CA.</div></div></div>
-        <div class="badge-card"><div class="badge-icon">🔥</div><div class="badge-info"><div class="badge-name">En Llamas</div><div class="badge-desc">Se otorga cuando respondes correctamente 10 preguntas seguidas en una sola sesión de práctica sin parar.</div></div></div>
-      </div>
+      <div class="accordion" id="badge-accordion">
 
-      <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px; margin-top:28px;">
-        <span class="tier-pill tier-uncommon">Poco Común</span>
-        <span style="font-size:13px; color:var(--text-muted);">Se obtienen con constancia y habilidad. Requiere esfuerzo real.</span>
-      </div>
-      <div class="badge-grid">
-        <div class="badge-card"><div class="badge-icon">📚</div><div class="badge-info"><div class="badge-name">Ratón de Biblioteca</div><div class="badge-desc">Se otorga cuando marcas 10 o más preguntas como favoritas. Estás prestando atención a las que importan — y volviendo a ellas.</div></div></div>
-        <div class="badge-card"><div class="badge-icon">🦉</div><div class="badge-info"><div class="badge-name">Búho Nocturno</div><div class="badge-desc">Se otorga cuando completas una sesión de práctica después de las 10 PM. Estudiante nocturno, te vemos.</div></div></div>
-        <div class="badge-card"><div class="badge-icon">💪</div><div class="badge-info"><div class="badge-name">El que Regresa</div><div class="badge-desc">Se otorga cuando respondes correctamente una pregunta que antes habías fallado. Aprendiste de tu error.</div></div></div>
-        <div class="badge-card"><div class="badge-icon">⚡</div><div class="badge-info"><div class="badge-name">Velocista</div><div class="badge-desc">Se otorga cuando completas un módulo completo en menos de 3 minutos. Rápido y preciso — ese es el objetivo.</div></div></div>
-        <div class="badge-card"><div class="badge-icon">🎯</div><div class="badge-info"><div class="badge-name">Francotirador</div><div class="badge-desc">Se otorga cuando logras 90% o más de precisión en una sesión de práctica de al menos 20 preguntas.</div></div></div>
-      </div>
+        <div class="accordion-item">
+          <button class="accordion-trigger" onclick="toggleBadge(this)">
+            <span style="display:flex;align-items:center;gap:12px;">
+              <span class="tier-pill tier-common">Común</span>
+              <span style="font-size:14px;color:var(--text-muted);font-weight:400;">Primera Luz Verde · Héroe del Manual · En Llamas</span>
+            </span>
+            <span class="accordion-chevron">▼</span>
+          </button>
+          <div class="accordion-body">
+            <p style="font-size:13px;color:var(--text-muted);margin-bottom:14px;">Se obtienen pronto. Reconoce los primeros pasos y hábitos diarios.</p>
+            <div class="badge-grid">
+              <div class="badge-card"><div class="badge-icon">🟢</div><div class="badge-info"><div class="badge-name">Primera Luz Verde</div><div class="badge-desc">Se otorga cuando respondes correctamente tu primera pregunta. Todos empiezan aquí — esta es tu primera victoria.</div></div></div>
+              <div class="badge-card"><div class="badge-icon">📖</div><div class="badge-info"><div class="badge-name">Héroe del Manual</div><div class="badge-desc">Se otorga cuando completas todas las preguntas de cualquier módulo. Has cubierto completamente un tema del Manual del Automovilista de CA.</div></div></div>
+              <div class="badge-card"><div class="badge-icon">🔥</div><div class="badge-info"><div class="badge-name">En Llamas</div><div class="badge-desc">Se otorga cuando respondes correctamente 10 preguntas seguidas en una sola sesión de práctica sin parar.</div></div></div>
+            </div>
+          </div>
+        </div>
 
-      <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px; margin-top:28px;">
-        <span class="tier-pill tier-rare">Raro</span>
-        <span style="font-size:13px; color:var(--text-muted);">Se obtienen con esfuerzo sostenido en el tiempo. La mayoría no los tendrá todos.</span>
-      </div>
-      <div class="badge-grid">
-        <div class="badge-card"><div class="badge-icon">📅</div><div class="badge-info"><div class="badge-name">Mes en Llamas</div><div class="badge-desc">Se otorga cuando mantienes una racha de estudio de 30 días. Treinta días seguidos — sin pausas, sin excusas.</div></div></div>
-        <div class="badge-card"><div class="badge-icon">✅</div><div class="badge-info"><div class="badge-name">Racha Perfecta</div><div class="badge-desc">Se otorga cuando completas un módulo completo con 100% de respuestas correctas al primer intento — sin errores, sin reintentos.</div></div></div>
-        <div class="badge-card"><div class="badge-icon">📆</div><div class="badge-info"><div class="badge-name">Guerrero Semanal</div><div class="badge-desc">Se otorga cuando estudias todos los días durante 7 días consecutivos. Una semana completa de práctica diaria.</div></div></div>
-        <div class="badge-card"><div class="badge-icon">🧠</div><div class="badge-info"><div class="badge-name">Gran Cerebro</div><div class="badge-desc">Se otorga cuando alcanzas 80% o más de dominio en las 13 categorías simultáneamente. Te sabes el manual completo.</div></div></div>
-      </div>
+        <div class="accordion-item">
+          <button class="accordion-trigger" onclick="toggleBadge(this)">
+            <span style="display:flex;align-items:center;gap:12px;">
+              <span class="tier-pill tier-uncommon">Poco Común</span>
+              <span style="font-size:14px;color:var(--text-muted);font-weight:400;">Ratón de Biblioteca · Búho Nocturno · El que Regresa · Velocista · Francotirador</span>
+            </span>
+            <span class="accordion-chevron">▼</span>
+          </button>
+          <div class="accordion-body">
+            <p style="font-size:13px;color:var(--text-muted);margin-bottom:14px;">Se obtienen con constancia y habilidad. Requiere esfuerzo real.</p>
+            <div class="badge-grid">
+              <div class="badge-card"><div class="badge-icon">📚</div><div class="badge-info"><div class="badge-name">Ratón de Biblioteca</div><div class="badge-desc">Se otorga cuando marcas 10 o más preguntas como favoritas. Estás prestando atención a las que importan — y volviendo a ellas.</div></div></div>
+              <div class="badge-card"><div class="badge-icon">🦉</div><div class="badge-info"><div class="badge-name">Búho Nocturno</div><div class="badge-desc">Se otorga cuando completas una sesión de práctica después de las 10 PM. Estudiante nocturno, te vemos.</div></div></div>
+              <div class="badge-card"><div class="badge-icon">💪</div><div class="badge-info"><div class="badge-name">El que Regresa</div><div class="badge-desc">Se otorga cuando respondes correctamente una pregunta que antes habías fallado. Aprendiste de tu error.</div></div></div>
+              <div class="badge-card"><div class="badge-icon">⚡</div><div class="badge-info"><div class="badge-name">Velocista</div><div class="badge-desc">Se otorga cuando completas un módulo completo en menos de 3 minutos. Rápido y preciso — ese es el objetivo.</div></div></div>
+              <div class="badge-card"><div class="badge-icon">🎯</div><div class="badge-info"><div class="badge-name">Francotirador</div><div class="badge-desc">Se otorga cuando logras 90% o más de precisión en una sesión de práctica de al menos 20 preguntas.</div></div></div>
+            </div>
+          </div>
+        </div>
 
-      <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px; margin-top:28px;">
-        <span class="tier-pill tier-legendary">Legendario</span>
-        <span style="font-size:13px; color:var(--text-muted);">Los más difíciles de obtener. Solo los usuarios más dedicados los tendrán todos.</span>
-      </div>
-      <div class="badge-grid">
-        <div class="badge-card"><div class="badge-icon">💎</div><div class="badge-info"><div class="badge-name">Impecable</div><div class="badge-desc">Se otorga cuando pasas una Simulación del Examen de Permiso con puntuación perfecta — 46 de 46 preguntas correctas.</div></div></div>
-        <div class="badge-card"><div class="badge-icon">🪪</div><div class="badge-info"><div class="badge-name">Con Licencia</div><div class="badge-desc">Se otorga cuando reportas que pasaste el examen escrito real del DMV de California. Para esto es todo. Viene con la placa dorada.</div></div></div>
-        <div class="badge-card"><div class="badge-icon">🥇</div><div class="badge-info"><div class="badge-name">Primero en la Clase</div><div class="badge-desc">Se otorga cuando llegas al #1 en la tabla de clasificación de amigos. Has superado a todos en tu grupo.</div></div></div>
+        <div class="accordion-item">
+          <button class="accordion-trigger" onclick="toggleBadge(this)">
+            <span style="display:flex;align-items:center;gap:12px;">
+              <span class="tier-pill tier-rare">Raro</span>
+              <span style="font-size:14px;color:var(--text-muted);font-weight:400;">Mes en Llamas · Racha Perfecta · Guerrero Semanal · Gran Cerebro</span>
+            </span>
+            <span class="accordion-chevron">▼</span>
+          </button>
+          <div class="accordion-body">
+            <p style="font-size:13px;color:var(--text-muted);margin-bottom:14px;">Se obtienen con esfuerzo sostenido en el tiempo. La mayoría no los tendrá todos.</p>
+            <div class="badge-grid">
+              <div class="badge-card"><div class="badge-icon">📅</div><div class="badge-info"><div class="badge-name">Mes en Llamas</div><div class="badge-desc">Se otorga cuando mantienes una racha de estudio de 30 días. Treinta días seguidos — sin pausas, sin excusas.</div></div></div>
+              <div class="badge-card"><div class="badge-icon">✅</div><div class="badge-info"><div class="badge-name">Racha Perfecta</div><div class="badge-desc">Se otorga cuando completas un módulo completo con 100% de respuestas correctas al primer intento — sin errores, sin reintentos.</div></div></div>
+              <div class="badge-card"><div class="badge-icon">📆</div><div class="badge-info"><div class="badge-name">Guerrero Semanal</div><div class="badge-desc">Se otorga cuando estudias todos los días durante 7 días consecutivos. Una semana completa de práctica diaria.</div></div></div>
+              <div class="badge-card"><div class="badge-icon">🧠</div><div class="badge-info"><div class="badge-name">Gran Cerebro</div><div class="badge-desc">Se otorga cuando alcanzas 80% o más de dominio en las 13 categorías simultáneamente. Te sabes el manual completo.</div></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" onclick="toggleBadge(this)">
+            <span style="display:flex;align-items:center;gap:12px;">
+              <span class="tier-pill tier-legendary">Legendario</span>
+              <span style="font-size:14px;color:var(--text-muted);font-weight:400;">Impecable · Con Licencia · Primero en la Clase</span>
+            </span>
+            <span class="accordion-chevron">▼</span>
+          </button>
+          <div class="accordion-body">
+            <p style="font-size:13px;color:var(--text-muted);margin-bottom:14px;">Los más difíciles de obtener. Solo los usuarios más dedicados los tendrán todos.</p>
+            <div class="badge-grid">
+              <div class="badge-card"><div class="badge-icon">💎</div><div class="badge-info"><div class="badge-name">Impecable</div><div class="badge-desc">Se otorga cuando pasas una Simulación del Examen de Permiso con puntuación perfecta — 46 de 46 preguntas correctas.</div></div></div>
+              <div class="badge-card"><div class="badge-icon">🪪</div><div class="badge-info"><div class="badge-name">Con Licencia</div><div class="badge-desc">Se otorga cuando reportas que pasaste el examen escrito real del DMV de California. Para esto es todo. Viene con la placa dorada.</div></div></div>
+              <div class="badge-card"><div class="badge-icon">🥇</div><div class="badge-info"><div class="badge-name">Primero en la Clase</div><div class="badge-desc">Se otorga cuando llegas al #1 en la tabla de clasificación de amigos. Has superado a todos en tu grupo.</div></div></div>
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <div class="notes-box">
@@ -571,6 +607,12 @@
   </footer>
 
   <script>
+    function toggleBadge(btn) {
+      const item = btn.closest('.accordion-item');
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('#badge-accordion .accordion-item').forEach(el => el.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    }
     function toggle(btn) {
       const item = btn.closest('.accordion-item');
       const wasOpen = item.classList.contains('open');
