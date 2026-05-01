@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Preguntas Frecuentes — Passing Lane</title>
-  <meta name="description" content="Preguntas frecuentes sobre Passing Lane — insignias, funciones y cómo funciona la app." />
+  <meta name="description" content="Preguntas frecuentes sobre Passing Lane — cómo funciona, cuentas, compras, XP, insignias y más." />
   <link rel="icon" type="image/png" href="/icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -16,13 +16,8 @@
     .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
     .nav-logo img { width: 30px; height: 30px; border-radius: 7px; }
     .nav-logo span { font-size: 16px; font-weight: 700; color: var(--text); }
-    .nav-right { display: flex; align-items: center; gap: 12px; }
     .nav-back { font-size: 14px; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
     .nav-back:hover { color: var(--text); }
-    .lang-toggle { display: flex; align-items: center; gap: 2px; background: rgba(255,255,255,0.06); border: 1px solid var(--card-border); border-radius: 20px; padding: 3px; font-size: 12px; font-weight: 600; }
-    .lang-toggle a { padding: 3px 10px; border-radius: 16px; text-decoration: none; color: var(--text-muted); transition: all 0.15s; }
-    .lang-toggle a.active { background: var(--green-bright); color: #0f2d22; }
-    .lang-toggle a:not(.active):hover { color: var(--text); }
     .hamburger { background: none; border: none; cursor: pointer; padding: 6px; display: flex; flex-direction: column; gap: 5px; z-index: 200; }
     .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.25s ease, opacity 0.25s ease; transform-origin: center; }
     .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -41,9 +36,38 @@
     h1 { font-size: clamp(30px, 5vw, 44px); font-weight: 800; letter-spacing: -1px; margin-bottom: 12px; line-height: 1.1; }
     .page-intro { font-size: 17px; color: var(--text-muted); line-height: 1.7; margin-bottom: 56px; }
     .faq-section { margin-bottom: 48px; }
-    .faq-section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 1px solid var(--card-border); }
+    .faq-section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; padding-bottom: 14px; border-bottom: 1px solid var(--card-border); }
     .faq-section-title { font-size: 20px; font-weight: 700; color: var(--text); }
     .faq-section-desc { font-size: 13px; color: var(--text-muted); margin-top: 2px; }
+    .accordion { display: flex; flex-direction: column; gap: 8px; }
+    .accordion-item { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; overflow: hidden; }
+    .accordion-trigger { width: 100%; background: none; border: none; cursor: pointer; padding: 18px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; text-align: left; color: var(--text); }
+    .accordion-trigger:hover { background: rgba(255,255,255,0.04); }
+    .accordion-question { font-size: 15px; font-weight: 600; line-height: 1.4; }
+    .accordion-chevron { font-size: 14px; color: var(--text-muted); flex-shrink: 0; transition: transform 0.22s ease; }
+    .accordion-item.open .accordion-chevron { transform: rotate(180deg); }
+    .accordion-body { display: none; padding: 0 20px 20px; }
+    .accordion-item.open .accordion-body { display: block; }
+    .accordion-body p { font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-bottom: 10px; }
+    .accordion-body p:last-child { margin-bottom: 0; }
+    .accordion-body ul { list-style: none; display: flex; flex-direction: column; gap: 6px; padding-left: 4px; }
+    .accordion-body li { font-size: 14px; color: var(--text-muted); line-height: 1.6; padding-left: 18px; position: relative; }
+    .accordion-body li::before { content: '·'; position: absolute; left: 4px; color: var(--green-bright); font-weight: 700; }
+    .accordion-body li strong { color: var(--text); }
+    .accordion-body a { color: var(--green-bright); text-decoration: none; }
+    .accordion-body a:hover { text-decoration: underline; }
+    .xp-table { width: 100%; border-collapse: collapse; margin-top: 4px; }
+    .xp-table td { font-size: 14px; padding: 7px 0; color: var(--text-muted); line-height: 1.5; vertical-align: top; }
+    .xp-table td:first-child { color: var(--text); font-weight: 500; width: 68%; }
+    .xp-table td:last-child { text-align: right; color: var(--green-bright); font-weight: 700; white-space: nowrap; }
+    .xp-table tr { border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .xp-table tr:last-child { border-bottom: none; }
+    .xp-group-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted); opacity: 0.6; padding-top: 14px !important; }
+    .level-table { width: 100%; border-collapse: collapse; }
+    .level-table td { font-size: 14px; padding: 8px 0; color: var(--text-muted); line-height: 1.5; border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: top; }
+    .level-table tr:last-child td { border-bottom: none; }
+    .level-table td:first-child { font-weight: 600; color: var(--text); width: 40%; }
+    .level-table td:nth-child(2) { color: var(--green-bright); font-weight: 600; width: 20%; }
     .tier-pill { font-size: 11px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; white-space: nowrap; }
     .tier-common    { background: rgba(255,255,255,0.08); color: var(--text-muted); border: 1px solid rgba(255,255,255,0.12); }
     .tier-uncommon  { background: rgba(62, 207, 110, 0.12); color: #6dd98a; border: 1px solid rgba(62,207,110,0.25); }
@@ -55,7 +79,7 @@
     .badge-info { flex: 1; }
     .badge-name { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
     .badge-desc { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
-    .notes-box { background: rgba(62, 207, 110, 0.06); border: 1px solid rgba(62, 207, 110, 0.2); border-radius: 14px; padding: 20px 24px; margin-top: 48px; }
+    .notes-box { background: rgba(62, 207, 110, 0.06); border: 1px solid rgba(62, 207, 110, 0.2); border-radius: 14px; padding: 20px 24px; margin-top: 32px; }
     .notes-box h3 { font-size: 14px; font-weight: 700; color: var(--green-bright); margin-bottom: 12px; letter-spacing: 0.3px; }
     .notes-box ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
     .notes-box li { font-size: 14px; color: var(--text-muted); padding-left: 18px; position: relative; line-height: 1.5; }
@@ -68,6 +92,7 @@
   </style>
 </head>
 <body>
+
   <div class="drawer-overlay" id="overlay" onclick="closeDrawer()"></div>
   <nav class="nav-drawer" id="drawer">
     <a href="/es/"><span class="icon">🏠</span> Inicio</a>
@@ -78,6 +103,7 @@
     <div class="nav-drawer-divider"></div>
     <a href="/es/faq" class="active"><span class="icon">❓</span> Preguntas Frecuentes</a>
   </nav>
+
   <nav>
     <button class="hamburger" id="hamburger" onclick="toggleDrawer()" aria-label="Menú">
       <span></span><span></span><span></span>
@@ -86,10 +112,10 @@
       <img src="/icon.png" alt="Passing Lane" />
       <span>Passing Lane</span>
     </a>
-    <div class="nav-right">
-      <div class="lang-toggle">
-        <a href="/faq">EN</a>
-        <a href="/es/faq" class="active">ES</a>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <div style="display:flex;align-items:center;gap:2px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:3px;font-size:12px;font-weight:600;">
+        <a href="/faq" style="padding:3px 10px;border-radius:16px;text-decoration:none;color:var(--text-muted);">EN</a>
+        <a href="/es/faq" style="padding:3px 10px;border-radius:16px;text-decoration:none;background:var(--green-bright);color:#0f2d22;">ES</a>
       </div>
       <a href="/es/" class="nav-back">← Inicio</a>
     </div>
@@ -100,6 +126,322 @@
     <h1>Preguntas Frecuentes</h1>
     <p class="page-intro">Todo lo que necesitas saber sobre cómo funciona Passing Lane.</p>
 
+    <!-- ── Sección 1: Sobre la App ── -->
+    <div class="faq-section">
+      <div class="faq-section-header">
+        <div>
+          <div class="faq-section-title">📱 Sobre la App</div>
+          <div class="faq-section-desc">Qué es Passing Lane y cómo funciona.</div>
+        </div>
+      </div>
+      <div class="accordion">
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" onclick="toggle(this)">
+            <span class="accordion-question">¿Qué es Passing Lane?</span>
+            <span class="accordion-chevron">▼</span>
+          </button>
+          <div class="accordion-body">
+            <p>Passing Lane es una app de preparación para el examen de permiso de California diseñada para que valga la pena usarla. Cubre las 348 preguntas del DMV en 13 categorías, rastrea tu dominio por tema y añade una capa de juego — XP, insignias, rachas y una tabla de clasificación de amigos — para que estudiar no se sienta como una obligación.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" onclick="toggle(this)">
+            <span class="accordion-question">¿Es gratis?</span>
+            <span class="accordion-chevron">▼</span>
+          </button>
+          <div class="accordion-body">
+            <p>Sí. Las primeras 100 preguntas son gratuitas — no necesitas cuenta para empezar. Después, un desbloqueo único de $7.99 te da acceso completo a todo. Sin suscripción, sin cargos recurrentes.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" onclick="toggle(this)">
+            <span class="accordion-question">¿Qué incluye la versión gratis vs. la desbloqueada?</span>
+            <span class="accordion-chevron">▼</span>
+          </button>
+          <div class="accordion-body">
+            <p><strong style="color:var(--text);">Gratis:</strong> Las primeras 100 preguntas en todos los módulos, XP e insignias, rachas y tabla de clasificación de amigos.</p>
+            <p><strong style="color:var(--text);">Desbloqueada ($7.99 única vez):</strong> Las 348 preguntas completas, ambas Simulaciones del Examen de Permiso y acceso completo a Revisar Errores en todas las categorías.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" onclick="toggle(this)">
+            <span class="accordion-question">¿Funciona sin conexión a internet?</span>
+            <span class="accordion-chevron">▼</span>
+          </button>
+          <div class="accordion-body">
+            <p>Las preguntas y tu progreso requieren conexión a internet. La app es liviana y carga rápido, pero se necesita una conexión activa para las sesiones de práctica y el seguimiento del progreso.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" onclick="toggle(this)">
+            <span class="accordion-question">¿Hay versión en español?</span>
+            <span class="accordion-chevron">▼</span>
+          </button>
+          <div class="accordion-body">
+            <p>Sí. La app completa está disponible en español. Cambia de idioma en cualquier momento desde la configuración de tu perfil en Apariencia — tu progreso y cuenta se mantienen.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" onclick="toggle(this)">
+            <span class="accordion-question">¿En qué estados está disponible Passing Lane?</span>
+            <span class="accordion-chevron">▼</span>
+          </button>
+          <div class="accordion-body">
+            <p>Por ahora solo en California. Florida y Texas están próximamente.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── Sección 2: Cuenta, Compra y Solución de Problemas ── -->
+    <div class="faq-section">
+      <div class="faq-section-header">
+        <div>
+          <div class="faq-section-title">🔒 Cuenta, Compra y Solución de Problemas</div>
+          <div class="faq-section-desc">Registrarse, compras y qué hacer cuando algo sale mal.</div>
+        </div>
+      </div>
+      <div class="accordion">
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" onclick="toggle(this)">
+            <span class="accordion-question">¿Necesito una cuenta para usar la app?</span>
+            <span class="accordion-chevron">▼</span>
+          </button>
+          <div class="accordion-body">
+            <p>No — puedes empezar a practicar sin una. Pero crear una cuenta gratuita guarda tu progreso, desbloquea XP e insignias y te permite unirte a la tabla de clasificación de amigos. Lo recomendamos.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" onclick="toggle(this)">
+            <span class="accordion-question">¿Cómo creo una cuenta?</span>
+            <span class="accordion-chevron">▼</span>
+          </button>
+          <div class="accordion-body">
+            <p>Abre la app y toca Registrarse. Puedes crear una cuenta con tu correo electrónico y una contraseña, o usar Iniciar sesión con Apple para una configuración más rápida.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" onclick="toggle(this)">
+            <span class="accordion-question">Me aparece un error al crear la cuenta — ¿qué hago?</span>
+            <span class="accordion-chevron">▼</span>
+          </button>
+          <div class="accordion-body">
+            <p>Prueba estos pasos en orden:</p>
+            <ul>
+              <li>Asegúrate de que tu contraseña tenga al menos 8 caracteres</li>
+              <li>Verifica que el correo no esté ya registrado en otra cuenta</li>
+              <li>Prueba Iniciar sesión con Apple como alternativa</li>
+              <li>Cierra la app por completo, vuelve a abrirla e inténtalo de nuevo</li>
+            </ul>
+            <p style="margin-top:12px;">Si el problema persiste, escríbenos a <a href="mailto:support@passinglane.app">support@passinglane.app</a> y lo resolvemos.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" onclick="toggle(this)">
+            <span class="accordion-question">Olvidé mi contraseña — ¿cómo la restablezco?</span>
+            <span class="accordion-chevron">▼</span>
+          </button>
+          <div class="accordion-body">
+            <p>En la pantalla de inicio de sesión, toca "¿Olvidaste tu contraseña?" e ingresa tu correo. Recibirás un enlace de restablecimiento en pocos minutos. Revisa tu carpeta de spam si no llega. Si te registraste con Apple, usa ese botón — no hay contraseña que restablecer.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" onclick="toggle(this)">
+            <span class="accordion-question">¿El pago de $7.99 es una suscripción?</span>
+            <span class="accordion-chevron">▼</span>
+          </button>
+          <div class="accordion-body">
+            <p>No. Es un pago único. Pagas una vez y lo tienes para siempre — sin renovaciones, sin cuotas mensuales, sin cargos sorpresa.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" onclick="toggle(this)">
+            <span class="accordion-question">Hice la compra pero la app sigue bloqueada — ¿qué hago?</span>
+            <span class="accordion-chevron">▼</span>
+          </button>
+          <div class="accordion-body">
+            <p>Ve a tu pestaña de Perfil y toca <strong style="color:var(--text);">Restaurar Compra</strong>. Esto sincroniza tu derecho de acceso con Apple y debería desbloquearse de inmediato.</p>
+            <p>Si sigue bloqueada: cierra la app por completo, vuelve a abrirla e intenta Restaurar Compra nuevamente. ¿Sigue sin funcionar? Escríbenos a <a href="mailto:support@passinglane.app">support@passinglane.app</a> con el Apple ID que usaste y lo resolvemos.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" onclick="toggle(this)">
+            <span class="accordion-question">¿Cómo restauro mi compra en un dispositivo nuevo?</span>
+            <span class="accordion-chevron">▼</span>
+          </button>
+          <div class="accordion-body">
+            <p>Inicia sesión con el mismo Apple ID que usaste para comprar, luego ve a <strong style="color:var(--text);">Perfil → Restaurar Compra</strong>. Tu compra está vinculada a tu Apple ID, no a tu dispositivo — se restaurará sin costo.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" onclick="toggle(this)">
+            <span class="accordion-question">No puedo iniciar sesión — ¿qué intento?</span>
+            <span class="accordion-chevron">▼</span>
+          </button>
+          <div class="accordion-body">
+            <p>Primero, asegúrate de usar el método correcto. Si te registraste con Apple, usa el botón de Apple — el correo y contraseña no funcionarán para esa cuenta. Si usas correo, intenta restablecer tu contraseña desde la pantalla de inicio de sesión.</p>
+            <p>Si nada funciona, escríbenos a <a href="mailto:support@passinglane.app">support@passinglane.app</a> con el correo o Apple ID que usaste y lo revisamos.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── Sección 3: Clasificación y Amigos ── -->
+    <div class="faq-section">
+      <div class="faq-section-header">
+        <div>
+          <div class="faq-section-title">🏆 Clasificación y Amigos</div>
+          <div class="faq-section-desc">Cómo funcionan la tabla de clasificación y el sistema de invitaciones.</div>
+        </div>
+      </div>
+      <div class="accordion">
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" onclick="toggle(this)">
+            <span class="accordion-question">¿Qué es la página de Clasificación?</span>
+            <span class="accordion-chevron">▼</span>
+          </button>
+          <div class="accordion-body">
+            <p>Una tabla de clasificación privada que muestra a ti y a tus amigos ordenados por XP. Se actualiza en tiempo real — en el momento en que un amigo gana XP, la tabla lo refleja. Es la capa competitiva sobre la experiencia de estudio.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" onclick="toggle(this)">
+            <span class="accordion-question">¿Cómo agrego amigos?</span>
+            <span class="accordion-chevron">▼</span>
+          </button>
+          <div class="accordion-body">
+            <p>Ve a la pestaña de Clasificación y comparte tu código de invitación. Cuando alguien descarga Passing Lane e ingresa tu código durante la configuración, aparece automáticamente en tu tabla — y tú ganas 250 XP.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" onclick="toggle(this)">
+            <span class="accordion-question">¿La tabla de clasificación es pública?</span>
+            <span class="accordion-chevron">▼</span>
+          </button>
+          <div class="accordion-body">
+            <p>No. Solo muestra a las personas conectadas a través de tu código de invitación. Sin desconocidos, sin clasificaciones globales — solo tu grupo.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" onclick="toggle(this)">
+            <span class="accordion-question">¿Qué pasa cuando un amigo aprueba su examen del DMV?</span>
+            <span class="accordion-chevron">▼</span>
+          </button>
+          <div class="accordion-body">
+            <p>Puede reportar su aprobación en la app, lo que le otorga la insignia Con Licencia — una placa dorada y un punto de verificación en su perfil. Lo verás reflejado en tu tabla de clasificación.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── Sección 4: XP y Niveles ── -->
+    <div class="faq-section">
+      <div class="faq-section-header">
+        <div>
+          <div class="faq-section-title">⭐ XP y Niveles</div>
+          <div class="faq-section-desc">Cómo funcionan los puntos de experiencia y los niveles.</div>
+        </div>
+      </div>
+      <div class="accordion">
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" onclick="toggle(this)">
+            <span class="accordion-question">¿Cómo gano XP?</span>
+            <span class="accordion-chevron">▼</span>
+          </button>
+          <div class="accordion-body">
+            <table class="xp-table">
+              <tr><td class="xp-group-label" colspan="2">Respondiendo Preguntas</td></tr>
+              <tr><td>Respuesta correcta</td><td>+10 XP</td></tr>
+              <tr><td>Correcto al primer intento</td><td>+15 XP</td></tr>
+              <tr><td>Módulo perfecto (100% al primer intento)</td><td>+100 XP</td></tr>
+              <tr><td class="xp-group-label" colspan="2">Rachas y Metas Diarias</td></tr>
+              <tr><td>Meta diaria cumplida</td><td>+50 XP</td></tr>
+              <tr><td>Racha de 3 días</td><td>+75 XP</td></tr>
+              <tr><td>Racha de 7 días</td><td>+200 XP</td></tr>
+              <tr><td>Racha de 30 días</td><td>+500 XP</td></tr>
+              <tr><td class="xp-group-label" colspan="2">Logros</td></tr>
+              <tr><td>Marcar una pregunta como favorita</td><td>+5 XP</td></tr>
+              <tr><td>Pasar una Simulación del Examen</td><td>+500 XP</td></tr>
+              <tr><td>Reportar tu aprobación real del DMV</td><td>+1,000 XP</td></tr>
+              <tr><td class="xp-group-label" colspan="2">Amigos</td></tr>
+              <tr><td>Un amigo se une con tu código</td><td>+250 XP</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" onclick="toggle(this)">
+            <span class="accordion-question">¿Cuáles son los niveles?</span>
+            <span class="accordion-chevron">▼</span>
+          </button>
+          <div class="accordion-body">
+            <table class="level-table">
+              <tr><td>Asiento Trasero</td><td>0 XP</td><td>Punto de partida</td></tr>
+              <tr><td>Aprendiz</td><td>500 XP</td><td></td></tr>
+              <tr><td>Listo para el Permiso</td><td>1,500 XP</td><td></td></tr>
+              <tr><td>Casi Legal</td><td>3,000 XP</td><td></td></tr>
+              <tr><td>Certificado en la Carretera</td><td>5,000 XP</td><td></td></tr>
+              <tr><td>Con Licencia</td><td>9,999 XP</td><td>Nivel máximo</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" onclick="toggle(this)">
+            <span class="accordion-question">¿Los niveles desbloquean algo?</span>
+            <span class="accordion-chevron">▼</span>
+          </button>
+          <div class="accordion-body">
+            <p>Algunos sí. Llegar a <strong style="color:var(--text);">Aprendiz</strong> desbloquea tu insignia de rango en la tabla de clasificación. <strong style="color:var(--text);">Casi Legal</strong> desbloquea la protección de escudo de racha — un margen de un día que salva tu racha si te lo saltas — y colores de acento personalizados para tu perfil. Llegar a <strong style="color:var(--text);">Con Licencia</strong> te da la placa dorada y el punto de verificación en tu perfil.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" onclick="toggle(this)">
+            <span class="accordion-question">¿Puedo perder XP?</span>
+            <span class="accordion-chevron">▼</span>
+          </button>
+          <div class="accordion-body">
+            <p>No. El XP solo sube. Saltarte un día te hace perder el conteo de racha, pero nunca tu total de XP — tu nivel y rango son permanentes una vez obtenidos.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" onclick="toggle(this)">
+            <span class="accordion-question">¿Qué es un escudo de racha?</span>
+            <span class="accordion-chevron">▼</span>
+          </button>
+          <div class="accordion-body">
+            <p>Un escudo de racha es una protección de un solo uso que salva tu racha si te saltás un día de práctica. Se aplica automáticamente cuando de otro modo perderías tu racha. Una vez usado se acaba — pero puedes ganar otro construyendo una nueva racha. El escudo se desbloquea al llegar al nivel Casi Legal (3,000 XP).</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── Sección 5: Definiciones de Insignias ── -->
     <div class="faq-section">
       <div class="faq-section-header">
         <div>
@@ -113,27 +455,9 @@
         <span style="font-size:13px; color:var(--text-muted);">Se obtienen pronto. Reconoce los primeros pasos y hábitos diarios.</span>
       </div>
       <div class="badge-grid">
-        <div class="badge-card">
-          <div class="badge-icon">🟢</div>
-          <div class="badge-info">
-            <div class="badge-name">Primera Luz Verde</div>
-            <div class="badge-desc">Se otorga cuando respondes correctamente tu primera pregunta. Todos empiezan aquí — esta es tu primera victoria.</div>
-          </div>
-        </div>
-        <div class="badge-card">
-          <div class="badge-icon">📖</div>
-          <div class="badge-info">
-            <div class="badge-name">Héroe del Manual</div>
-            <div class="badge-desc">Se otorga cuando completas todas las preguntas de cualquier módulo. Has cubierto completamente un tema del Manual del Automovilista de CA.</div>
-          </div>
-        </div>
-        <div class="badge-card">
-          <div class="badge-icon">🔥</div>
-          <div class="badge-info">
-            <div class="badge-name">En Llamas</div>
-            <div class="badge-desc">Se otorga cuando respondes correctamente 10 preguntas seguidas en una sola sesión de práctica sin parar.</div>
-          </div>
-        </div>
+        <div class="badge-card"><div class="badge-icon">🟢</div><div class="badge-info"><div class="badge-name">Primera Luz Verde</div><div class="badge-desc">Se otorga cuando respondes correctamente tu primera pregunta. Todos empiezan aquí — esta es tu primera victoria.</div></div></div>
+        <div class="badge-card"><div class="badge-icon">📖</div><div class="badge-info"><div class="badge-name">Héroe del Manual</div><div class="badge-desc">Se otorga cuando completas todas las preguntas de cualquier módulo. Has cubierto completamente un tema del Manual del Automovilista de CA.</div></div></div>
+        <div class="badge-card"><div class="badge-icon">🔥</div><div class="badge-info"><div class="badge-name">En Llamas</div><div class="badge-desc">Se otorga cuando respondes correctamente 10 preguntas seguidas en una sola sesión de práctica sin parar.</div></div></div>
       </div>
 
       <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px; margin-top:28px;">
@@ -141,41 +465,11 @@
         <span style="font-size:13px; color:var(--text-muted);">Se obtienen con constancia y habilidad. Requiere esfuerzo real.</span>
       </div>
       <div class="badge-grid">
-        <div class="badge-card">
-          <div class="badge-icon">📚</div>
-          <div class="badge-info">
-            <div class="badge-name">Ratón de Biblioteca</div>
-            <div class="badge-desc">Se otorga cuando marcas 10 o más preguntas como favoritas. Estás prestando atención a las que importan — y volviendo a ellas.</div>
-          </div>
-        </div>
-        <div class="badge-card">
-          <div class="badge-icon">🦉</div>
-          <div class="badge-info">
-            <div class="badge-name">Búho Nocturno</div>
-            <div class="badge-desc">Se otorga cuando completas una sesión de práctica después de las 10 PM. Estudiante nocturno, te vemos.</div>
-          </div>
-        </div>
-        <div class="badge-card">
-          <div class="badge-icon">💪</div>
-          <div class="badge-info">
-            <div class="badge-name">El que Regresa</div>
-            <div class="badge-desc">Se otorga cuando respondes correctamente una pregunta que antes habías fallado. Aprendiste de tu error.</div>
-          </div>
-        </div>
-        <div class="badge-card">
-          <div class="badge-icon">⚡</div>
-          <div class="badge-info">
-            <div class="badge-name">Velocista</div>
-            <div class="badge-desc">Se otorga cuando completas un módulo completo en menos de 3 minutos. Rápido y preciso — ese es el objetivo.</div>
-          </div>
-        </div>
-        <div class="badge-card">
-          <div class="badge-icon">🎯</div>
-          <div class="badge-info">
-            <div class="badge-name">Francotirador</div>
-            <div class="badge-desc">Se otorga cuando logras 90% o más de precisión en una sesión de práctica de al menos 20 preguntas.</div>
-          </div>
-        </div>
+        <div class="badge-card"><div class="badge-icon">📚</div><div class="badge-info"><div class="badge-name">Ratón de Biblioteca</div><div class="badge-desc">Se otorga cuando marcas 10 o más preguntas como favoritas. Estás prestando atención a las que importan — y volviendo a ellas.</div></div></div>
+        <div class="badge-card"><div class="badge-icon">🦉</div><div class="badge-info"><div class="badge-name">Búho Nocturno</div><div class="badge-desc">Se otorga cuando completas una sesión de práctica después de las 10 PM. Estudiante nocturno, te vemos.</div></div></div>
+        <div class="badge-card"><div class="badge-icon">💪</div><div class="badge-info"><div class="badge-name">El que Regresa</div><div class="badge-desc">Se otorga cuando respondes correctamente una pregunta que antes habías fallado. Aprendiste de tu error.</div></div></div>
+        <div class="badge-card"><div class="badge-icon">⚡</div><div class="badge-info"><div class="badge-name">Velocista</div><div class="badge-desc">Se otorga cuando completas un módulo completo en menos de 3 minutos. Rápido y preciso — ese es el objetivo.</div></div></div>
+        <div class="badge-card"><div class="badge-icon">🎯</div><div class="badge-info"><div class="badge-name">Francotirador</div><div class="badge-desc">Se otorga cuando logras 90% o más de precisión en una sesión de práctica de al menos 20 preguntas.</div></div></div>
       </div>
 
       <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px; margin-top:28px;">
@@ -183,34 +477,10 @@
         <span style="font-size:13px; color:var(--text-muted);">Se obtienen con esfuerzo sostenido en el tiempo. La mayoría no los tendrá todos.</span>
       </div>
       <div class="badge-grid">
-        <div class="badge-card">
-          <div class="badge-icon">📅</div>
-          <div class="badge-info">
-            <div class="badge-name">Mes en Llamas</div>
-            <div class="badge-desc">Se otorga cuando mantienes una racha de estudio de 30 días. Treinta días seguidos — sin pausas, sin excusas.</div>
-          </div>
-        </div>
-        <div class="badge-card">
-          <div class="badge-icon">✅</div>
-          <div class="badge-info">
-            <div class="badge-name">Racha Perfecta</div>
-            <div class="badge-desc">Se otorga cuando completas un módulo completo con 100% de respuestas correctas al primer intento — sin errores, sin reintentos.</div>
-          </div>
-        </div>
-        <div class="badge-card">
-          <div class="badge-icon">📆</div>
-          <div class="badge-info">
-            <div class="badge-name">Guerrero Semanal</div>
-            <div class="badge-desc">Se otorga cuando estudias todos los días durante 7 días consecutivos. Una semana completa de práctica diaria.</div>
-          </div>
-        </div>
-        <div class="badge-card">
-          <div class="badge-icon">🧠</div>
-          <div class="badge-info">
-            <div class="badge-name">Gran Cerebro</div>
-            <div class="badge-desc">Se otorga cuando alcanzas 80% o más de dominio en las 13 categorías simultáneamente. Te sabes el manual completo.</div>
-          </div>
-        </div>
+        <div class="badge-card"><div class="badge-icon">📅</div><div class="badge-info"><div class="badge-name">Mes en Llamas</div><div class="badge-desc">Se otorga cuando mantienes una racha de estudio de 30 días. Treinta días seguidos — sin pausas, sin excusas.</div></div></div>
+        <div class="badge-card"><div class="badge-icon">✅</div><div class="badge-info"><div class="badge-name">Racha Perfecta</div><div class="badge-desc">Se otorga cuando completas un módulo completo con 100% de respuestas correctas al primer intento — sin errores, sin reintentos.</div></div></div>
+        <div class="badge-card"><div class="badge-icon">📆</div><div class="badge-info"><div class="badge-name">Guerrero Semanal</div><div class="badge-desc">Se otorga cuando estudias todos los días durante 7 días consecutivos. Una semana completa de práctica diaria.</div></div></div>
+        <div class="badge-card"><div class="badge-icon">🧠</div><div class="badge-info"><div class="badge-name">Gran Cerebro</div><div class="badge-desc">Se otorga cuando alcanzas 80% o más de dominio en las 13 categorías simultáneamente. Te sabes el manual completo.</div></div></div>
       </div>
 
       <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px; margin-top:28px;">
@@ -218,27 +488,9 @@
         <span style="font-size:13px; color:var(--text-muted);">Los más difíciles de obtener. Solo los usuarios más dedicados los tendrán todos.</span>
       </div>
       <div class="badge-grid">
-        <div class="badge-card">
-          <div class="badge-icon">💎</div>
-          <div class="badge-info">
-            <div class="badge-name">Impecable</div>
-            <div class="badge-desc">Se otorga cuando pasas una Simulación del Examen de Permiso con puntuación perfecta — 46 de 46 preguntas correctas.</div>
-          </div>
-        </div>
-        <div class="badge-card">
-          <div class="badge-icon">🪪</div>
-          <div class="badge-info">
-            <div class="badge-name">Con Licencia</div>
-            <div class="badge-desc">Se otorga cuando reportas que pasaste el examen escrito real del DMV de California. Para esto es todo. Viene con la placa dorada.</div>
-          </div>
-        </div>
-        <div class="badge-card">
-          <div class="badge-icon">🥇</div>
-          <div class="badge-info">
-            <div class="badge-name">Primero en la Clase</div>
-            <div class="badge-desc">Se otorga cuando llegas al #1 en la tabla de clasificación de amigos. Has superado a todos en tu grupo.</div>
-          </div>
-        </div>
+        <div class="badge-card"><div class="badge-icon">💎</div><div class="badge-info"><div class="badge-name">Impecable</div><div class="badge-desc">Se otorga cuando pasas una Simulación del Examen de Permiso con puntuación perfecta — 46 de 46 preguntas correctas.</div></div></div>
+        <div class="badge-card"><div class="badge-icon">🪪</div><div class="badge-info"><div class="badge-name">Con Licencia</div><div class="badge-desc">Se otorga cuando reportas que pasaste el examen escrito real del DMV de California. Para esto es todo. Viene con la placa dorada.</div></div></div>
+        <div class="badge-card"><div class="badge-icon">🥇</div><div class="badge-info"><div class="badge-name">Primero en la Clase</div><div class="badge-desc">Se otorga cuando llegas al #1 en la tabla de clasificación de amigos. Has superado a todos en tu grupo.</div></div></div>
       </div>
 
       <div class="notes-box">
@@ -251,6 +503,60 @@
         </ul>
       </div>
     </div>
+
+    <!-- ── Sección 6: Reportar Problemas ── -->
+    <div class="faq-section">
+      <div class="faq-section-header">
+        <div>
+          <div class="faq-section-title">🚩 Reportar Problemas</div>
+          <div class="faq-section-desc">Cómo reportar un error en una pregunta o un problema en la app.</div>
+        </div>
+      </div>
+      <div class="accordion">
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" onclick="toggle(this)">
+            <span class="accordion-question">¿Cómo reporto un problema con una pregunta?</span>
+            <span class="accordion-chevron">▼</span>
+          </button>
+          <div class="accordion-body">
+            <p>Mientras practicas, desplázate al final de cualquier pregunta y toca el ícono de bandera. Elige un motivo — respuesta incorrecta, pregunta confusa, contenido desactualizado u otro — y envía. Tarda unos 5 segundos y puedes seguir practicando de inmediato.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" onclick="toggle(this)">
+            <span class="accordion-question">¿Qué pasa después de que reporto una pregunta?</span>
+            <span class="accordion-chevron">▼</span>
+          </button>
+          <div class="accordion-body">
+            <p>Cada reporte va a nuestra cola de revisión. Los leemos todos. Los errores confirmados se corrigen en el banco de preguntas — las actualizaciones se publican sin que necesites actualizar la app.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" onclick="toggle(this)">
+            <span class="accordion-question">¿Cómo contacto al soporte desde la app?</span>
+            <span class="accordion-chevron">▼</span>
+          </button>
+          <div class="accordion-body">
+            <p>Ve a la pestaña de Perfil y toca <strong style="color:var(--text);">Ayuda y Preguntas Frecuentes</strong>. Eso abre esta página. Para ayuda directa, escríbenos a <a href="mailto:support@passinglane.app">support@passinglane.app</a> — respondemos a cada mensaje.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" onclick="toggle(this)">
+            <span class="accordion-question">Encontré un error en la app — ¿cómo lo reporto?</span>
+            <span class="accordion-chevron">▼</span>
+          </button>
+          <div class="accordion-body">
+            <p>Escríbenos a <a href="mailto:support@passinglane.app">support@passinglane.app</a> con una breve descripción de lo que pasó y en qué pantalla estabas. Las capturas de pantalla ayudan si las tienes. Respondemos y corregimos los errores confirmados en la próxima actualización.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 
   <footer>
@@ -265,8 +571,22 @@
   </footer>
 
   <script>
-    function toggleDrawer() { const open = document.getElementById('drawer').classList.toggle('open'); document.getElementById('hamburger').classList.toggle('open', open); document.getElementById('overlay').classList.toggle('open', open); }
-    function closeDrawer() { document.getElementById('drawer').classList.remove('open'); document.getElementById('hamburger').classList.remove('open'); document.getElementById('overlay').classList.remove('open'); }
+    function toggle(btn) {
+      const item = btn.closest('.accordion-item');
+      const wasOpen = item.classList.contains('open');
+      btn.closest('.accordion').querySelectorAll('.accordion-item').forEach(el => el.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    }
+    function toggleDrawer() {
+      const open = document.getElementById('drawer').classList.toggle('open');
+      document.getElementById('hamburger').classList.toggle('open', open);
+      document.getElementById('overlay').classList.toggle('open', open);
+    }
+    function closeDrawer() {
+      document.getElementById('drawer').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+      document.getElementById('overlay').classList.remove('open');
+    }
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
   </script>
 </body>
