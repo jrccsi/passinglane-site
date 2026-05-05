@@ -72,27 +72,49 @@
       letter-spacing: -0.3px;
     }
 
+    /* Official black App Store badge — nav size */
     .nav-app-store {
       display: inline-flex;
       align-items: center;
-      gap: 7px;
-      background: var(--text);
-      color: #0f2d22;
-      font-size: 12px;
-      font-weight: 700;
-      padding: 7px 14px;
-      border-radius: 20px;
+      gap: 8px;
+      background: #000;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 6px 14px 6px 10px;
+      border-radius: 8px;
       text-decoration: none;
       letter-spacing: 0.1px;
       transition: opacity 0.2s;
+      border: 1px solid #333;
     }
 
-    .nav-app-store:hover { opacity: 0.88; }
+    .nav-app-store:hover { opacity: 0.82; }
 
     .nav-app-store svg {
-      width: 14px;
-      height: 14px;
+      width: 16px;
+      height: 16px;
       flex-shrink: 0;
+    }
+
+    .nav-app-store .badge-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+
+    .nav-app-store .badge-sub {
+      font-size: 8px;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+
+    .nav-app-store .badge-main {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: -0.2px;
     }
 
     /* ── Hamburger ── */
@@ -192,7 +214,6 @@
       overflow: hidden;
     }
 
-    /* Road perspective background */
     .hero::before {
       content: '';
       position: absolute;
@@ -259,9 +280,7 @@
       z-index: 1;
     }
 
-    h1 span {
-      color: var(--green-bright);
-    }
+    h1 span { color: var(--green-bright); }
 
     .hero-sub {
       font-size: clamp(17px, 2.5vw, 20px);
@@ -288,35 +307,34 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       position: relative;
       z-index: 1;
     }
 
+    /* Official black App Store badge — hero size */
     .app-store-btn {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      background: var(--text);
-      color: #0f2d22;
+      gap: 10px;
+      background: #000;
+      color: #fff;
       text-decoration: none;
-      padding: 14px 28px;
-      border-radius: 50px;
-      font-size: 16px;
-      font-weight: 700;
-      letter-spacing: -0.2px;
+      padding: 11px 22px 11px 16px;
+      border-radius: 12px;
+      border: 1px solid #333;
       transition: opacity 0.2s, transform 0.2s;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
     }
 
     .app-store-btn:hover {
-      opacity: 0.92;
+      opacity: 0.82;
       transform: translateY(-1px);
     }
 
     .app-store-btn svg {
-      width: 22px;
-      height: 22px;
+      width: 28px;
+      height: 28px;
       flex-shrink: 0;
     }
 
@@ -329,15 +347,16 @@
 
     .app-store-btn .btn-sub {
       font-size: 10px;
-      font-weight: 500;
-      opacity: 0.6;
+      font-weight: 400;
+      letter-spacing: 0.6px;
       text-transform: uppercase;
-      letter-spacing: 0.8px;
+      opacity: 0.8;
     }
 
     .app-store-btn .btn-main {
-      font-size: 16px;
-      font-weight: 800;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
     }
 
     .android-pill {
@@ -368,29 +387,6 @@
       letter-spacing: 0.2px;
       position: relative;
       z-index: 1;
-    }
-
-    .hero-features {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-bottom: 28px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-feature-pill {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(62, 207, 110, 0.1);
-      border: 1px solid rgba(62, 207, 110, 0.25);
-      color: var(--text);
-      font-size: 14px;
-      font-weight: 600;
-      padding: 10px 18px;
-      border-radius: 50px;
     }
 
     @keyframes pulse {
@@ -445,17 +441,8 @@
     }
 
     .service-icon { font-size: 28px; }
-
-    .service-name {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    .service-desc {
-      font-size: 12px;
-      color: var(--text-muted);
-    }
+    .service-name { font-size: 16px; font-weight: 700; color: var(--text); }
+    .service-desc { font-size: 12px; color: var(--text-muted); }
 
     /* ── Features ── */
     .features {
@@ -502,23 +489,9 @@
       transform: translateY(-2px);
     }
 
-    .feature-icon {
-      font-size: 32px;
-      margin-bottom: 16px;
-    }
-
-    .feature-title {
-      font-size: 17px;
-      font-weight: 700;
-      margin-bottom: 8px;
-      color: var(--text);
-    }
-
-    .feature-desc {
-      font-size: 14px;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
+    .feature-icon { font-size: 32px; margin-bottom: 16px; }
+    .feature-title { font-size: 17px; font-weight: 700; margin-bottom: 8px; color: var(--text); }
+    .feature-desc { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
 
     /* ── Guide callout ── */
     .guide-callout {
@@ -536,9 +509,7 @@
       margin: 0 auto;
     }
 
-    .guide-body strong {
-      color: var(--text);
-    }
+    .guide-body strong { color: var(--text); }
 
     /* ── Stats ── */
     .stats {
@@ -565,11 +536,7 @@
       margin-bottom: 6px;
     }
 
-    .stat-label {
-      font-size: 14px;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
+    .stat-label { font-size: 14px; color: var(--text-muted); font-weight: 500; }
 
     /* ── CA specific ── */
     .ca-section {
@@ -579,15 +546,8 @@
       text-align: center;
     }
 
-    .ca-section p {
-      font-size: 17px;
-      color: var(--text-muted);
-      line-height: 1.7;
-    }
-
-    .ca-section p strong {
-      color: var(--text);
-    }
+    .ca-section p { font-size: 17px; color: var(--text-muted); line-height: 1.7; }
+    .ca-section p strong { color: var(--text); }
 
     /* ── Footer ── */
     footer {
@@ -605,17 +565,8 @@
       text-decoration: none;
     }
 
-    .footer-logo img {
-      width: 28px;
-      height: 28px;
-      border-radius: 7px;
-    }
-
-    .footer-logo span {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--text);
-    }
+    .footer-logo img { width: 28px; height: 28px; border-radius: 7px; }
+    .footer-logo span { font-size: 16px; font-weight: 700; color: var(--text); }
 
     .footer-links {
       display: flex;
@@ -625,22 +576,9 @@
       flex-wrap: wrap;
     }
 
-    .footer-links a {
-      font-size: 13px;
-      color: var(--text-muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover {
-      color: var(--text);
-    }
-
-    .footer-copy {
-      font-size: 12px;
-      color: var(--text-muted);
-      opacity: 0.6;
-    }
+    .footer-links a { font-size: 13px; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text); }
+    .footer-copy { font-size: 12px; color: var(--text-muted); opacity: 0.6; }
 
     @media (max-width: 600px) {
       .stats-inner { grid-template-columns: 1fr; }
@@ -650,10 +588,8 @@
 </head>
 <body>
 
-  <!-- Drawer overlay -->
   <div class="drawer-overlay" id="overlay" onclick="closeDrawer()"></div>
 
-  <!-- Nav drawer -->
   <nav class="nav-drawer" id="drawer">
     <a href="/" class="active"><span class="icon">🏠</span> Home</a>
     <div class="nav-drawer-divider"></div>
@@ -678,15 +614,15 @@
         <a href="/es/" style="padding:3px 10px;border-radius:16px;text-decoration:none;color:var(--text-muted);">ES</a>
       </div>
       <a href="https://apps.apple.com/app/passing-lane-ca-dmv-permit/id6762711447" class="nav-app-store" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.15-2.18 1.32-2.16 3.93.03 3.13 2.62 4.17 2.65 4.18l-.04.11zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-        </svg>
-        App Store
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.15-2.18 1.32-2.16 3.93.03 3.13 2.62 4.17 2.65 4.18l-.04.11zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <div class="badge-text">
+          <span class="badge-sub">Download on the</span>
+          <span class="badge-main">App Store</span>
+        </div>
       </a>
     </div>
   </nav>
 
-  <!-- Hero -->
   <section class="hero">
     <img src="/icon.png" alt="Passing Lane" class="hero-icon" />
     <p class="hero-eyebrow">California Permit Test Prep for Teens</p>
@@ -695,9 +631,7 @@
     <p class="hero-guide">Plus a complete step by step licensing guide for teens and parents — from driver's ed to provisional license.</p>
     <div class="hero-cta-group">
       <a href="https://apps.apple.com/app/passing-lane-ca-dmv-permit/id6762711447" class="app-store-btn" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.15-2.18 1.32-2.16 3.93.03 3.13 2.62 4.17 2.65 4.18l-.04.11zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-        </svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.15-2.18 1.32-2.16 3.93.03 3.13 2.62 4.17 2.65 4.18l-.04.11zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
         <div class="btn-text">
           <span class="btn-sub">Download on the</span>
           <span class="btn-main">App Store</span>
@@ -711,7 +645,6 @@
     <p class="launch-states" style="margin-top:16px;">Available in California &nbsp;·&nbsp; Florida and Texas coming soon</p>
   </section>
 
-  <!-- Services strip -->
   <section class="services-strip">
     <p class="services-label">Ready to get started? Find what you need.</p>
     <div class="services-links">
@@ -733,7 +666,6 @@
     </div>
   </section>
 
-  <!-- Features -->
   <section class="features">
     <p class="section-label">How it works</p>
     <h2 class="section-title">Everything you need. Nothing you don't.</h2>
@@ -771,14 +703,12 @@
     </div>
   </section>
 
-  <!-- Guide callout -->
   <section class="guide-callout">
     <p class="section-label">More than a question bank</p>
     <h2 class="section-title">The full road to your license, mapped out.</h2>
     <p class="guide-body">Passing Lane walks teens and parents through every step — driver's education, the permit application, behind-the-wheel training, the road test, and provisional license rules. Both tracks. No guesswork.</p>
   </section>
 
-  <!-- Stats -->
   <section class="stats">
     <div class="stats-inner">
       <div>
@@ -796,14 +726,12 @@
     </div>
   </section>
 
-  <!-- CA Context -->
   <section class="ca-section">
     <p class="section-label">Built for California</p>
     <h2 class="section-title">Know the road before you're on it.</h2>
     <p>The California DMV written test is <strong>46 questions</strong>. You need to get <strong>38 correct (83%) to pass</strong>. Most teens who fail do so because they studied the wrong material or ran out of time. Passing Lane fixes both.</p>
   </section>
 
-  <!-- Footer -->
   <footer>
     <a href="/" class="footer-logo">
       <img src="/icon.png" alt="Passing Lane" />
