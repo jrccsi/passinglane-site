@@ -5,6 +5,17 @@ Read it in full before making any changes.
 
 ---
 
+## Session Rule — Confirm Before Every Change
+
+Before making any change in a session — including edits to HTML, CSS, new files, `_redirects`
+rules, `_headers`, commits, or shell commands — stop and describe exactly what you are about to
+do and why. Wait for explicit confirmation from Josh before proceeding. Do not assume a general
+instruction is permission to execute. Show the plan first, get a yes, then act.
+
+This applies to every change, every time, without exception.
+
+---
+
 ## Project Overview
 
 **Site:** passinglane.app — marketing and conversion site for the Passing Lane iOS app.
@@ -231,8 +242,7 @@ The "Coming Soon" pill should be updated to an App Store download button once th
 the App Store. **This has not been done yet.**
 
 App screenshots section is planned between the hero and features. Images will go in `/assets/images/`
-when added. Use the `folder/index.html` pattern does not apply to asset files — images can live
-anywhere under the root and be referenced with relative paths.
+when added. Images can live anywhere under the root and be referenced with relative paths.
 
 ### faq/index.html — FAQ page
 Linked directly from inside the app. Do not break this route. Content includes:
