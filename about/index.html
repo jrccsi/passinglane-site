@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — Passing Lane</title>
+  <meta name="description" content="Passing Lane is a California family business building education apps for teens and parents. Learn about the story behind the app." />
+  <link rel="canonical" href="https://passinglane.app/about" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://passinglane.app/about" />
+  <meta property="og:title" content="About Us — Passing Lane" />
+  <meta property="og:description" content="A California family business building education apps for teens and parents. The story behind Passing Lane." />
+  <meta property="og:image" content="https://passinglane.app/icon.png" />
+  <meta property="og:site_name" content="Passing Lane" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About Us — Passing Lane" />
+  <meta name="twitter:description" content="A California family business building education apps for teens and parents." />
+  <meta name="twitter:image" content="https://passinglane.app/icon.png" />
+  <link rel="icon" type="image/png" href="/icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --green-dark: #1a4a3a; --green-bright: #3ecf6e; --text: #f0f4f2; --text-muted: #8ab09a; --card-bg: rgba(255,255,255,0.07); --card-border: rgba(255,255,255,0.12); }
+    body { font-family: 'Inter', sans-serif; background: var(--green-dark); color: var(--text); min-height: 100vh; }
+    nav { padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--card-border); position: sticky; top: 0; z-index: 100; background: rgba(26,74,58,0.92); backdrop-filter: blur(12px); }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { width: 30px; height: 30px; border-radius: 7px; }
+    .nav-logo span { font-size: 16px; font-weight: 700; color: var(--text); }
+    .nav-back { font-size: 14px; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .nav-back:hover { color: var(--text); }
+    .hamburger { background: none; border: none; cursor: pointer; padding: 6px; display: flex; flex-direction: column; gap: 5px; z-index: 200; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.25s ease, opacity 0.25s ease; transform-origin: center; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-drawer { position: fixed; top: 0; left: 0; width: 260px; height: 100vh; background: #112e25; border-right: 1px solid var(--card-border); z-index: 150; transform: translateX(-100%); transition: transform 0.28s cubic-bezier(0.4,0,0.2,1); display: flex; flex-direction: column; padding: 72px 12px 40px; gap: 2px; }
+    .nav-drawer.open { transform: translateX(0); }
+    .nav-drawer a { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 10px; text-decoration: none; color: var(--text-muted); font-size: 15px; font-weight: 500; transition: background 0.15s, color 0.15s; }
+    .nav-drawer a:hover, .nav-drawer a.active { background: rgba(255,255,255,0.07); color: var(--text); }
+    .nav-drawer a .icon { font-size: 18px; width: 24px; text-align: center; }
+    .nav-drawer-divider { height: 1px; background: var(--card-border); margin: 6px 2px; }
+    .drawer-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 140; backdrop-filter: blur(2px); }
+    .drawer-overlay.open { display: block; }
+    .page { max-width: 720px; margin: 0 auto; padding: 56px 24px 80px; }
+    .page-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green-bright); margin-bottom: 12px; }
+    h1 { font-size: clamp(28px, 5vw, 44px); font-weight: 800; letter-spacing: -1px; margin-bottom: 32px; line-height: 1.15; }
+    .photo-placeholder { width: 100%; aspect-ratio: 16/9; border-radius: 20px; background: var(--card-bg); border: 1px solid var(--card-border); display: flex; align-items: center; justify-content: center; margin-bottom: 48px; color: var(--text-muted); font-size: 14px; font-weight: 500; }
+    .body-text { font-size: 17px; color: var(--text-muted); line-height: 1.8; }
+    .body-text p { margin-bottom: 24px; }
+    .body-text p:last-child { margin-bottom: 0; }
+    .body-text strong { color: var(--text); font-weight: 700; }
+    .divider { height: 1px; background: var(--card-border); margin: 48px 0; }
+    .values { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 24px; }
+    .value-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 24px; }
+    .value-icon { font-size: 28px; margin-bottom: 12px; }
+    .value-title { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .value-desc { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+    footer { padding: 32px 24px; border-top: 1px solid var(--card-border); text-align: center; }
+    .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 16px; }
+    .footer-links a { font-size: 13px; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text); }
+    .footer-copy { font-size: 12px; color: var(--text-muted); opacity: 0.6; }
+  </style>
+</head>
+<body>
+
+  <div class="drawer-overlay" id="overlay" onclick="closeDrawer()"></div>
+  <nav class="nav-drawer" id="drawer">
+    <a href="/"><span class="icon">🏠</span> Home</a>
+    <div class="nav-drawer-divider"></div>
+    <a href="/drivers-ed"><span class="icon">📚</span> Driver's Ed</a>
+    <a href="/driving-school"><span class="icon">🚗</span> Driving Schools</a>
+    <a href="/insurance"><span class="icon">🛡</span> Insurance, Defensive Driving &amp; Traffic School</a>
+    <div class="nav-drawer-divider"></div>
+    <a href="/faq"><span class="icon">❓</span> FAQ</a>
+    <a href="/about" class="active"><span class="icon">👨‍👩‍👧</span> About Us</a>
+  </nav>
+
+  <nav>
+    <button class="hamburger" id="hamburger" onclick="toggleDrawer()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="/" class="nav-logo">
+      <img src="/icon.png" alt="Passing Lane" />
+      <span>Passing Lane</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <div style="display:flex;align-items:center;gap:2px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:3px;font-size:12px;font-weight:600;">
+        <a href="/about" style="padding:3px 10px;border-radius:16px;text-decoration:none;background:var(--green-bright);color:#0f2d22;">EN</a>
+        <a href="/es/about" style="padding:3px 10px;border-radius:16px;text-decoration:none;color:var(--text-muted);">ES</a>
+      </div>
+      <a href="/" class="nav-back">← Home</a>
+    </div>
+  </nav>
+
+  <div class="page">
+    <p class="page-eyebrow">Our Story</p>
+    <h1>A California family, building for California families.</h1>
+
+    <div class="photo-placeholder" id="photo-section">
+      📷 Photo coming soon
+    </div>
+
+    <div class="body-text">
+      <p>Passing Lane started the way most good ideas do. Out of frustration with something that should work better.</p>
+      <p>We are a small family business based in California. Between our five kids and a handful of nieces and nephews, we have watched more than a few of them sit down for the DMV permit test completely unprepared and walk out without passing. That is not a knock on them. The reality is that California's permit test failure rate is high, and most of the study tools available just are not built to actually help teens learn.</p>
+      <p>So we built one that is.</p>
+      <p>Passing Lane is our first app and the beginning of something we care a lot about. Our focus is education: tools that make the hard parts of growing up a little easier to navigate, for both kids and the parents trying to guide them through it.</p>
+      <p>The app itself is built for teens. The guide inside it is built for parents. Because getting a license is not just about passing a test. It is about preparing a new driver to be safe on the road. We wanted one place where families could find the prep, the resources, and the guidance to get there together.</p>
+      <p><strong>We are just getting started.</strong></p>
+    </div>
+
+    <div class="divider"></div>
+
+    <p class="page-eyebrow">What we believe</p>
+    <div class="values">
+      <div class="value-card">
+        <div class="value-icon">📚</div>
+        <div class="value-title">Education first</div>
+        <div class="value-desc">Every feature we build starts with one question: does this actually help a teen learn?</div>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">👨‍👩‍👧</div>
+        <div class="value-title">Built for families</div>
+        <div class="value-desc">Parents are part of the journey. We build tools for both sides of the front seat.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🌎</div>
+        <div class="value-title">Everyone welcome</div>
+        <div class="value-desc">Full English and Spanish support from day one. Built for California's community.</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/drivers-ed">Driver's Ed</a>
+      <a href="/driving-school">Driving Schools</a>
+      <a href="/insurance">Insurance</a>
+      <a href="/faq">FAQ</a>
+      <a href="/about">About Us</a>
+    </div>
+    <p class="footer-copy">© 2026 Passing Lane Solutions LLC. All rights reserved. · passinglane.app</p>
+  </footer>
+
+  <script>
+    function toggleDrawer() {
+      const open = document.getElementById('drawer').classList.toggle('open');
+      document.getElementById('hamburger').classList.toggle('open', open);
+      document.getElementById('overlay').classList.toggle('open', open);
+    }
+    function closeDrawer() {
+      document.getElementById('drawer').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+      document.getElementById('overlay').classList.remove('open');
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+  </script>
+</body>
+</html>
