@@ -136,7 +136,7 @@
       max-width: 420px; max-height: 0; overflow: hidden; opacity: 0;
       transition: max-height .35s ease, opacity .3s ease;
     }
-    .step.active .step-body { max-height: 200px; opacity: 1; }
+    .step.active .step-body { max-height: 220px; opacity: 1; }
 
     /* MOBILE */
     .showcase-mobile { display: none; }
@@ -228,21 +228,24 @@
         <div class="phone-notch"></div>
         <div class="phone-screen">
           <div class="phone-slide active" data-slide="0">
-            <img src="assets/screenshots/ss-home-light.jpeg" alt="Passing Lane home screen" loading="eager" />
+            <img src="assets/screenshots/ss-home-light.jpeg" alt="Passing Lane home screen with Today's Route" loading="eager" />
           </div>
           <div class="phone-slide" data-slide="1">
-            <img src="assets/screenshots/ss-practice.jpeg" alt="Practice modules" loading="lazy" />
+            <img src="assets/screenshots/ss-study-insights.jpeg" alt="Study Insights with Exam Readiness tracker" loading="lazy" />
           </div>
           <div class="phone-slide" data-slide="2">
-            <img src="assets/screenshots/ss-leaderboard.jpeg" alt="Friends leaderboard" loading="lazy" />
+            <img src="assets/screenshots/ss-practice.jpeg" alt="Practice modules" loading="lazy" />
           </div>
           <div class="phone-slide" data-slide="3">
-            <img src="assets/screenshots/ss-guide.jpeg" alt="Road to a License guide" loading="lazy" />
+            <img src="assets/screenshots/ss-leaderboard.jpeg" alt="Friends leaderboard" loading="lazy" />
           </div>
           <div class="phone-slide" data-slide="4">
-            <img src="assets/screenshots/ss-profile.jpeg" alt="Profile and plate skins" loading="lazy" />
+            <img src="assets/screenshots/ss-guide.jpeg" alt="Road to a License guide" loading="lazy" />
           </div>
           <div class="phone-slide" data-slide="5">
+            <img src="assets/screenshots/ss-profile.jpeg" alt="Profile and plate skins" loading="lazy" />
+          </div>
+          <div class="phone-slide" data-slide="6">
             <img src="assets/screenshots/ss-home-spanish.jpeg" alt="Home screen in Spanish" loading="lazy" />
           </div>
         </div>
@@ -254,37 +257,43 @@
         <button onclick="setSlide(3)" aria-label="Step 4"></button>
         <button onclick="setSlide(4)" aria-label="Step 5"></button>
         <button onclick="setSlide(5)" aria-label="Step 6"></button>
+        <button onclick="setSlide(6)" aria-label="Step 7"></button>
       </div>
     </div>
 
     <div class="steps-col">
       <div class="step active" data-step="0" onclick="setSlide(0)">
-        <div class="step-num">01 &mdash; Home</div>
-        <div class="step-head">Your personalized study dashboard</div>
-        <div class="step-body">Today&rsquo;s Route tells you exactly what to study next based on your real progress. Your California license plate sits front and center &mdash; your identity in the app, leveling up as you earn XP.</div>
+        <div class="step-num">01 &mdash; Today&rsquo;s Route</div>
+        <div class="step-head">Your personalized path to a license</div>
+        <div class="step-body">Today&rsquo;s Route tells you exactly what to study next based on your real progress &mdash; not a generic list. Your California license plate sits front and center, leveling up as you earn XP.</div>
       </div>
       <div class="step" data-step="1" onclick="setSlide(1)">
-        <div class="step-num">02 &mdash; Practice</div>
-        <div class="step-head">350+ real CA DMV questions</div>
-        <div class="step-body">All 13 DMV topic categories with mastery tracking, missed-question drills, full retakes, and a Permit Test Simulation built to the exact 46-question CA DMV format. See exactly where you stand in every module.</div>
+        <div class="step-num">02 &mdash; Study Insights</div>
+        <div class="step-head">Know exactly where you stand</div>
+        <div class="step-body">Exam Readiness tracks four real criteria &mdash; coverage, accuracy, weak modules, and a recent simulation. Study Insights surfaces your strongest and weakest modules so you always know where to focus next.</div>
       </div>
       <div class="step" data-step="2" onclick="setSlide(2)">
-        <div class="step-num">03 &mdash; Rank</div>
+        <div class="step-num">03 &mdash; Practice</div>
+        <div class="step-head">350+ real CA DMV questions</div>
+        <div class="step-body">All 13 DMV topic categories with mastery tracking, missed-question drills, full retakes, and a Permit Test Simulation built to the exact 46-question CA DMV format.</div>
+      </div>
+      <div class="step" data-step="3" onclick="setSlide(3)">
+        <div class="step-num">04 &mdash; Rank</div>
         <div class="step-head">Study with friends</div>
         <div class="step-body">Invite friends and family to compare progress on the XP leaderboard. Everyone&rsquo;s California plate shows their earned skin &mdash; a little friendly competition keeps teens coming back without being nagged.</div>
       </div>
-      <div class="step" data-step="3" onclick="setSlide(3)">
-        <div class="step-num">04 &mdash; Guide</div>
-        <div class="step-head">Step by step to your license</div>
-        <div class="step-body">The built-in guide walks through every stage of the California licensing process &mdash; Driver&rsquo;s Ed, permit, behind-the-wheel training, and the road test. Track your real-world progress alongside your study progress.</div>
-      </div>
       <div class="step" data-step="4" onclick="setSlide(4)">
-        <div class="step-num">05 &mdash; Profile</div>
+        <div class="step-num">05 &mdash; Guide</div>
+        <div class="step-head">Step by step to your license</div>
+        <div class="step-body">The built-in guide walks through every stage of the California licensing process &mdash; Driver&rsquo;s Ed, permit, behind-the-wheel training, and the road test. Links to sign up for required classes are included at each step. Track your real-world progress alongside your study progress.</div>
+      </div>
+      <div class="step" data-step="5" onclick="setSlide(5)">
+        <div class="step-num">06 &mdash; Profile</div>
         <div class="step-head">Earn your plate</div>
         <div class="step-body">Eight California license plate designs unlock as you level up &mdash; Desert Gold, Night Cruise, Island Drive, and more. Badges, streaks, and XP rewards make every study session feel like progress toward something real.</div>
       </div>
-      <div class="step" data-step="5" onclick="setSlide(5)">
-        <div class="step-num">06 &mdash; Bilingual</div>
+      <div class="step" data-step="6" onclick="setSlide(6)">
+        <div class="step-num">07 &mdash; Bilingual</div>
         <div class="step-head">Full English and Spanish</div>
         <div class="step-body">Every screen, every question, every explanation &mdash; available in English and Spanish. Switch anytime from your profile. Built specifically for California&rsquo;s bilingual teen community and their families.</div>
       </div>
@@ -303,13 +312,13 @@
   <div class="mobile-nav">
     <button onclick="mobileGo(-1)" aria-label="Previous">&#8592;</button>
     <div class="mobile-dots" id="mobileDots">
-      <span class="active"></span><span></span><span></span><span></span><span></span><span></span>
+      <span class="active"></span><span></span><span></span><span></span><span></span><span></span><span></span>
     </div>
     <button onclick="mobileGo(1)" aria-label="Next">&#8594;</button>
   </div>
   <div class="mobile-step-text" id="mobileText">
-    <div class="step-num">01 &mdash; Home</div>
-    <div class="step-head">Your personalized study dashboard</div>
+    <div class="step-num">01 &mdash; Today&rsquo;s Route</div>
+    <div class="step-head">Your personalized path to a license</div>
     <div class="step-body">Today&rsquo;s Route tells you exactly what to study next based on your real progress.</div>
   </div>
 </div>
@@ -328,12 +337,13 @@
 
 <script>
 const SLIDES = [
-  { img:'assets/screenshots/ss-home-light.jpeg', num:'01 \u2014 Home', head:'Your personalized study dashboard', body:'Today\u2019s Route tells you exactly what to study next based on your real progress.' },
-  { img:'assets/screenshots/ss-practice.jpeg', num:'02 \u2014 Practice', head:'350+ real CA DMV questions', body:'All 13 DMV topic categories with mastery tracking, missed-question drills, and a full Permit Test Simulation.' },
-  { img:'assets/screenshots/ss-leaderboard.jpeg', num:'03 \u2014 Rank', head:'Study with friends', body:'Invite friends and family to compare progress on the XP leaderboard.' },
-  { img:'assets/screenshots/ss-guide.jpeg', num:'04 \u2014 Guide', head:'Step by step to your license', body:'Every stage of the California licensing process, tracked alongside your study progress.' },
-  { img:'assets/screenshots/ss-profile.jpeg', num:'05 \u2014 Profile', head:'Earn your plate', body:'Eight California license plate designs unlock as you level up through XP.' },
-  { img:'assets/screenshots/ss-home-spanish.jpeg', num:'06 \u2014 Bilingual', head:'Full English and Spanish', body:'Every screen, every question \u2014 available in English and Spanish.' },
+  { img:'assets/screenshots/ss-home-light.jpeg',     num:'01 \u2014 Today\u2019s Route', head:'Your personalized path to a license',  body:'Today\u2019s Route tells you exactly what to study next based on your real progress.' },
+  { img:'assets/screenshots/ss-study-insights.jpeg', num:'02 \u2014 Study Insights',     head:'Know exactly where you stand',          body:'Exam Readiness tracks four real criteria. Study Insights surfaces your strongest and weakest modules so you always know where to focus.' },
+  { img:'assets/screenshots/ss-practice.jpeg',       num:'03 \u2014 Practice',           head:'350+ real CA DMV questions',            body:'All 13 DMV topic categories with mastery tracking, missed-question drills, and a full Permit Test Simulation.' },
+  { img:'assets/screenshots/ss-leaderboard.jpeg',    num:'04 \u2014 Rank',               head:'Study with friends',                   body:'Invite friends and family to compare progress on the XP leaderboard.' },
+  { img:'assets/screenshots/ss-guide.jpeg',          num:'05 \u2014 Guide',              head:'Step by step to your license',          body:'Every stage of the California licensing process, with links to sign up for required classes at each step.' },
+  { img:'assets/screenshots/ss-profile.jpeg',        num:'06 \u2014 Profile',            head:'Earn your plate',                      body:'Eight California license plate designs unlock as you level up through XP.' },
+  { img:'assets/screenshots/ss-home-spanish.jpeg',   num:'07 \u2014 Bilingual',          head:'Full English and Spanish',              body:'Every screen, every question \u2014 available in English and Spanish.' },
 ];
 let current = 0;
 
