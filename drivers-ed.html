@@ -16,139 +16,119 @@
   <meta name="twitter:title" content="California Driver's Education — Passing Lane" />
   <meta name="twitter:description" content="DMV-approved driver's ed courses for California teens. Required for under 17½. Online and in-person options available." />
   <meta name="twitter:image" content="https://passinglane.app/icon.png" />
+  <meta name="theme-color" content="#F5F4EF" />
   <link rel="icon" type="image/png" href="/icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --green-dark: #1a4a3a;
-      --green-bright: #3ecf6e;
-      --text: #f0f4f2;
-      --text-muted: #8ab09a;
-      --card-bg: rgba(255,255,255,0.07);
-      --card-border: rgba(255,255,255,0.12);
+      --warm:     #F5F4EF;
+      --warm-dk:  #ECEAE2;
+      --grn:      #1A4A3A;
+      --grn-mid:  #2A6A54;
+      --accent:   #3ECF6E;
+      --near-blk: #0A2218;
+      --muted:    #5C6B63;
+      --border:   rgba(26,74,58,.10);
     }
-    body { font-family: 'Inter', sans-serif; background: var(--green-dark); color: var(--text); min-height: 100vh; }
-    nav {
-      padding: 18px 24px;
-      display: flex; align-items: center; justify-content: space-between;
-      border-bottom: 1px solid var(--card-border);
-    }
-    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .nav-logo img { width: 30px; height: 30px; border-radius: 7px; }
-    .nav-logo span { font-size: 16px; font-weight: 700; color: var(--text); }
-    .nav-back { font-size: 14px; color: var(--text-muted); text-decoration: none; }
-    .nav-back:hover { color: var(--text); }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--warm); font-family: 'DM Sans', sans-serif; color: var(--near-blk); -webkit-font-smoothing: antialiased; min-height: 100vh; }
 
-    /* ── Hamburger ── */
-    .hamburger {
-      background: none; border: none; cursor: pointer; padding: 6px;
-      display: flex; flex-direction: column; gap: 5px; z-index: 200;
-    }
-    .hamburger span {
-      display: block; width: 22px; height: 2px; background: var(--text);
-      border-radius: 2px; transition: transform 0.25s ease, opacity 0.25s ease;
-      transform-origin: center;
-    }
-    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    /* NAV */
+    .site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 32px; height: 64px; display: flex; align-items: center; justify-content: space-between; background: rgba(245,244,239,.90); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
+    .nav-left { display: flex; align-items: center; gap: 10px; }
+    .hamburger { background: none; border: none; cursor: pointer; padding: 6px; display: flex; flex-direction: column; gap: 5px; z-index: 200; }
+    .hamburger span { display: block; width: 20px; height: 1.5px; background: var(--grn); border-radius: 2px; transition: transform .25s ease, opacity .25s ease; transform-origin: center; }
+    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
     .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    .nav-drawer {
-      position: fixed; top: 0; left: 0; width: 260px; height: 100vh;
-      background: #112e25; border-right: 1px solid var(--card-border);
-      z-index: 150; transform: translateX(-100%);
-      transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-      display: flex; flex-direction: column; align-items: stretch;
-      justify-content: flex-start; padding: 72px 12px 40px; gap: 2px;
-    }
-    .nav-drawer.open { transform: translateX(0); }
-    .nav-drawer a {
-      display: flex; align-items: center; gap: 12px; padding: 10px 14px;
-      border-radius: 10px; text-decoration: none; color: var(--text-muted);
-      font-size: 15px; font-weight: 500; transition: background 0.15s, color 0.15s;
-    }
-    .nav-drawer a:hover, .nav-drawer a.active { background: rgba(255,255,255,0.07); color: var(--text); }
-    .nav-drawer a .icon { font-size: 18px; width: 24px; text-align: center; }
-    .nav-drawer-divider { height: 1px; background: var(--card-border); margin: 6px 2px; }
-    .drawer-overlay {
-      display: none; position: fixed; inset: 0;
-      background: rgba(0,0,0,0.5); z-index: 140; backdrop-filter: blur(2px);
-    }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .nav-logo { display: flex; align-items: center; gap: 9px; text-decoration: none; }
+    .nav-logo img { width: 30px; height: 30px; border-radius: 7px; }
+    .nav-logo span { font-size: 16px; font-weight: 600; color: var(--near-blk); letter-spacing: -.2px; }
+    .nav-right { display: flex; align-items: center; gap: 14px; }
+    .lang-toggle { display: flex; align-items: center; gap: 2px; background: rgba(26,74,58,.06); border: 1px solid var(--border); border-radius: 20px; padding: 3px; font-size: 11px; font-weight: 600; }
+    .lang-toggle a { padding: 3px 10px; border-radius: 16px; text-decoration: none; color: var(--muted); transition: background .15s, color .15s; }
+    .lang-toggle a.active { background: var(--grn); color: #fff; }
+    .nav-dl { display: inline-flex; align-items: center; background: var(--grn); color: #fff; font-size: 13px; font-weight: 600; padding: 9px 18px; border-radius: 100px; text-decoration: none; transition: background .18s; white-space: nowrap; }
+    .nav-dl:hover { background: var(--grn-mid); }
+
+    /* DRAWER */
+    .drawer-overlay { display: none; position: fixed; inset: 0; background: rgba(10,34,24,.25); z-index: 140; backdrop-filter: blur(2px); }
     .drawer-overlay.open { display: block; }
+    .nav-drawer { position: fixed; top: 0; left: 0; width: 240px; height: 100vh; background: var(--warm); border-right: 1px solid var(--border); z-index: 150; transform: translateX(-100%); transition: transform .28s cubic-bezier(.4,0,.2,1); padding: 76px 16px 32px; display: flex; flex-direction: column; gap: 0; }
+    .nav-drawer.open { transform: translateX(0); }
+    .nav-drawer a { display: block; padding: 9px 12px; border-radius: 8px; text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 500; transition: background .15s, color .15s; }
+    .nav-drawer a:hover, .nav-drawer a.active { background: rgba(26,74,58,.06); color: var(--grn); }
+    .nav-drawer-divider { height: 1px; background: var(--border); margin: 6px 0; }
 
-    .page { max-width: 720px; margin: 0 auto; padding: 64px 24px 80px; }
+    /* PAGE */
+    .page { max-width: 720px; margin: 0 auto; padding: 104px 32px 100px; }
 
-    .breadcrumb { font-size: 13px; color: var(--text-muted); margin-bottom: 32px; }
-    .breadcrumb a { color: var(--text-muted); text-decoration: none; }
-    .breadcrumb a:hover { color: var(--text); }
+    .breadcrumb { font-size: 13px; color: var(--muted); margin-bottom: 36px; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; transition: color .15s; }
+    .breadcrumb a:hover { color: var(--grn); }
+    .breadcrumb span { margin: 0 6px; opacity: .5; }
 
-    .page-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green-bright); margin-bottom: 14px; }
-    h1 { font-size: clamp(30px, 5vw, 48px); font-weight: 800; letter-spacing: -1px; margin-bottom: 20px; line-height: 1.1; }
-    .page-intro { font-size: 17px; color: var(--text-muted); line-height: 1.7; margin-bottom: 48px; }
-    .page-intro strong { color: var(--text); }
+    .page-eyebrow { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--grn); background: rgba(26,74,58,.07); padding: 4px 12px; border-radius: 100px; margin-bottom: 16px; }
 
-    .info-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-left: 3px solid var(--green-bright);
-      border-radius: 16px;
-      padding: 24px;
-      margin-bottom: 32px;
+    h1 { font-family: 'DM Serif Display', serif; font-size: clamp(32px, 5vw, 52px); line-height: 1.1; letter-spacing: -.02em; color: var(--near-blk); margin-bottom: 20px; }
+
+    .page-intro { font-size: 17px; color: var(--muted); line-height: 1.75; margin-bottom: 48px; }
+    .page-intro strong { color: var(--near-blk); font-weight: 600; }
+
+    /* INFO CARD */
+    .info-card { border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 16px; padding: 28px; margin-bottom: 40px; background: #fff; }
+    .info-card h2 { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--near-blk); margin-bottom: 16px; }
+    .info-card ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .info-card li { font-size: 15px; color: var(--muted); padding-left: 22px; position: relative; line-height: 1.6; }
+    .info-card li::before { content: ''; position: absolute; left: 0; top: 8px; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+    .info-card li strong { color: var(--near-blk); font-weight: 600; }
+
+    /* PARTNER LABEL */
+    .partners-intro { font-size: 15px; color: var(--muted); line-height: 1.65; margin-bottom: 20px; }
+
+    /* PARTNER CARDS */
+    .partner-cards { display: flex; flex-direction: column; gap: 20px; margin-bottom: 40px; }
+    .partner-card { border: 1px solid var(--border); border-radius: 16px; padding: 28px; background: #fff; transition: border-color .2s, box-shadow .2s; }
+    .partner-card:hover { border-color: rgba(26,74,58,.2); box-shadow: 0 6px 20px rgba(10,34,24,.06); }
+    .partner-label { font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+    .partner-name { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--near-blk); margin-bottom: 10px; }
+    .partner-desc { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 20px; }
+    .partner-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--grn); color: #fff; font-size: 14px; font-weight: 600; padding: 12px 22px; border-radius: 100px; text-decoration: none; transition: background .18s; }
+    .partner-cta:hover { background: var(--grn-mid); }
+
+    /* DMV LINK */
+    .dmv-link { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--border); border-radius: 100px; padding: 12px 20px; text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 500; transition: color .15s, border-color .15s; margin-bottom: 48px; }
+    .dmv-link:hover { color: var(--grn); border-color: var(--grn); }
+    .dmv-link svg { flex-shrink: 0; }
+
+    /* NOTICE */
+    .notice { border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 12px; padding: 20px 24px; margin-bottom: 40px; background: rgba(62,207,110,.04); }
+    .notice p { font-size: 14px; color: var(--muted); line-height: 1.65; }
+    .notice p strong { color: var(--near-blk); font-weight: 600; }
+    .notice a { color: var(--grn); }
+
+    /* DISCLOSURE */
+    .disclosure { font-size: 12px; color: var(--muted); opacity: .6; line-height: 1.65; }
+
+    /* FOOTER */
+    footer { padding: 36px 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .footer-logo img { width: 26px; height: 26px; border-radius: 6px; }
+    .footer-logo span { font-size: 14px; font-weight: 600; color: var(--near-blk); }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+    .footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color .15s; }
+    .footer-links a:hover { color: var(--grn); }
+    .footer-copy { font-size: 12px; color: var(--muted); opacity: .7; }
+
+    @media (max-width: 720px) {
+      .site-nav { padding: 0 20px; }
+      .page { padding: 96px 20px 80px; }
+      footer { flex-direction: column; text-align: center; padding: 28px 20px; }
+      .nav-dl { display: none; }
     }
-    .info-card h2 { font-size: 17px; font-weight: 700; margin-bottom: 12px; }
-    .info-card ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .info-card li { font-size: 15px; color: var(--text-muted); padding-left: 20px; position: relative; line-height: 1.5; }
-    .info-card li::before { content: '✓'; position: absolute; left: 0; color: var(--green-bright); font-weight: 700; font-size: 13px; top: 1px; }
-    .info-card li strong { color: var(--text); }
-
-    .coming-soon-box {
-      background: rgba(62, 207, 110, 0.08);
-      border: 1px solid rgba(62, 207, 110, 0.25);
-      border-radius: 16px;
-      padding: 32px;
-      text-align: center;
-      margin-bottom: 48px;
-    }
-    .coming-soon-box .icon { font-size: 40px; margin-bottom: 16px; }
-    .coming-soon-box h2 { font-size: 22px; font-weight: 700; margin-bottom: 10px; }
-    .coming-soon-box p { font-size: 15px; color: var(--text-muted); line-height: 1.6; }
-
-    .cta-link {
-      display: block;
-      background: var(--green-bright);
-      color: #0d2d1e;
-      font-size: 17px;
-      font-weight: 700;
-      text-decoration: none;
-      padding: 16px 28px;
-      border-radius: 12px;
-      text-align: center;
-      margin-bottom: 16px;
-      transition: opacity 0.2s;
-    }
-    .cta-link:hover { opacity: 0.88; }
-
-    .dmv-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      border: 1px solid var(--card-border);
-      border-radius: 10px;
-      padding: 14px 20px;
-      text-decoration: none;
-      color: var(--text-muted);
-      font-size: 14px;
-      transition: color 0.2s, border-color 0.2s;
-    }
-    .dmv-link:hover { color: var(--text); border-color: rgba(255,255,255,0.25); }
-
-    .disclosure { font-size: 12px; color: var(--text-muted); opacity: 0.6; margin-top: 48px; line-height: 1.6; }
-
-    footer { padding: 32px 24px; border-top: 1px solid var(--card-border); text-align: center; }
-    .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-    .footer-links a { font-size: 13px; color: var(--text-muted); text-decoration: none; }
-    .footer-links a:hover { color: var(--text); }
   </style>
 <script type="application/ld+json">
 {
@@ -161,119 +141,100 @@
     "@type": "Organization",
     "name": "Passing Lane",
     "url": "https://passinglane.app",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://passinglane.app/icon.png"
-    }
+    "logo": { "@type": "ImageObject", "url": "https://passinglane.app/icon.png" }
   },
-  "about": {
-    "@type": "Thing",
-    "name": "Driver's Education",
-    "description": "DMV-approved driver's education courses required for California teens under 17½"
-  }
+  "about": { "@type": "Thing", "name": "Driver's Education", "description": "DMV-approved driver's education courses required for California teens under 17½" }
 }
 </script>
 </head>
 <body>
 
-  <div class="drawer-overlay" id="overlay" onclick="closeDrawer()"></div>
-  <nav class="nav-drawer" id="drawer">
-    <a href="/"><span class="icon">🏠</span> Home</a>
-    <div class="nav-drawer-divider"></div>
-    <a href="/drivers-ed" class="active"><span class="icon">📚</span> Driver's Ed</a>
-    <a href="/driving-school"><span class="icon">🚗</span> Driving Schools</a>
-    <a href="/insurance"><span class="icon">🛡</span> Insurance, Defensive Driving & Traffic School</a>
-    <div class="nav-drawer-divider"></div>
-    <a href="/faq"><span class="icon">❓</span> FAQ</a>
-    <a href="/about"><span class="icon">👨‍👩‍👧</span> About Us</a>
-  </nav>
-  <nav>
-    <button class="hamburger" id="hamburger" onclick="toggleDrawer()" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-    <a href="/" class="nav-logo">
-      <img src="/icon.png" alt="Passing Lane" />
-      <span>Passing Lane</span>
-    </a>
-    <div style="display:flex;align-items:center;gap:12px;">
-      <div class="lang-toggle" style="display:flex;align-items:center;gap:2px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:3px;font-size:12px;font-weight:600;">
-        <a href="/drivers-ed" style="padding:3px 10px;border-radius:16px;text-decoration:none;background:var(--green-bright);color:#0f2d22;">EN</a>
-        <a href="/es/drivers-ed" style="padding:3px 10px;border-radius:16px;text-decoration:none;color:var(--text-muted);">ES</a>
-      </div>
-      <a href="/" class="nav-back">← Back</a>
+<div class="drawer-overlay" id="overlay" onclick="closeDrawer()"></div>
+<div class="nav-drawer" id="drawer">
+  <a href="/">Home</a>
+  <div class="nav-drawer-divider"></div>
+  <a href="/drivers-ed" class="active">Driver&rsquo;s Ed</a>
+  <a href="/driving-school">Driving Schools</a>
+  <a href="/insurance">Insurance &amp; Defensive Driving</a>
+  <div class="nav-drawer-divider"></div>
+  <a href="/faq">FAQ</a>
+  <a href="/about">About Us</a>
+</div>
+
+<nav class="site-nav">
+  <div class="nav-left">
+    <button class="hamburger" id="hamburger" onclick="toggleDrawer()" aria-label="Menu"><span></span><span></span><span></span></button>
+    <a href="/" class="nav-logo"><img src="/icon.png" alt="Passing Lane" /><span>Passing Lane</span></a>
+  </div>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <a href="/drivers-ed" class="active">EN</a>
+      <a href="/es/drivers-ed">ES</a>
     </div>
-  </nav>
+    <a href="https://apps.apple.com/app/passing-lane-ca-dmv-permit/id6762711447" class="nav-dl" target="_blank" rel="noopener">Download</a>
+  </div>
+</nav>
 
-  <div class="page">
-    <div class="breadcrumb"><a href="/">Home</a> / Driver's Education</div>
-    <p class="page-eyebrow">Step 1</p>
-    <h1>Driver's Education</h1>
-    <p class="page-intro">If you're <strong>under 17½</strong>, California requires 30 hours of DMV-approved driver's education before you can apply for your permit. Online and in-person courses both qualify — as long as the course is state-approved.</p>
+<div class="page">
+  <div class="breadcrumb"><a href="/">Home</a><span>/</span>Driver&rsquo;s Education</div>
 
-    <div class="info-card">
-      <h2>What you need to know</h2>
-      <ul>
-        <li>Completion earns you <strong>Form OL 237</strong> — required at the DMV to get your permit</li>
-        <li>Online courses cost <strong>$30–$80</strong>, classroom courses <strong>$150–$300</strong></li>
-        <li>If you're <strong>17½ or older</strong>, driver's ed is not required — skip to Step 2</li>
-        <li>Look for courses explicitly listed as <strong>DMV-approved</strong> — not all are</li>
-        <li>Keep a photo of your OL 237 in case the original is lost</li>
-      </ul>
-    </div>
+  <span class="page-eyebrow">Step 1</span>
+  <h1>Driver&rsquo;s Education</h1>
+  <p class="page-intro">If you&rsquo;re <strong>under 17&frac12;</strong>, California requires 30 hours of DMV-approved driver&rsquo;s education before you can apply for your permit. Online and in-person courses both qualify &mdash; as long as the course is state-approved.</p>
 
-    <p style="font-size: 15px; color: var(--text-muted); margin-bottom: 20px;">We partner with two DMV-approved online programs. Both qualify for your OL 237 completion certificate.</p>
-
-    <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px;">
-
-      <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 24px;">
-        <p style="font-size: 12px; font-weight: 700; color: var(--text-muted); letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 6px;">Aceable</p>
-        <h3 style="font-size: 18px; font-weight: 700; margin: 0 0 8px; color: var(--text);">Online Driver's Ed</h3>
-        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6; margin: 0 0 16px;">Built for teens who won't sit still for a textbook. Aceable's DMV-approved course runs entirely on your phone — short modules, animations, and interactive checkpoints that actually hold attention. Ace Mode targets your weak spots as you go, so you're studying smarter, not longer. Progress saves across all devices.</p>
-        <a href="http://go.aceable.com/aff_c?offer_id=7&amp;aff_id=6905" target="_blank" rel="noopener" class="cta-link" style="margin-top: 0;">
-          Enroll at Aceable →
-        </a>
-      </div>
-
-      <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 24px;">
-        <p style="font-size: 12px; font-weight: 700; color: var(--text-muted); letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 6px;">DriversEd.com</p>
-        <h3 style="font-size: 18px; font-weight: 700; margin: 0 0 8px; color: var(--text);">Online Driver's Ed</h3>
-        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6; margin: 0 0 16px;">California's most established online program. DMV-approved, self-paced, works on any device. Includes the required 30 hours and the completion certificate you need to apply for your permit.</p>
-        <a href="http://go.driversed.com/SH3C" target="_blank" rel="noopener" class="cta-link" style="margin-top: 0;">
-          Enroll at DriversEd.com →
-        </a>
-      </div>
-
-    </div>
-
-    <a href="https://www.dmv.ca.gov/portal/teen-drivers/" target="_blank" rel="noopener" class="dmv-link">
-      🔗 View DMV-Approved Courses at dmv.ca.gov →
-    </a>
-
-    <p class="disclosure">Passing Lane may earn a referral fee when you enroll in a partner course. This never affects our recommendations — we only partner with DMV-approved programs.</p>
+  <div class="info-card">
+    <h2>What you need to know</h2>
+    <ul>
+      <li>Completion earns you <strong>Form OL 237</strong> &mdash; required at the DMV to get your permit</li>
+      <li>Online courses cost <strong>$30&ndash;$80</strong>, classroom courses <strong>$150&ndash;$300</strong></li>
+      <li>If you&rsquo;re <strong>17&frac12; or older</strong>, driver&rsquo;s ed is not required &mdash; skip to Step 2</li>
+      <li>Look for courses explicitly listed as <strong>DMV-approved</strong> &mdash; not all are</li>
+      <li>Keep a photo of your OL 237 in case the original is lost</li>
+    </ul>
   </div>
 
-  <footer>
-    <div class="footer-links">
-      <a href="/">Home</a>
-      <a href="/drivers-ed">Driver's Ed</a>
-      <a href="/driving-school">Driving Schools</a>
-      <a href="/insurance">Insurance</a>
-    </div>
-    <p style="font-size:12px;color:var(--text-muted);opacity:0.6;margin-top:16px;">© 2026 Passing Lane Solutions LLC. All rights reserved. · passinglane.app · <a href="/privacy" style="color:inherit;">Privacy</a> · <a href="/terms" style="color:inherit;">Terms</a></p>
-  </footer>
+  <p class="partners-intro">We partner with two DMV-approved online programs. Both qualify for your OL 237 completion certificate.</p>
 
-  <script>
-    function toggleDrawer() {
-      const open = document.getElementById('drawer').classList.toggle('open');
-      document.getElementById('hamburger').classList.toggle('open', open);
-      document.getElementById('overlay').classList.toggle('open', open);
-    }
-    function closeDrawer() {
-      document.getElementById('drawer').classList.remove('open');
-      document.getElementById('hamburger').classList.remove('open');
-      document.getElementById('overlay').classList.remove('open');
-    }
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
-  </script>
+  <div class="partner-cards">
+    <div class="partner-card">
+      <p class="partner-label">Aceable</p>
+      <p class="partner-name">Online Driver&rsquo;s Ed</p>
+      <p class="partner-desc">Built for teens who won&rsquo;t sit still for a textbook. Aceable&rsquo;s DMV-approved course runs entirely on your phone &mdash; short modules, animations, and interactive checkpoints that actually hold attention. Ace Mode targets your weak spots as you go, so you&rsquo;re studying smarter, not longer. Progress saves across all devices.</p>
+      <a href="http://go.aceable.com/aff_c?offer_id=7&amp;aff_id=6905" target="_blank" rel="noopener" class="partner-cta">Enroll at Aceable &rarr;</a>
+    </div>
+    <div class="partner-card">
+      <p class="partner-label">DriversEd.com</p>
+      <p class="partner-name">Online Driver&rsquo;s Ed</p>
+      <p class="partner-desc">California&rsquo;s most established online program. DMV-approved, self-paced, works on any device. Includes the required 30 hours and the completion certificate you need to apply for your permit.</p>
+      <a href="http://go.driversed.com/SH3C" target="_blank" rel="noopener" class="partner-cta">Enroll at DriversEd.com &rarr;</a>
+    </div>
+  </div>
+
+  <a href="https://www.dmv.ca.gov/portal/teen-drivers/" target="_blank" rel="noopener" class="dmv-link">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1h6v6M13 1L6 8M5 2H2a1 1 0 00-1 1v9a1 1 0 001 1h9a1 1 0 001-1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    View DMV-approved courses at dmv.ca.gov
+  </a>
+
+  <p class="disclosure">Passing Lane may earn a referral fee when you enroll in a partner course. This never affects our recommendations &mdash; we only partner with DMV-approved programs.</p>
+</div>
+
+<footer>
+  <a href="/" class="footer-logo"><img src="/icon.png" alt="Passing Lane" /><span>Passing Lane</span></a>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/drivers-ed">Driver&rsquo;s Ed</a>
+    <a href="/driving-school">Driving Schools</a>
+    <a href="/insurance">Insurance &amp; Defensive Driving</a>
+    <a href="/faq">FAQ</a>
+    <a href="/about">About Us</a>
+  </div>
+  <p class="footer-copy">&copy; 2026 Passing Lane Solutions LLC &middot; <a href="/privacy" style="color:inherit;">Privacy</a> &middot; <a href="/terms" style="color:inherit;">Terms</a></p>
+</footer>
+
+<script>
+function toggleDrawer(){const open=document.getElementById('drawer').classList.toggle('open');document.getElementById('hamburger').classList.toggle('open',open);document.getElementById('overlay').classList.toggle('open',open);}
+function closeDrawer(){document.getElementById('drawer').classList.remove('open');document.getElementById('hamburger').classList.remove('open');document.getElementById('overlay').classList.remove('open');}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();});
+</script>
 </body>
 </html>
