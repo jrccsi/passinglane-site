@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Passing Lane — App Showcase</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --warm:    #F5F4EF;
+      --grn:     #1A4A3A;
+      --grn-mid: #2A6A54;
+      --accent:  #3ECF6E;
+      --near-blk:#0A2218;
+      --muted:   #6B7280;
+      --border:  rgba(26,74,58,.12);
+      --phone-w: 270px;
+      --phone-r: 36px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--warm);
+      font-family: 'DM Sans', sans-serif;
+      color: var(--near-blk);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* HEADER */
+    .page-header { text-align: center; padding: 72px 24px 56px; }
+    .page-header .eyebrow {
+      display: inline-block;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--grn);
+      background: rgba(26,74,58,.08);
+      padding: 5px 14px; border-radius: 100px; margin-bottom: 18px;
+    }
+    .page-header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(36px, 6vw, 60px);
+      line-height: 1.08; color: var(--near-blk);
+      letter-spacing: -.02em; margin-bottom: 16px;
+    }
+    .page-header h1 em { font-style: italic; color: var(--grn); }
+    .page-header p {
+      font-size: 17px; line-height: 1.6; color: var(--muted);
+      max-width: 480px; margin: 0 auto 32px;
+    }
+    .dl-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--grn); color: #fff;
+      font-size: 14px; font-weight: 600;
+      padding: 13px 26px; border-radius: 100px;
+      text-decoration: none; transition: background .18s;
+    }
+    .dl-btn:hover { background: var(--grn-mid); }
+
+    /* DESKTOP */
+    .showcase-wrap { max-width: 1100px; margin: 0 auto; padding: 0 32px 120px; }
+    .showcase-desktop { display: flex; gap: 80px; align-items: flex-start; }
+    .phone-sticky { flex-shrink: 0; width: var(--phone-w); position: sticky; top: 96px; }
+    .phone-frame {
+      width: var(--phone-w);
+      height: calc(var(--phone-w) * 2.16);
+      background: var(--near-blk);
+      border-radius: var(--phone-r);
+      border: 8px solid #111;
+      position: relative; overflow: hidden;
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,.06),
+        0 40px 80px -20px rgba(10,34,24,.35),
+        0 16px 32px -8px rgba(10,34,24,.20);
+    }
+    .phone-notch {
+      position: absolute; top: 10px; left: 50%;
+      transform: translateX(-50%);
+      width: 64px; height: 14px;
+      background: #111; border-radius: 7px; z-index: 10;
+    }
+    .phone-screen {
+      position: absolute; inset: 0;
+      border-radius: calc(var(--phone-r) - 8px);
+      overflow: hidden; background: #0A2218;
+    }
+    .phone-slide {
+      position: absolute; inset: 0; opacity: 0;
+      transition: opacity .45s cubic-bezier(.4,0,.2,1);
+      will-change: opacity;
+    }
+    .phone-slide.active { opacity: 1; }
+    .phone-slide img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: top; display: block;
+    }
+    .phone-dots { display: flex; justify-content: center; gap: 7px; margin-top: 18px; }
+    .phone-dots button {
+      width: 7px; height: 7px; border-radius: 50%;
+      border: none; background: rgba(26,74,58,.22);
+      cursor: pointer; padding: 0;
+      transition: background .2s, transform .2s;
+    }
+    .phone-dots button.active { background: var(--grn); transform: scale(1.35); }
+
+    .steps-col { flex: 1; padding-top: 16px; }
+    .step {
+      padding: 32px 0 32px 24px;
+      border-left: 2px solid var(--border);
+      cursor: pointer; transition: border-color .2s; position: relative;
+    }
+    .step::before {
+      content: ''; position: absolute;
+      left: -5px; top: 36px;
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--border);
+      transition: background .2s, transform .2s;
+    }
+    .step.active { border-color: var(--accent); }
+    .step.active::before { background: var(--accent); transform: scale(1.4); }
+    .step-num {
+      font-size: 11px; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 8px; transition: color .2s;
+    }
+    .step.active .step-num { color: var(--accent); }
+    .step-head {
+      font-family: 'DM Serif Display', serif;
+      font-size: 26px; line-height: 1.2;
+      color: var(--near-blk); margin-bottom: 10px; letter-spacing: -.01em;
+    }
+    .step-body {
+      font-size: 15px; line-height: 1.65; color: var(--muted);
+      max-width: 420px; max-height: 0; overflow: hidden; opacity: 0;
+      transition: max-height .35s ease, opacity .3s ease;
+    }
+    .step.active .step-body { max-height: 200px; opacity: 1; }
+
+    /* MOBILE */
+    .showcase-mobile { display: none; }
+    .mobile-phone-wrap { width: 220px; margin: 0 auto 28px; }
+    .mobile-phone-frame {
+      width: 220px; height: 475px;
+      background: var(--near-blk);
+      border-radius: 30px; border: 6px solid #111;
+      overflow: hidden; position: relative;
+      box-shadow: 0 24px 60px -12px rgba(10,34,24,.32);
+    }
+    .mobile-phone-frame img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: top; display: block;
+    }
+    .mobile-notch {
+      position: absolute; top: 8px; left: 50%;
+      transform: translateX(-50%);
+      width: 52px; height: 12px;
+      background: #111; border-radius: 6px; z-index: 10;
+    }
+    .mobile-nav {
+      display: flex; justify-content: center;
+      align-items: center; gap: 20px; margin-bottom: 16px;
+    }
+    .mobile-nav button {
+      background: none; border: 1.5px solid var(--border);
+      border-radius: 100px; width: 36px; height: 36px;
+      cursor: pointer; font-size: 16px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--grn); transition: border-color .2s, background .2s;
+    }
+    .mobile-nav button:hover { background: rgba(26,74,58,.06); border-color: var(--grn); }
+    .mobile-dots { display: flex; gap: 6px; }
+    .mobile-dots span {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: rgba(26,74,58,.2);
+      transition: background .2s, transform .2s;
+    }
+    .mobile-dots span.active { background: var(--grn); transform: scale(1.4); }
+    .mobile-step-text { text-align: center; padding: 0 24px; }
+    .mobile-step-text .step-num {
+      font-size: 11px; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 6px;
+    }
+    .mobile-step-text .step-head {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px; line-height: 1.25;
+      color: var(--near-blk); margin-bottom: 8px;
+    }
+    .mobile-step-text .step-body {
+      font-size: 14px; line-height: 1.6; color: var(--muted);
+    }
+
+    /* FOOTER CTA */
+    .showcase-cta {
+      text-align: center; padding: 40px 24px 80px;
+      border-top: 1px solid var(--border);
+    }
+    .showcase-cta p { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
+    .badge-row { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .badge-row a img { height: 44px; }
+
+    @media (max-width: 720px) {
+      .showcase-desktop { display: none; }
+      .showcase-mobile { display: block; padding: 0 0 80px; }
+      .page-header { padding: 48px 20px 40px; }
+      .badge-row a img { height: 38px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="page-header">
+  <span class="eyebrow">App Preview</span>
+  <h1>Built for the road<br><em>ahead of you.</em></h1>
+  <p>Everything you need to pass the California DMV permit test &mdash; personalized, bilingual, and actually worth using.</p>
+  <a class="dl-btn" href="https://apps.apple.com/app/passing-lane-ca-dmv-permit/id6762711447" target="_blank" rel="noopener">
+    Download on the App Store &rarr;
+  </a>
+</header>
+
+<!-- DESKTOP -->
+<div class="showcase-wrap">
+  <div class="showcase-desktop">
+    <div class="phone-sticky">
+      <div class="phone-frame">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="phone-slide active" data-slide="0">
+            <img src="assets/screenshots/ss-home-light.jpeg" alt="Passing Lane home screen" loading="eager" />
+          </div>
+          <div class="phone-slide" data-slide="1">
+            <img src="assets/screenshots/ss-practice.jpeg" alt="Practice modules" loading="lazy" />
+          </div>
+          <div class="phone-slide" data-slide="2">
+            <img src="assets/screenshots/ss-leaderboard.jpeg" alt="Friends leaderboard" loading="lazy" />
+          </div>
+          <div class="phone-slide" data-slide="3">
+            <img src="assets/screenshots/ss-guide.jpeg" alt="Road to a License guide" loading="lazy" />
+          </div>
+          <div class="phone-slide" data-slide="4">
+            <img src="assets/screenshots/ss-profile.jpeg" alt="Profile and plate skins" loading="lazy" />
+          </div>
+          <div class="phone-slide" data-slide="5">
+            <img src="assets/screenshots/ss-home-spanish.jpeg" alt="Home screen in Spanish" loading="lazy" />
+          </div>
+        </div>
+      </div>
+      <div class="phone-dots" id="desktopDots">
+        <button class="active" onclick="setSlide(0)" aria-label="Step 1"></button>
+        <button onclick="setSlide(1)" aria-label="Step 2"></button>
+        <button onclick="setSlide(2)" aria-label="Step 3"></button>
+        <button onclick="setSlide(3)" aria-label="Step 4"></button>
+        <button onclick="setSlide(4)" aria-label="Step 5"></button>
+        <button onclick="setSlide(5)" aria-label="Step 6"></button>
+      </div>
+    </div>
+
+    <div class="steps-col">
+      <div class="step active" data-step="0" onclick="setSlide(0)">
+        <div class="step-num">01 &mdash; Home</div>
+        <div class="step-head">Your personalized study dashboard</div>
+        <div class="step-body">Today&rsquo;s Route tells you exactly what to study next based on your real progress. Your California license plate sits front and center &mdash; your identity in the app, leveling up as you earn XP.</div>
+      </div>
+      <div class="step" data-step="1" onclick="setSlide(1)">
+        <div class="step-num">02 &mdash; Practice</div>
+        <div class="step-head">350+ real CA DMV questions</div>
+        <div class="step-body">All 13 DMV topic categories with mastery tracking, missed-question drills, full retakes, and a Permit Test Simulation built to the exact 46-question CA DMV format. See exactly where you stand in every module.</div>
+      </div>
+      <div class="step" data-step="2" onclick="setSlide(2)">
+        <div class="step-num">03 &mdash; Rank</div>
+        <div class="step-head">Study with friends</div>
+        <div class="step-body">Invite friends and family to compare progress on the XP leaderboard. Everyone&rsquo;s California plate shows their earned skin &mdash; a little friendly competition keeps teens coming back without being nagged.</div>
+      </div>
+      <div class="step" data-step="3" onclick="setSlide(3)">
+        <div class="step-num">04 &mdash; Guide</div>
+        <div class="step-head">Step by step to your license</div>
+        <div class="step-body">The built-in guide walks through every stage of the California licensing process &mdash; Driver&rsquo;s Ed, permit, behind-the-wheel training, and the road test. Track your real-world progress alongside your study progress.</div>
+      </div>
+      <div class="step" data-step="4" onclick="setSlide(4)">
+        <div class="step-num">05 &mdash; Profile</div>
+        <div class="step-head">Earn your plate</div>
+        <div class="step-body">Eight California license plate designs unlock as you level up &mdash; Desert Gold, Night Cruise, Island Drive, and more. Badges, streaks, and XP rewards make every study session feel like progress toward something real.</div>
+      </div>
+      <div class="step" data-step="5" onclick="setSlide(5)">
+        <div class="step-num">06 &mdash; Bilingual</div>
+        <div class="step-head">Full English and Spanish</div>
+        <div class="step-body">Every screen, every question, every explanation &mdash; available in English and Spanish. Switch anytime from your profile. Built specifically for California&rsquo;s bilingual teen community and their families.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MOBILE -->
+<div class="showcase-mobile">
+  <div class="mobile-phone-wrap">
+    <div class="mobile-phone-frame">
+      <div class="mobile-notch"></div>
+      <img id="mobileImg" src="assets/screenshots/ss-home-light.jpeg" alt="App screenshot" />
+    </div>
+  </div>
+  <div class="mobile-nav">
+    <button onclick="mobileGo(-1)" aria-label="Previous">&#8592;</button>
+    <div class="mobile-dots" id="mobileDots">
+      <span class="active"></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <button onclick="mobileGo(1)" aria-label="Next">&#8594;</button>
+  </div>
+  <div class="mobile-step-text" id="mobileText">
+    <div class="step-num">01 &mdash; Home</div>
+    <div class="step-head">Your personalized study dashboard</div>
+    <div class="step-body">Today&rsquo;s Route tells you exactly what to study next based on your real progress.</div>
+  </div>
+</div>
+
+<div class="showcase-cta">
+  <p>Free to download &mdash; first 100 questions on us.</p>
+  <div class="badge-row">
+    <a href="https://apps.apple.com/app/passing-lane-ca-dmv-permit/id6762711447" target="_blank" rel="noopener" aria-label="Download on the App Store">
+      <img src="assets/apple-badge-en.svg" alt="Download on the App Store" />
+    </a>
+    <a href="https://apps.apple.com/app/passing-lane-ca-dmv-permit/id6762711447" target="_blank" rel="noopener" aria-label="Descargar en el App Store" lang="es">
+      <img src="assets/apple-badge-es.svg" alt="Descargar en el App Store" />
+    </a>
+  </div>
+</div>
+
+<script>
+const SLIDES = [
+  { img:'assets/screenshots/ss-home-light.jpeg', num:'01 \u2014 Home', head:'Your personalized study dashboard', body:'Today\u2019s Route tells you exactly what to study next based on your real progress.' },
+  { img:'assets/screenshots/ss-practice.jpeg', num:'02 \u2014 Practice', head:'350+ real CA DMV questions', body:'All 13 DMV topic categories with mastery tracking, missed-question drills, and a full Permit Test Simulation.' },
+  { img:'assets/screenshots/ss-leaderboard.jpeg', num:'03 \u2014 Rank', head:'Study with friends', body:'Invite friends and family to compare progress on the XP leaderboard.' },
+  { img:'assets/screenshots/ss-guide.jpeg', num:'04 \u2014 Guide', head:'Step by step to your license', body:'Every stage of the California licensing process, tracked alongside your study progress.' },
+  { img:'assets/screenshots/ss-profile.jpeg', num:'05 \u2014 Profile', head:'Earn your plate', body:'Eight California license plate designs unlock as you level up through XP.' },
+  { img:'assets/screenshots/ss-home-spanish.jpeg', num:'06 \u2014 Bilingual', head:'Full English and Spanish', body:'Every screen, every question \u2014 available in English and Spanish.' },
+];
+let current = 0;
+
+function setSlide(n) {
+  current = n;
+  document.querySelectorAll('.phone-slide').forEach((el,i) => el.classList.toggle('active', i===n));
+  document.querySelectorAll('.step').forEach((el,i) => el.classList.toggle('active', i===n));
+  document.querySelectorAll('#desktopDots button').forEach((el,i) => el.classList.toggle('active', i===n));
+  updateMobile(n);
+}
+
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting && e.intersectionRatio > 0.5) {
+      const idx = parseInt(e.target.dataset.step);
+      if (idx !== current) setSlide(idx);
+    }
+  });
+}, { threshold: 0.5, rootMargin: '-20% 0px -20% 0px' });
+document.querySelectorAll('.step').forEach(el => obs.observe(el));
+
+function updateMobile(n) {
+  const s = SLIDES[n];
+  const img = document.getElementById('mobileImg');
+  img.style.opacity = '0';
+  setTimeout(() => { img.src = s.img; img.alt = s.head; img.style.opacity = '1'; }, 180);
+  const txt = document.getElementById('mobileText');
+  txt.querySelector('.step-num').textContent = s.num;
+  txt.querySelector('.step-head').textContent = s.head;
+  txt.querySelector('.step-body').textContent = s.body;
+  document.querySelectorAll('#mobileDots span').forEach((el,i) => el.classList.toggle('active', i===n));
+}
+function mobileGo(dir) { setSlide((current + dir + SLIDES.length) % SLIDES.length); }
+document.getElementById('mobileImg').style.transition = 'opacity .2s ease';
+</script>
+</body>
+</html>
