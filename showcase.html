@@ -33,12 +33,12 @@
       overflow-x: hidden;
     }
 
-    /* ── NAV ── */
-    nav {
+    /* ── NAV BAR ── */
+    .site-nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       padding: 0 32px; height: 64px;
       display: flex; align-items: center; justify-content: space-between;
-      background: rgba(245,244,239,.88);
+      background: rgba(245,244,239,.90);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border);
     }
@@ -63,8 +63,7 @@
     .nav-right { display: flex; align-items: center; gap: 14px; }
     .lang-toggle {
       display: flex; align-items: center; gap: 2px;
-      background: rgba(26,74,58,.06);
-      border: 1px solid var(--border);
+      background: rgba(26,74,58,.06); border: 1px solid var(--border);
       border-radius: 20px; padding: 3px;
       font-size: 11px; font-weight: 600;
     }
@@ -75,7 +74,7 @@
     }
     .lang-toggle a.active { background: var(--grn); color: #fff; }
     .nav-dl {
-      display: inline-flex; align-items: center; gap: 7px;
+      display: inline-flex; align-items: center;
       background: var(--grn); color: #fff;
       font-size: 13px; font-weight: 600;
       padding: 9px 18px; border-radius: 100px;
@@ -83,13 +82,15 @@
     }
     .nav-dl:hover { background: var(--grn-mid); }
 
-    /* Drawer */
+    /* ── DRAWER ── */
     .drawer-overlay {
       display: none; position: fixed; inset: 0;
       background: rgba(10,34,24,.25); z-index: 140;
       backdrop-filter: blur(2px);
     }
     .drawer-overlay.open { display: block; }
+
+    /* Use a div, not nav, to avoid tag conflict with .site-nav styles */
     .nav-drawer {
       position: fixed; top: 0; left: 0;
       width: 240px; height: 100vh;
@@ -97,6 +98,7 @@
       z-index: 150; transform: translateX(-100%);
       transition: transform .28s cubic-bezier(.4,0,.2,1);
       padding: 76px 16px 32px;
+      display: flex; flex-direction: column; gap: 0;
     }
     .nav-drawer.open { transform: translateX(0); }
     .nav-drawer a {
@@ -105,16 +107,14 @@
       text-decoration: none; color: var(--muted);
       font-size: 14px; font-weight: 500;
       transition: background .15s, color .15s;
-      line-height: 1.3;
     }
-    .nav-drawer a:hover, .nav-drawer a.active {
-      background: rgba(26,74,58,.06); color: var(--grn);
-    }
-    .nav-drawer-divider { height: 1px; background: var(--border); margin: 8px 0; }
+    .nav-drawer a:hover,
+    .nav-drawer a.active { background: rgba(26,74,58,.06); color: var(--grn); }
+    .nav-drawer-divider { height: 1px; background: var(--border); margin: 6px 0; }
 
     /* ── HERO ── */
     .hero {
-      padding: 140px 32px 80px;
+      padding: 136px 32px 48px;
       max-width: 780px; margin: 0 auto; text-align: center;
     }
     .hero-eyebrow {
@@ -134,7 +134,7 @@
     .hero-sub {
       font-size: clamp(16px, 2.2vw, 19px);
       line-height: 1.65; color: var(--muted);
-      max-width: 520px; margin: 0 auto 36px;
+      max-width: 520px; margin: 0 auto 32px;
     }
     .hero-cta { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
     .btn-primary {
@@ -145,10 +145,10 @@
       text-decoration: none; transition: background .18s;
     }
     .btn-primary:hover { background: var(--grn-mid); }
-    .hero-note { font-size: 13px; color: var(--muted); margin-top: 14px; }
+    .hero-note { font-size: 13px; color: var(--muted); margin-top: 12px; }
 
-    /* ── CAROUSEL ── */
-    .showcase-wrap { max-width: 1100px; margin: 0 auto; padding: 0 32px 120px; }
+    /* ── DESKTOP CAROUSEL ── */
+    .showcase-wrap { max-width: 1100px; margin: 0 auto; padding: 40px 32px 100px; }
     .showcase-desktop { display: flex; gap: 80px; align-items: flex-start; }
     .phone-sticky { flex-shrink: 0; width: var(--phone-w); position: sticky; top: 88px; }
     .phone-frame {
@@ -178,10 +178,7 @@
       transition: opacity .45s cubic-bezier(.4,0,.2,1);
     }
     .phone-slide.active { opacity: 1; }
-    .phone-slide img {
-      width: 100%; height: 100%;
-      object-fit: cover; object-position: top; display: block;
-    }
+    .phone-slide img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
     .phone-dots { display: flex; justify-content: center; gap: 7px; margin-top: 18px; }
     .phone-dots button {
       width: 7px; height: 7px; border-radius: 50%;
@@ -190,6 +187,7 @@
       transition: background .2s, transform .2s;
     }
     .phone-dots button.active { background: var(--grn); transform: scale(1.35); }
+
     .steps-col { flex: 1; padding-top: 16px; }
     .step {
       padding: 32px 0 32px 28px;
@@ -214,6 +212,7 @@
       font-size: 25px; line-height: 1.2;
       color: var(--near-blk); margin-bottom: 10px;
     }
+    /* Desktop step body — hidden until active */
     .step-body {
       font-size: 15px; line-height: 1.7; color: var(--muted);
       max-width: 400px; max-height: 0;
@@ -222,9 +221,9 @@
     }
     .step.active .step-body { max-height: 220px; opacity: 1; }
 
-    /* ── MOBILE ── */
+    /* ── MOBILE CAROUSEL ── */
     .showcase-mobile { display: none; }
-    .mobile-phone-wrap { width: 220px; margin: 0 auto 28px; }
+    .mobile-phone-wrap { width: 220px; margin: 0 auto 24px; }
     .mobile-phone-frame {
       width: 220px; height: 475px;
       background: var(--near-blk);
@@ -261,18 +260,22 @@
       transition: background .2s, transform .2s;
     }
     .mobile-dots span.active { background: var(--grn); transform: scale(1.4); }
-    .mobile-step-text { text-align: center; padding: 0 24px; }
-    .mobile-step-text .step-num {
+    .mobile-step-text { text-align: center; padding: 0 28px 40px; }
+    .mobile-step-num {
       font-size: 10px; font-weight: 600;
       letter-spacing: .12em; text-transform: uppercase;
-      color: var(--accent); margin-bottom: 6px;
+      color: var(--accent); margin-bottom: 8px;
     }
-    .mobile-step-text .step-head {
+    .mobile-step-head {
       font-family: 'DM Serif Display', serif;
       font-size: 22px; line-height: 1.25;
-      color: var(--near-blk); margin-bottom: 8px;
+      color: var(--near-blk); margin-bottom: 10px;
     }
-    .mobile-step-text .step-body { font-size: 14px; line-height: 1.65; color: var(--muted); }
+    /* Mobile body — always visible, no max-height clipping */
+    .mobile-step-body {
+      font-size: 14px; line-height: 1.65;
+      color: var(--muted);
+    }
 
     /* ── DIVIDER ── */
     .section-divider { height: 1px; background: var(--border); max-width: 1100px; margin: 0 auto; }
@@ -290,19 +293,14 @@
       line-height: 1.15; letter-spacing: -.02em;
       color: var(--near-blk); margin-bottom: 40px; max-width: 480px;
     }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
-    }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
     .service-card {
       border: 1px solid var(--border); border-radius: 16px; padding: 28px;
       text-decoration: none; color: inherit; background: #fff;
       transition: border-color .2s, transform .2s, box-shadow .2s; display: block;
     }
     .service-card:hover {
-      border-color: rgba(26,74,58,.25);
-      transform: translateY(-2px);
+      border-color: rgba(26,74,58,.25); transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(10,34,24,.07);
     }
     .service-card-label {
@@ -350,10 +348,8 @@
 
     /* ── FOOTER CTA ── */
     .footer-cta {
-      padding: 80px 32px;
-      background: var(--warm-dk);
-      border-top: 1px solid var(--border);
-      text-align: center;
+      padding: 80px 32px; background: var(--warm-dk);
+      border-top: 1px solid var(--border); text-align: center;
     }
     .footer-cta h2 {
       font-family: 'DM Serif Display', serif;
@@ -387,9 +383,10 @@
     }
     @media (max-width: 720px) {
       .showcase-desktop { display: none; }
-      .showcase-mobile { display: block; padding: 0 0 80px; }
-      nav { padding: 0 20px; }
-      .hero { padding: 120px 20px 64px; }
+      .showcase-mobile { display: block; }
+      .showcase-wrap { padding: 24px 0 0; }
+      .site-nav { padding: 0 20px; }
+      .hero { padding: 110px 20px 32px; }
       .services { padding: 60px 20px; }
       .guide-callout { padding: 64px 20px; }
       .ca-section { padding: 64px 20px; }
@@ -404,7 +401,8 @@
 
 <div class="drawer-overlay" id="overlay" onclick="closeDrawer()"></div>
 
-<nav class="nav-drawer" id="drawer">
+<!-- Drawer uses div, not nav, to avoid conflicting with .site-nav styles -->
+<div class="nav-drawer" id="drawer">
   <a href="/" class="active">Home</a>
   <div class="nav-drawer-divider"></div>
   <a href="/drivers-ed">Driver&rsquo;s Ed</a>
@@ -413,9 +411,9 @@
   <div class="nav-drawer-divider"></div>
   <a href="/faq">FAQ</a>
   <a href="/about">About Us</a>
-</nav>
+</div>
 
-<nav>
+<nav class="site-nav">
   <div class="nav-left">
     <button class="hamburger" id="hamburger" onclick="toggleDrawer()" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -444,17 +442,18 @@
   <p class="hero-note">Free to start &middot; California &middot; Florida &amp; Texas coming soon</p>
 </section>
 
+<!-- DESKTOP -->
 <div class="showcase-wrap">
   <div class="showcase-desktop">
     <div class="phone-sticky">
       <div class="phone-frame">
         <div class="phone-notch"></div>
         <div class="phone-screen">
-          <div class="phone-slide active" data-slide="0"><img src="assets/screenshots/ss-home-light.jpeg" alt="Passing Lane home screen" loading="eager" /></div>
+          <div class="phone-slide active" data-slide="0"><img src="assets/screenshots/ss-home-light.jpeg" alt="Home screen" loading="eager" /></div>
           <div class="phone-slide" data-slide="1"><img src="assets/screenshots/ss-study-insights.jpeg" alt="Study Insights" loading="lazy" /></div>
           <div class="phone-slide" data-slide="2"><img src="assets/screenshots/ss-practice.jpeg" alt="Practice modules" loading="lazy" /></div>
           <div class="phone-slide" data-slide="3"><img src="assets/screenshots/ss-leaderboard.jpeg" alt="Friends leaderboard" loading="lazy" /></div>
-          <div class="phone-slide" data-slide="4"><img src="assets/screenshots/ss-guide.jpeg" alt="Road to a License guide" loading="lazy" /></div>
+          <div class="phone-slide" data-slide="4"><img src="assets/screenshots/ss-guide.jpeg" alt="Road to a License" loading="lazy" /></div>
           <div class="phone-slide" data-slide="5"><img src="assets/screenshots/ss-profile.jpeg" alt="Profile and plate skins" loading="lazy" /></div>
           <div class="phone-slide" data-slide="6"><img src="assets/screenshots/ss-home-spanish.jpeg" alt="Home in Spanish" loading="lazy" /></div>
         </div>
@@ -509,6 +508,7 @@
   </div>
 </div>
 
+<!-- MOBILE -->
 <div class="showcase-mobile">
   <div class="mobile-phone-wrap">
     <div class="mobile-phone-frame">
@@ -523,10 +523,10 @@
     </div>
     <button onclick="mobileGo(1)" aria-label="Next">&#8594;</button>
   </div>
-  <div class="mobile-step-text" id="mobileText">
-    <div class="step-num">01 &mdash; Today&rsquo;s Route</div>
-    <div class="step-head">Your personalized path to a license</div>
-    <div class="step-body">Today&rsquo;s Route tells you exactly what to study next based on your real progress.</div>
+  <div class="mobile-step-text">
+    <div class="mobile-step-num" id="mobileNum">01 &mdash; Today&rsquo;s Route</div>
+    <div class="mobile-step-head" id="mobileHead">Your personalized path to a license</div>
+    <div class="mobile-step-body" id="mobileBody">Today&rsquo;s Route tells you exactly what to study next based on your real progress.</div>
   </div>
 </div>
 
@@ -622,13 +622,13 @@
 
 <script>
 const SLIDES = [
-  { img:'assets/screenshots/ss-home-light.jpeg',     num:'01 \u2014 Today\u2019s Route', head:'Your personalized path to a license',  body:'Today\u2019s Route tells you exactly what to study next based on your real progress.' },
-  { img:'assets/screenshots/ss-study-insights.jpeg', num:'02 \u2014 Study Insights',     head:'Know exactly where you stand',          body:'Exam Readiness tracks four real criteria. Study Insights surfaces your strongest and weakest modules.' },
+  { img:'assets/screenshots/ss-home-light.jpeg',     num:'01 \u2014 Today\u2019s Route', head:'Your personalized path to a license',  body:'Today\u2019s Route tells you exactly what to study next based on your real progress \u2014 not a generic list.' },
+  { img:'assets/screenshots/ss-study-insights.jpeg', num:'02 \u2014 Study Insights',     head:'Know exactly where you stand',          body:'Exam Readiness tracks four real criteria. Study Insights surfaces your strongest and weakest modules so you always know where to focus.' },
   { img:'assets/screenshots/ss-practice.jpeg',       num:'03 \u2014 Practice',           head:'350+ real CA DMV questions',            body:'All 13 DMV topic categories with mastery tracking, missed-question drills, and a full Permit Test Simulation.' },
-  { img:'assets/screenshots/ss-leaderboard.jpeg',    num:'04 \u2014 Rank',               head:'Study with friends',                   body:'Invite friends and family to compare progress on the XP leaderboard.' },
+  { img:'assets/screenshots/ss-leaderboard.jpeg',    num:'04 \u2014 Rank',               head:'Study with friends',                   body:'Invite friends and family to compare XP on the leaderboard. Everyone\u2019s California plate shows their earned skin.' },
   { img:'assets/screenshots/ss-guide.jpeg',          num:'05 \u2014 Guide',              head:'Step by step to your license',          body:'Every stage of the California licensing process, with links to sign up for required classes at each step.' },
-  { img:'assets/screenshots/ss-profile.jpeg',        num:'06 \u2014 Profile',            head:'Earn your plate',                      body:'Eight California license plate designs unlock as you level up through XP.' },
-  { img:'assets/screenshots/ss-home-spanish.jpeg',   num:'07 \u2014 Bilingual',          head:'Full English and Spanish',              body:'Every screen, every question \u2014 available in English and Spanish.' },
+  { img:'assets/screenshots/ss-profile.jpeg',        num:'06 \u2014 Profile',            head:'Earn your plate',                      body:'Eight California license plate designs unlock as you level up. Badges, streaks, and XP make every session feel like progress.' },
+  { img:'assets/screenshots/ss-home-spanish.jpeg',   num:'07 \u2014 Bilingual',          head:'Full English and Spanish',              body:'Every screen, every question \u2014 available in English and Spanish. Switch anytime from your profile.' },
 ];
 let current = 0;
 
@@ -655,10 +655,9 @@ function updateMobile(n) {
   const img = document.getElementById('mobileImg');
   img.style.opacity = '0';
   setTimeout(() => { img.src = s.img; img.alt = s.head; img.style.opacity = '1'; }, 180);
-  const txt = document.getElementById('mobileText');
-  txt.querySelector('.step-num').textContent = s.num;
-  txt.querySelector('.step-head').textContent = s.head;
-  txt.querySelector('.step-body').textContent = s.body;
+  document.getElementById('mobileNum').textContent  = s.num;
+  document.getElementById('mobileHead').textContent = s.head;
+  document.getElementById('mobileBody').textContent = s.body;
   document.querySelectorAll('#mobileDots span').forEach((el,i) => el.classList.toggle('active', i===n));
 }
 function mobileGo(dir) { setSlide((current + dir + SLIDES.length) % SLIDES.length); }
