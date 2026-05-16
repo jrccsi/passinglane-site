@@ -4,156 +4,191 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Passing Lane: Preparación para el Examen de Manejo de CA — Práctica y Guía de Licencia</title>
-  <meta name="description" content="App gratuita de práctica para el examen de permiso del DMV de California. 348 preguntas reales, simulaciones del examen y guía completa en inglés y español." />
+  <meta name="description" content="App gratuita de práctica para el examen de permiso del DMV de California. 350+ preguntas reales, simulaciones del examen y guía completa en inglés y español." />
   <link rel="canonical" href="https://passinglane.app/es/" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://passinglane.app/es/" />
   <meta property="og:title" content="Passing Lane — Preparación para el Examen del DMV de CA" />
-  <meta property="og:description" content="348 preguntas reales del DMV, simulaciones del examen de permiso y guía de licencia paso a paso. Gratis para empezar. Inglés y español completo." />
+  <meta property="og:description" content="350+ preguntas reales del DMV, simulaciones del examen de permiso y guía de licencia paso a paso. Gratis para empezar. Inglés y español completo." />
   <meta property="og:image" content="https://passinglane.app/icon.png" />
   <meta property="og:site_name" content="Passing Lane" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Passing Lane — Preparación para el Examen del DMV de CA" />
-  <meta name="twitter:description" content="348 preguntas reales del DMV, simulaciones del examen de permiso y guía de licencia paso a paso. Gratis para empezar. Inglés y español completo." />
+  <meta name="twitter:description" content="350+ preguntas reales del DMV, simulaciones del examen de permiso y guía de licencia paso a paso. Gratis para empezar. Inglés y español completo." />
   <meta name="twitter:image" content="https://passinglane.app/icon.png" />
-  <meta name="theme-color" content="#1a4a3a" />
+  <meta name="theme-color" content="#F5F4EF" />
   <link rel="icon" type="image/png" href="/icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --green-dark: #1a4a3a; --green-mid: #2d6b52; --green-bright: #3ecf6e;
-      --yellow: #f5c842; --text: #f0f4f2; --text-muted: #8ab09a;
-      --card-bg: rgba(255,255,255,0.07); --card-border: rgba(255,255,255,0.12);
+      --warm:     #F5F4EF;
+      --warm-dk:  #ECEAE2;
+      --grn:      #1A4A3A;
+      --grn-mid:  #2A6A54;
+      --accent:   #3ECF6E;
+      --near-blk: #0A2218;
+      --muted:    #5C6B63;
+      --border:   rgba(26,74,58,.10);
+      --phone-w:  270px;
+      --phone-r:  36px;
     }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background-color: var(--green-dark); color: var(--text); min-height: 100vh; overflow-x: hidden; }
+    body { background: var(--warm); font-family: 'DM Sans', sans-serif; color: var(--near-blk); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; background: rgba(26, 74, 58, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--card-border); }
-    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .nav-logo img { width: 32px; height: 32px; border-radius: 8px; }
-    .nav-logo span { font-size: 17px; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
-    .nav-right { display: flex; align-items: center; gap: 12px; }
-    .lang-toggle { display: flex; align-items: center; gap: 2px; background: rgba(255,255,255,0.06); border: 1px solid var(--card-border); border-radius: 20px; padding: 3px; font-size: 12px; font-weight: 600; }
-    .lang-toggle a { padding: 3px 10px; border-radius: 16px; text-decoration: none; color: var(--text-muted); transition: all 0.15s; }
-    .lang-toggle a.active { background: var(--green-bright); color: #0f2d22; }
-    .lang-toggle a:not(.active):hover { color: var(--text); }
-
-    .nav-app-store { display: inline-block; transition: opacity 0.2s; }
-    .nav-app-store:hover { opacity: 0.82; }
-    .nav-app-store img { display: block; height: 34px; width: auto; }
-
+    .site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 32px; height: 64px; display: flex; align-items: center; justify-content: space-between; background: rgba(245,244,239,.90); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
+    .nav-left { display: flex; align-items: center; gap: 10px; }
     .hamburger { background: none; border: none; cursor: pointer; padding: 6px; display: flex; flex-direction: column; gap: 5px; z-index: 200; }
-    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.25s ease, opacity 0.25s ease; transform-origin: center; }
-    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger span { display: block; width: 20px; height: 1.5px; background: var(--grn); border-radius: 2px; transition: transform .25s ease, opacity .25s ease; transform-origin: center; }
+    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
     .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .nav-logo { display: flex; align-items: center; gap: 9px; text-decoration: none; }
+    .nav-logo img { width: 30px; height: 30px; border-radius: 7px; }
+    .nav-logo span { font-size: 16px; font-weight: 600; color: var(--near-blk); letter-spacing: -.2px; }
+    .nav-right { display: flex; align-items: center; gap: 14px; }
+    .lang-toggle { display: flex; align-items: center; gap: 2px; background: rgba(26,74,58,.06); border: 1px solid var(--border); border-radius: 20px; padding: 3px; font-size: 11px; font-weight: 600; }
+    .lang-toggle a { padding: 3px 10px; border-radius: 16px; text-decoration: none; color: var(--muted); transition: background .15s, color .15s; }
+    .lang-toggle a.active { background: var(--grn); color: #fff; }
+    .nav-dl { display: inline-flex; align-items: center; background: var(--grn); color: #fff; font-size: 13px; font-weight: 600; padding: 9px 18px; border-radius: 100px; text-decoration: none; transition: background .18s; white-space: nowrap; }
+    .nav-dl:hover { background: var(--grn-mid); }
 
-    .nav-drawer { position: fixed; top: 0; left: 0; width: 260px; height: 100vh; background: #112e25; border-right: 1px solid var(--card-border); z-index: 150; transform: translateX(-100%); transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1); display: flex; flex-direction: column; align-items: stretch; justify-content: flex-start; padding: 72px 12px 40px; gap: 2px; }
-    .nav-drawer.open { transform: translateX(0); }
-    .nav-drawer a { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 10px; text-decoration: none; color: var(--text-muted); font-size: 15px; font-weight: 500; transition: background 0.15s, color 0.15s; }
-    .nav-drawer a:hover, .nav-drawer a.active { background: rgba(255,255,255,0.07); color: var(--text); }
-    .nav-drawer a .icon { font-size: 18px; width: 24px; text-align: center; }
-    .nav-drawer-divider { height: 1px; background: var(--card-border); margin: 6px 2px; }
-    .drawer-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 140; backdrop-filter: blur(2px); }
+    .drawer-overlay { display: none; position: fixed; inset: 0; background: rgba(10,34,24,.25); z-index: 140; backdrop-filter: blur(2px); }
     .drawer-overlay.open { display: block; }
+    .nav-drawer { position: fixed; top: 0; left: 0; width: 240px; height: 100vh; background: var(--warm); border-right: 1px solid var(--border); z-index: 150; transform: translateX(-100%); transition: transform .28s cubic-bezier(.4,0,.2,1); padding: 76px 16px 32px; display: flex; flex-direction: column; gap: 0; }
+    .nav-drawer.open { transform: translateX(0); }
+    .nav-drawer a { display: block; padding: 9px 12px; border-radius: 8px; text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 500; transition: background .15s, color .15s; }
+    .nav-drawer a:hover, .nav-drawer a.active { background: rgba(26,74,58,.06); color: var(--grn); }
+    .nav-drawer-divider { height: 1px; background: var(--border); margin: 6px 0; }
 
-    .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 120px 24px 80px; text-align: center; position: relative; overflow: hidden; }
-    .hero::before { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 180px solid transparent; border-right: 180px solid transparent; border-bottom: 420px solid rgba(0,0,0,0.18); pointer-events: none; }
-    .hero::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 12px; height: 400px; background: repeating-linear-gradient(to top, var(--yellow) 0px, var(--yellow) 40px, transparent 40px, transparent 60px); opacity: 0.4; pointer-events: none; }
-    .hero-icon { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); margin-bottom: 32px; position: relative; z-index: 1; }
-    .hero-eyebrow { font-size: 15px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green-bright); margin-bottom: 16px; position: relative; z-index: 1; }
-    h1 { font-size: clamp(36px, 7vw, 68px); font-weight: 800; line-height: 1.05; letter-spacing: -2px; color: var(--text); max-width: 780px; margin-bottom: 24px; position: relative; z-index: 1; }
-    h1 span { color: var(--green-bright); }
-    .hero-sub { font-size: clamp(17px, 2.5vw, 20px); color: var(--text-muted); max-width: 520px; line-height: 1.6; margin-bottom: 12px; position: relative; z-index: 1; }
-    .hero-guide { font-size: clamp(14px, 1.8vw, 16px); color: var(--text-muted); max-width: 480px; line-height: 1.6; margin-bottom: 32px; opacity: 0.8; position: relative; z-index: 1; }
+    .hero { padding: 136px 32px 48px; max-width: 780px; margin: 0 auto; text-align: center; }
+    .hero-eyebrow { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--grn); background: rgba(26,74,58,.07); padding: 5px 14px; border-radius: 100px; margin-bottom: 24px; }
+    .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(38px, 6.5vw, 68px); line-height: 1.06; letter-spacing: -.03em; color: var(--near-blk); margin-bottom: 20px; }
+    .hero h1 em { font-style: italic; color: var(--grn); }
+    .hero-sub { font-size: clamp(16px, 2.2vw, 19px); line-height: 1.65; color: var(--muted); max-width: 520px; margin: 0 auto 32px; }
+    .hero-cta { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--grn); color: #fff; font-size: 14px; font-weight: 600; padding: 14px 28px; border-radius: 100px; text-decoration: none; transition: background .18s; }
+    .btn-primary:hover { background: var(--grn-mid); }
+    .hero-note { font-size: 13px; color: var(--muted); margin-top: 12px; }
 
-    .hero-cta-group { display: flex; flex-direction: column; align-items: center; gap: 14px; position: relative; z-index: 1; }
+    .showcase-wrap { max-width: 1100px; margin: 0 auto; padding: 40px 32px 100px; }
+    .showcase-desktop { display: flex; gap: 80px; align-items: flex-start; }
+    .phone-sticky { flex-shrink: 0; width: var(--phone-w); position: sticky; top: 88px; }
+    .phone-frame { width: var(--phone-w); height: calc(var(--phone-w) * 2.16); background: var(--near-blk); border-radius: var(--phone-r); border: 8px solid #111; position: relative; overflow: hidden; box-shadow: 0 0 0 1px rgba(255,255,255,.06), 0 40px 80px -20px rgba(10,34,24,.30), 0 16px 32px -8px rgba(10,34,24,.15); }
+    .phone-notch { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 64px; height: 14px; background: #111; border-radius: 7px; z-index: 10; }
+    .phone-screen { position: absolute; inset: 0; border-radius: calc(var(--phone-r) - 8px); overflow: hidden; background: #0A2218; }
+    .phone-slide { position: absolute; inset: 0; opacity: 0; transition: opacity .45s cubic-bezier(.4,0,.2,1); }
+    .phone-slide.active { opacity: 1; }
+    .phone-slide img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+    .phone-dots { display: flex; justify-content: center; gap: 7px; margin-top: 18px; }
+    .phone-dots button { width: 7px; height: 7px; border-radius: 50%; border: none; background: rgba(26,74,58,.18); cursor: pointer; padding: 0; transition: background .2s, transform .2s; }
+    .phone-dots button.active { background: var(--grn); transform: scale(1.35); }
+    .steps-col { flex: 1; padding-top: 16px; }
+    .step { padding: 32px 0 32px 28px; border-left: 1.5px solid var(--border); cursor: pointer; transition: border-color .2s; position: relative; }
+    .step::before { content: ''; position: absolute; left: -5px; top: 38px; width: 8px; height: 8px; border-radius: 50%; background: var(--border); transition: background .2s, transform .2s; }
+    .step.active { border-color: var(--accent); }
+    .step.active::before { background: var(--accent); transform: scale(1.4); }
+    .step-num { font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; transition: color .2s; }
+    .step.active .step-num { color: var(--accent); }
+    .step-head { font-family: 'DM Serif Display', serif; font-size: 25px; line-height: 1.2; color: var(--near-blk); margin-bottom: 10px; }
+    .step-body { font-size: 15px; line-height: 1.7; color: var(--muted); max-width: 400px; max-height: 0; overflow: hidden; opacity: 0; transition: max-height .35s ease, opacity .3s ease; }
+    .step.active .step-body { max-height: 220px; opacity: 1; }
 
-    .app-store-btn { display: inline-block; transition: opacity 0.2s, transform 0.2s; }
-    .app-store-btn:hover { opacity: 0.85; transform: translateY(-1px); }
-    .app-store-btn img { display: block; height: 58px; width: auto; }
+    .showcase-mobile { display: none; }
+    .mobile-phone-wrap { width: 220px; margin: 0 auto 24px; }
+    .mobile-phone-frame { width: 220px; height: 475px; background: var(--near-blk); border-radius: 30px; border: 6px solid #111; overflow: hidden; position: relative; box-shadow: 0 24px 60px -12px rgba(10,34,24,.28); }
+    .mobile-phone-frame img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+    .mobile-notch { position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 52px; height: 12px; background: #111; border-radius: 6px; z-index: 10; }
+    .mobile-nav { display: flex; justify-content: center; align-items: center; gap: 20px; margin-bottom: 16px; }
+    .mobile-nav button { background: none; border: 1px solid var(--border); border-radius: 100px; width: 36px; height: 36px; cursor: pointer; font-size: 15px; display: flex; align-items: center; justify-content: center; color: var(--grn); transition: border-color .2s, background .2s; }
+    .mobile-nav button:hover { background: rgba(26,74,58,.06); border-color: var(--grn); }
+    .mobile-dots { display: flex; gap: 6px; }
+    .mobile-dots span { width: 6px; height: 6px; border-radius: 50%; background: rgba(26,74,58,.18); transition: background .2s, transform .2s; }
+    .mobile-dots span.active { background: var(--grn); transform: scale(1.4); }
+    .mobile-step-text { text-align: center; padding: 0 28px 40px; }
+    .mobile-step-num { font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+    .mobile-step-head { font-family: 'DM Serif Display', serif; font-size: 22px; line-height: 1.25; color: var(--near-blk); margin-bottom: 10px; }
+    .mobile-step-body { font-size: 14px; line-height: 1.65; color: var(--muted); }
 
-    .android-pill { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 50px; padding: 9px 18px; font-size: 13px; font-weight: 500; color: var(--text-muted); }
-    .android-pill .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green-bright); animation: pulse 2s ease-in-out infinite; }
-    .launch-states { font-size: 13px; color: var(--text-muted); margin-top: 4px; letter-spacing: 0.2px; position: relative; z-index: 1; }
+    .section-divider { height: 1px; background: var(--border); max-width: 1100px; margin: 0 auto; }
+    .services { padding: 80px 32px; max-width: 1100px; margin: 0 auto; }
+    .section-label { font-size: 10px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--grn); margin-bottom: 12px; }
+    .section-title { font-family: 'DM Serif Display', serif; font-size: clamp(26px, 4vw, 38px); line-height: 1.15; letter-spacing: -.02em; color: var(--near-blk); margin-bottom: 40px; max-width: 480px; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+    .service-card { border: 1px solid var(--border); border-radius: 16px; padding: 28px; text-decoration: none; color: inherit; background: #fff; transition: border-color .2s, transform .2s, box-shadow .2s; display: block; }
+    .service-card:hover { border-color: rgba(26,74,58,.25); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(10,34,24,.07); }
+    .service-card-label { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .service-card-title { font-size: 17px; font-weight: 600; color: var(--near-blk); margin-bottom: 6px; line-height: 1.3; }
+    .service-card-desc { font-size: 14px; color: var(--muted); line-height: 1.55; }
+    .service-card-arrow { margin-top: 16px; font-size: 13px; color: var(--grn); font-weight: 500; }
 
-    @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.8); } }
+    .guide-callout { padding: 100px 32px; background: var(--grn); }
+    .guide-inner { max-width: 860px; margin: 0 auto; display: flex; gap: 64px; align-items: center; }
+    .guide-text { flex: 1; }
+    .guide-callout .section-label { color: var(--accent); margin-bottom: 16px; }
+    .guide-callout .section-title { color: #fff; max-width: none; margin-bottom: 20px; }
+    .guide-body { font-size: 17px; color: rgba(255,255,255,.65); line-height: 1.7; margin-bottom: 28px; }
+    .guide-body strong { color: #fff; font-weight: 500; }
+    .btn-ghost { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,.3); color: #fff; font-size: 13px; font-weight: 500; padding: 11px 22px; border-radius: 100px; text-decoration: none; transition: border-color .18s, background .18s; }
+    .btn-ghost:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.5); }
+    .guide-stats { display: flex; flex-direction: column; gap: 28px; flex-shrink: 0; }
+    .guide-stat { text-align: center; }
+    .guide-stat-num { font-family: 'DM Serif Display', serif; font-size: 48px; line-height: 1; color: var(--accent); letter-spacing: -.03em; margin-bottom: 4px; }
+    .guide-stat-label { font-size: 12px; color: rgba(255,255,255,.5); font-weight: 500; letter-spacing: .04em; text-transform: uppercase; }
 
-    .services-strip { padding: 48px 24px; background: rgba(0,0,0,0.15); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border); text-align: center; }
-    .services-label { font-size: 14px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 28px; }
-    .services-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; max-width: 800px; margin: 0 auto; }
-    .service-link { display: flex; flex-direction: column; align-items: center; gap: 6px; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 24px 32px; text-decoration: none; transition: border-color 0.2s, transform 0.2s; min-width: 180px; }
-    .service-link:hover { border-color: rgba(62, 207, 110, 0.4); transform: translateY(-2px); }
-    .service-icon { font-size: 28px; }
-    .service-name { font-size: 16px; font-weight: 700; color: var(--text); }
-    .service-desc { font-size: 12px; color: var(--text-muted); }
+    .ca-section { padding: 100px 32px; max-width: 760px; margin: 0 auto; text-align: center; }
+    .ca-section .section-title { margin: 0 auto 20px; }
+    .ca-body { font-size: 17px; color: var(--muted); line-height: 1.7; max-width: 580px; margin: 0 auto 36px; }
+    .ca-body strong { color: var(--near-blk); font-weight: 600; }
 
-    .features { padding: 80px 24px; max-width: 1000px; margin: 0 auto; }
-    .section-label { font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green-bright); text-align: center; margin-bottom: 14px; }
-    .section-title { font-size: clamp(28px, 4vw, 40px); font-weight: 800; letter-spacing: -1px; text-align: center; margin-bottom: 56px; color: var(--text); }
-    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
-    .feature-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 20px; padding: 28px; transition: border-color 0.2s, transform 0.2s; }
-    .feature-card:hover { border-color: rgba(62, 207, 110, 0.3); transform: translateY(-2px); }
-    .feature-icon { font-size: 32px; margin-bottom: 16px; }
-    .feature-title { font-size: 17px; font-weight: 700; margin-bottom: 8px; color: var(--text); }
-    .feature-desc { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+    .footer-cta { padding: 80px 32px; background: var(--warm-dk); border-top: 1px solid var(--border); text-align: center; }
+    .footer-cta h2 { font-family: 'DM Serif Display', serif; font-size: clamp(28px, 4vw, 42px); color: var(--near-blk); margin-bottom: 12px; letter-spacing: -.02em; }
+    .footer-cta p { font-size: 15px; color: var(--muted); margin-bottom: 28px; }
+    .badge-row { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .badge-row a { display: inline-block; transition: opacity .18s; }
+    .badge-row a:hover { opacity: .82; }
+    .badge-row a img { display: block; height: 46px; width: auto; }
 
-    .guide-callout { padding: 80px 24px; max-width: 720px; margin: 0 auto; text-align: center; }
-    .guide-body { font-size: 18px; color: var(--text-muted); line-height: 1.7; max-width: 600px; margin: 0 auto; }
-    .guide-body strong { color: var(--text); }
+    footer { padding: 36px 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .footer-logo img { width: 26px; height: 26px; border-radius: 6px; }
+    .footer-logo span { font-size: 14px; font-weight: 600; color: var(--near-blk); }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+    .footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color .15s; }
+    .footer-links a:hover { color: var(--grn); }
+    .footer-copy { font-size: 12px; color: var(--muted); opacity: .7; }
 
-    .stats { padding: 80px 24px; background: rgba(0,0,0,0.2); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border); }
-    .stats-inner { max-width: 800px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
-    .stat-number { font-size: clamp(36px, 5vw, 52px); font-weight: 800; color: var(--green-bright); letter-spacing: -1px; margin-bottom: 6px; }
-    .stat-label { font-size: 14px; color: var(--text-muted); font-weight: 500; }
-
-    .ca-section { padding: 80px 24px; max-width: 700px; margin: 0 auto; text-align: center; }
-    .ca-section p { font-size: 17px; color: var(--text-muted); line-height: 1.7; }
-    .ca-section p strong { color: var(--text); }
-
-    footer { padding: 48px 24px; border-top: 1px solid var(--card-border); text-align: center; }
-    .footer-logo { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 20px; text-decoration: none; }
-    .footer-logo img { width: 28px; height: 28px; border-radius: 7px; }
-    .footer-logo span { font-size: 16px; font-weight: 700; color: var(--text); }
-    .footer-links { display: flex; justify-content: center; gap: 24px; margin-bottom: 20px; flex-wrap: wrap; }
-    .footer-links a { font-size: 13px; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
-    .footer-links a:hover { color: var(--text); }
-    .footer-copy { font-size: 12px; color: var(--text-muted); opacity: 0.6; }
-    @media (max-width: 600px) { .stats-inner { grid-template-columns: 1fr; } .hero::before, .hero::after { display: none; } }
+    @media (max-width: 860px) { .guide-inner { flex-direction: column; gap: 40px; } .guide-stats { flex-direction: row; justify-content: center; } }
+    @media (max-width: 720px) {
+      .showcase-desktop { display: none; }
+      .showcase-mobile { display: block; }
+      .showcase-wrap { padding: 24px 0 0; }
+      .site-nav { padding: 0 20px; }
+      .hero { padding: 110px 20px 32px; }
+      .services { padding: 60px 20px; }
+      .guide-callout { padding: 64px 20px; }
+      .ca-section { padding: 64px 20px; }
+      .footer-cta { padding: 60px 20px; }
+      footer { flex-direction: column; text-align: center; padding: 28px 20px; }
+      .nav-dl { display: none; }
+      .badge-row a img { height: 40px; }
+    }
   </style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Passing Lane",
-  "description": "App de preparación para el examen de permiso del DMV de California. 348 preguntas reales, simulaciones del examen, XP, insignias, rachas y tabla de clasificación. Inglés y español completo.",
+  "description": "App de preparación para el examen de permiso del DMV de California. 350+ preguntas reales, simulaciones del examen, XP, insignias, rachas y tabla de clasificación. Inglés y español completo.",
   "url": "https://passinglane.app/es/",
   "applicationCategory": "EducationApplication",
   "operatingSystem": "iOS",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD",
-    "description": "Free to start. One-time $7.99 unlock for full access."
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "ratingCount": "4",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
-  "inLanguage": [
-    "es",
-    "en"
-  ],
-  "publisher": {
-    "@type": "Organization",
-    "name": "Passing Lane Solutions LLC",
-    "url": "https://passinglane.app"
-  },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Gratis para empezar. Desbloqueo único de $7.99 para acceso completo." },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "ratingCount": "4", "bestRating": "5", "worstRating": "1" },
+  "inLanguage": ["es","en"],
+  "publisher": { "@type": "Organization", "name": "Passing Lane Solutions LLC", "url": "https://passinglane.app" },
   "downloadUrl": "https://apps.apple.com/app/passing-lane-ca-dmv-permit/id6762711447",
   "installUrl": "https://apps.apple.com/app/passing-lane-ca-dmv-permit/id6762711447"
 }
@@ -161,169 +196,172 @@
 </head>
 <body>
 
-  <div class="drawer-overlay" id="overlay" onclick="closeDrawer()"></div>
-  <nav class="nav-drawer" id="drawer">
-    <a href="/es/" class="active"><span class="icon">🏠</span> Inicio</a>
-    <div class="nav-drawer-divider"></div>
-    <a href="/es/drivers-ed"><span class="icon">📚</span> Educación Vial</a>
-    <a href="/es/driving-school"><span class="icon">🚗</span> Escuelas de Manejo</a>
-    <a href="/es/insurance"><span class="icon">🛡</span> Seguro, Manejo Defensivo y Escuela de Tráfico</a>
-    <div class="nav-drawer-divider"></div>
-    <a href="/es/faq"><span class="icon">❓</span> Preguntas Frecuentes</a>
-    <a href="/es/about"><span class="icon">👨‍👩‍👧</span> Sobre Nosotros</a>
-  </nav>
+<div class="drawer-overlay" id="overlay" onclick="closeDrawer()"></div>
+<div class="nav-drawer" id="drawer">
+  <a href="/es/" class="active">Inicio</a>
+  <div class="nav-drawer-divider"></div>
+  <a href="/es/drivers-ed">Educaci&oacute;n Vial</a>
+  <a href="/es/driving-school">Escuelas de Manejo</a>
+  <a href="/es/insurance">Seguro y Manejo Defensivo</a>
+  <div class="nav-drawer-divider"></div>
+  <a href="/es/faq">Preguntas Frecuentes</a>
+  <a href="/es/about">Sobre Nosotros</a>
+</div>
 
-  <nav>
-    <button class="hamburger" id="hamburger" onclick="toggleDrawer()" aria-label="Menú">
-      <span></span><span></span><span></span>
-    </button>
-    <a href="/es/" class="nav-logo">
-      <img src="/icon.png" alt="Passing Lane" />
-      <span>Passing Lane</span>
-    </a>
-    <div class="nav-right">
-      <div class="lang-toggle">
-        <a href="/">EN</a>
-        <a href="/es/" class="active">ES</a>
-      </div>
-      <a href="https://apps.apple.com/app/passing-lane-ca-dmv-permit/id6762711447" class="nav-app-store" target="_blank" rel="noopener">
-        <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/es-mx?size=250x83" alt="Descargar en el App Store" />
-      </a>
+<nav class="site-nav">
+  <div class="nav-left">
+    <button class="hamburger" id="hamburger" onclick="toggleDrawer()" aria-label="Men&uacute;"><span></span><span></span><span></span></button>
+    <a href="/es/" class="nav-logo"><img src="/icon.png" alt="Passing Lane" /><span>Passing Lane</span></a>
+  </div>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <a href="/">EN</a>
+      <a href="/es/" class="active">ES</a>
     </div>
-  </nav>
+    <a href="https://apps.apple.com/app/passing-lane-ca-dmv-permit/id6762711447" class="nav-dl" target="_blank" rel="noopener">Descargar</a>
+  </div>
+</nav>
 
-  <section class="hero">
-    <img src="/icon.png" alt="Passing Lane" class="hero-icon" />
-    <p class="hero-eyebrow">Preparación para el Permiso de Conducir en California</p>
-    <h1>El camino rápido a tu <span>permiso de CA.</span></h1>
-    <p class="hero-sub">Preguntas reales del DMV, práctica gamificada y apoyo bilingüe — diseñado para que los adolescentes de California pasen a la primera.</p>
-    <p class="hero-guide">Más una guía completa paso a paso del proceso de licencia para adolescentes y padres — desde la educación vial hasta la licencia provisional.</p>
-    <div class="hero-cta-group">
-      <a href="https://apps.apple.com/app/passing-lane-ca-dmv-permit/id6762711447" class="app-store-btn" target="_blank" rel="noopener">
-        <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/es-mx?size=250x83" alt="Descargar en el App Store" />
-      </a>
-      <div class="android-pill">
-        <div class="dot"></div>
-        Android próximamente
-      </div>
-    </div>
-    <p class="launch-states" style="margin-top:16px;">Disponible en California &nbsp;·&nbsp; Florida y Texas próximamente</p>
-  </section>
+<section class="hero">
+  <span class="hero-eyebrow">Preparaci&oacute;n para el Permiso de California</span>
+  <h1>El camino r&aacute;pido a tu<br><em>permiso de CA.</em></h1>
+  <p class="hero-sub">Preguntas reales del DMV, an&aacute;lisis de estudio personalizados y soporte completo en ingl&eacute;s y espa&ntilde;ol &mdash; dise&ntilde;ado para que los j&oacute;venes de California pasen a la primera.</p>
+  <div class="hero-cta">
+    <a href="https://apps.apple.com/app/passing-lane-ca-dmv-permit/id6762711447" class="btn-primary" target="_blank" rel="noopener">Descargar en el App Store</a>
+  </div>
+  <p class="hero-note">Gratis para empezar &middot; California &middot; Florida y Texas pr&oacute;ximamente</p>
+</section>
 
-  <section class="services-strip">
-    <p class="services-label">¿Listo para comenzar? Encuentra lo que necesitas.</p>
-    <div class="services-links">
-      <a href="/es/drivers-ed" class="service-link">
-        <span class="service-icon">📚</span>
-        <span class="service-name">Educación Vial</span>
-        <span class="service-desc">Inscríbete en cursos aprobados por el DMV</span>
-      </a>
-      <a href="/es/driving-school" class="service-link">
-        <span class="service-icon">🚗</span>
-        <span class="service-name">Escuelas de Manejo</span>
-        <span class="service-desc">Inscríbete en clases de manejo</span>
-      </a>
-      <a href="/es/insurance" class="service-link">
-        <span class="service-icon">🛡</span>
-        <span class="service-name">Seguro, Manejo Defensivo y Escuela de Tráfico</span>
-        <span class="service-desc">Cobertura, tarifas y manejo defensivo</span>
-      </a>
-    </div>
-  </section>
-
-  <section class="features">
-    <p class="section-label">Cómo funciona</p>
-    <h2 class="section-title">Todo lo que necesitas. Nada que no.</h2>
-    <div class="feature-grid">
-      <div class="feature-card">
-        <div class="feature-icon">🛑</div>
-        <div class="feature-title">Preguntas Reales del DMV</div>
-        <div class="feature-desc">Más de 350 preguntas del Manual del Automovilista de California — el mismo material que el examen real.</div>
+<div class="showcase-wrap">
+  <div class="showcase-desktop">
+    <div class="phone-sticky">
+      <div class="phone-frame">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="phone-slide active" data-slide="0"><img src="/assets/screenshots/ss-home-light.jpeg" alt="Pantalla de inicio" loading="eager" /></div>
+          <div class="phone-slide" data-slide="1"><img src="/assets/screenshots/ss-study-insights.jpeg" alt="Análisis de estudio" loading="lazy" /></div>
+          <div class="phone-slide" data-slide="2"><img src="/assets/screenshots/ss-practice.jpeg" alt="Módulos de práctica" loading="lazy" /></div>
+          <div class="phone-slide" data-slide="3"><img src="/assets/screenshots/ss-leaderboard.jpeg" alt="Tabla de clasificación" loading="lazy" /></div>
+          <div class="phone-slide" data-slide="4"><img src="/assets/screenshots/ss-guide.jpeg" alt="Guía de licencia" loading="lazy" /></div>
+          <div class="phone-slide" data-slide="5"><img src="/assets/screenshots/ss-profile.jpeg" alt="Perfil y placas" loading="lazy" /></div>
+          <div class="phone-slide" data-slide="6"><img src="/assets/screenshots/ss-home-spanish.jpeg" alt="Inicio en español" loading="lazy" /></div>
+        </div>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">🏆</div>
-        <div class="feature-title">Práctica Gamificada</div>
-        <div class="feature-desc">Gana XP, sube de nivel, mantén rachas y compite con amigos en una tabla de clasificación mientras estudias.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">📋</div>
-        <div class="feature-title">Simulación del Examen</div>
-        <div class="feature-desc">Simulaciones cronometradas que replican el examen escrito real del DMV con 46 preguntas — ponderadas por categoría, igual que el examen de verdad.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🌎</div>
-        <div class="feature-title">Inglés y Español</div>
-        <div class="feature-desc">Soporte bilingüe completo — cada pregunta, respuesta y explicación disponible en inglés y español.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🚦</div>
-        <div class="feature-title">Reconocimiento de Señales</div>
-        <div class="feature-desc">Preguntas visuales con imágenes reales de señales para que las reconozcas a primera vista — no solo por descripción.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">📱</div>
-        <div class="feature-title">Estudia Donde Sea</div>
-        <div class="feature-desc">Listo para uso sin conexión con caché inteligente. Estudia durante el almuerzo, en el carro o en cualquier lugar sin internet.</div>
+      <div class="phone-dots" id="desktopDots">
+        <button class="active" onclick="setSlide(0)" aria-label="Paso 1"></button>
+        <button onclick="setSlide(1)" aria-label="Paso 2"></button>
+        <button onclick="setSlide(2)" aria-label="Paso 3"></button>
+        <button onclick="setSlide(3)" aria-label="Paso 4"></button>
+        <button onclick="setSlide(4)" aria-label="Paso 5"></button>
+        <button onclick="setSlide(5)" aria-label="Paso 6"></button>
+        <button onclick="setSlide(6)" aria-label="Paso 7"></button>
       </div>
     </div>
-  </section>
-
-  <section class="guide-callout">
-    <p class="section-label">Más que un banco de preguntas</p>
-    <h2 class="section-title">El camino completo a tu licencia, trazado.</h2>
-    <p class="guide-body">Passing Lane guía a adolescentes y padres en cada paso — educación vial, la solicitud del permiso, entrenamiento práctico de manejo, el examen de conducir y las reglas de la licencia provisional. Ambas rutas. Sin dudas.</p>
-  </section>
-
-  <section class="stats">
-    <div class="stats-inner">
-      <div>
-        <div class="stat-number">350+</div>
-        <div class="stat-label">Preguntas de Práctica</div>
-      </div>
-      <div>
-        <div class="stat-number">13</div>
-        <div class="stat-label">Categorías del Examen</div>
-      </div>
-      <div>
-        <div class="stat-number">2</div>
-        <div class="stat-label">Idiomas</div>
-      </div>
+    <div class="steps-col">
+      <div class="step active" data-step="0" onclick="setSlide(0)"><div class="step-num">01 &mdash; Ruta de Hoy</div><div class="step-head">Tu camino personalizado a la licencia</div><div class="step-body">La Ruta de Hoy te dice exactamente qu&eacute; estudiar basado en tu progreso real &mdash; no una lista gen&eacute;rica. Tu placa de California est&aacute; al frente, subi&eacute;ndose de nivel con cada XP que ganas.</div></div>
+      <div class="step" data-step="1" onclick="setSlide(1)"><div class="step-num">02 &mdash; An&aacute;lisis de Estudio</div><div class="step-head">Sabe exactamente d&oacute;nde est&aacute;s</div><div class="step-body">La Preparaci&oacute;n para el Examen rastrea cuatro criterios reales &mdash; cobertura, exactitud, m&oacute;dulos d&eacute;biles y una simulaci&oacute;n reciente. El An&aacute;lisis de Estudio muestra tus m&oacute;dulos m&aacute;s fuertes y d&eacute;biles para que siempre sepas en qu&eacute; enfocarte.</div></div>
+      <div class="step" data-step="2" onclick="setSlide(2)"><div class="step-num">03 &mdash; Pr&aacute;ctica</div><div class="step-head">350+ preguntas reales del DMV de CA</div><div class="step-body">Las 13 categor&iacute;as del DMV con seguimiento de dominio, ejercicios de preguntas fallidas, repeticiones completas y una Simulaci&oacute;n del Examen con el formato exacto de 46 preguntas del DMV de CA.</div></div>
+      <div class="step" data-step="3" onclick="setSlide(3)"><div class="step-num">04 &mdash; Rango</div><div class="step-head">Estudia con amigos</div><div class="step-body">Invita a amigos y familiares a comparar el progreso en la tabla de clasificaci&oacute;n de XP. La placa de cada quien muestra su dise&ntilde;o ganado &mdash; un poco de competencia amistosa motiva a los j&oacute;venes a seguir estudiando.</div></div>
+      <div class="step" data-step="4" onclick="setSlide(4)"><div class="step-num">05 &mdash; Gu&iacute;a</div><div class="step-head">Paso a paso hasta tu licencia</div><div class="step-body">La gu&iacute;a integrada cubre cada etapa del proceso de licencia en California &mdash; educaci&oacute;n vial, permiso, entrenamiento pr&aacute;ctico y el examen de manejo. Incluye enlaces para inscribirse en los cursos requeridos en cada paso.</div></div>
+      <div class="step" data-step="5" onclick="setSlide(5)"><div class="step-num">06 &mdash; Perfil</div><div class="step-head">Gana tu placa</div><div class="step-body">Ocho dise&ntilde;os de placas de California se desbloquean conforme subes de nivel &mdash; Oro del Desierto, Noche de la Ciudad, Paseo Isleño y m&aacute;s. Insignias, rachas y XP hacen que cada sesi&oacute;n valga.</div></div>
+      <div class="step" data-step="6" onclick="setSlide(6)"><div class="step-num">07 &mdash; Bilingüe</div><div class="step-head">Ingl&eacute;s y espa&ntilde;ol completos</div><div class="step-body">Cada pantalla, cada pregunta, cada explicaci&oacute;n &mdash; disponible en ingl&eacute;s y espa&ntilde;ol. Cambia en cualquier momento desde tu perfil. Dise&ntilde;ado especialmente para la comunidad bilingüe de California.</div></div>
     </div>
-  </section>
+  </div>
+</div>
 
-  <section class="ca-section">
-    <p class="section-label">Diseñado para California</p>
-    <h2 class="section-title">Conoce la carretera antes de estar en ella.</h2>
-    <p>El examen escrito del DMV de California tiene <strong>46 preguntas</strong>. Necesitas responder correctamente <strong>38 (83%) para pasar</strong>. La mayoría de los adolescentes que reprueban lo hacen porque estudiaron el material equivocado o se les acabó el tiempo. Passing Lane resuelve ambos problemas.</p>
-  </section>
+<div class="showcase-mobile">
+  <div class="mobile-phone-wrap"><div class="mobile-phone-frame"><div class="mobile-notch"></div><img id="mobileImg" src="/assets/screenshots/ss-home-light.jpeg" alt="Captura de pantalla" /></div></div>
+  <div class="mobile-nav">
+    <button onclick="mobileGo(-1)" aria-label="Anterior">&#8592;</button>
+    <div class="mobile-dots" id="mobileDots"><span class="active"></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <button onclick="mobileGo(1)" aria-label="Siguiente">&#8594;</button>
+  </div>
+  <div class="mobile-step-text">
+    <div class="mobile-step-num" id="mobileNum">01 &mdash; Ruta de Hoy</div>
+    <div class="mobile-step-head" id="mobileHead">Tu camino personalizado a la licencia</div>
+    <div class="mobile-step-body" id="mobileBody">La Ruta de Hoy te dice exactamente qu&eacute; estudiar basado en tu progreso real.</div>
+  </div>
+</div>
 
-  <footer>
-    <a href="/es/" class="footer-logo">
-      <img src="/icon.png" alt="Passing Lane" />
-      <span>Passing Lane</span>
-    </a>
-    <div class="footer-links">
-      <a href="/es/drivers-ed">Educación Vial</a>
-      <a href="/es/driving-school">Escuelas de Manejo</a>
-      <a href="/es/insurance">Seguro y Manejo Defensivo</a>
-      <a href="/es/faq">Preguntas Frecuentes</a>
-      <a href="https://apps.apple.com/app/id6762711447?action=write-review" target="_blank" rel="noopener">Dejar una reseña ★</a>
+<div class="section-divider"></div>
+
+<section class="services">
+  <p class="section-label">Listo para empezar</p>
+  <h2 class="section-title">Todo lo que necesitas en el camino a tu licencia.</h2>
+  <div class="services-grid">
+    <a href="/es/drivers-ed" class="service-card"><p class="service-card-label">Paso 1</p><p class="service-card-title">Educaci&oacute;n Vial</p><p class="service-card-desc">California requiere 30 horas de educaci&oacute;n vial aprobada por el DMV antes de obtener tu permiso. Encuentra e inscr&iacute;bete en cursos certificados en l&iacute;nea o en el sal&oacute;n.</p><p class="service-card-arrow">Encontrar cursos &rarr;</p></a>
+    <a href="/es/driving-school" class="service-card"><p class="service-card-label">Paso 4</p><p class="service-card-title">Entrenamiento Pr&aacute;ctico de Manejo</p><p class="service-card-desc">Se requieren seis horas de instrucci&oacute;n profesional al volante. Conect&aacute;te con escuelas de manejo certificadas cerca de ti.</p><p class="service-card-arrow">Encontrar escuelas &rarr;</p></a>
+    <a href="/es/insurance" class="service-card"><p class="service-card-label">Despu&eacute;s del examen</p><p class="service-card-title">Seguro y Manejo Defensivo</p><p class="service-card-desc">Compara tarifas de seguro para j&oacute;venes conductores, cursos de manejo defensivo y opciones de escuela de tr&aacute;fico para nuevos conductores en California.</p><p class="service-card-arrow">Saber m&aacute;s &rarr;</p></a>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="guide-callout">
+  <div class="guide-inner">
+    <div class="guide-text">
+      <p class="section-label">M&aacute;s que un banco de preguntas</p>
+      <h2 class="section-title">El camino completo a tu licencia, trazado.</h2>
+      <p class="guide-body">Passing Lane gu&iacute;a a j&oacute;venes y padres en cada paso &mdash; <strong>educaci&oacute;n vial</strong>, la solicitud del permiso, <strong>entrenamiento pr&aacute;ctico de manejo</strong>, el examen de conducir y las reglas de la licencia provisional. Ambas rutas. Sin dudas.</p>
+      <a href="https://apps.apple.com/app/passing-lane-ca-dmv-permit/id6762711447" class="btn-ghost" target="_blank" rel="noopener">Descargar gratis &rarr;</a>
     </div>
-    <p class="footer-copy">© 2026 Passing Lane Solutions LLC. Todos los derechos reservados. · <a href="/es/privacy" style="color:inherit;">Privacidad</a> · <a href="/es/terms" style="color:inherit;">Términos</a></p>
-  </footer>
+    <div class="guide-stats">
+      <div class="guide-stat"><div class="guide-stat-num">350+</div><div class="guide-stat-label">Preguntas de Pr&aacute;ctica</div></div>
+      <div class="guide-stat"><div class="guide-stat-num">13</div><div class="guide-stat-label">Categor&iacute;as del Examen</div></div>
+      <div class="guide-stat"><div class="guide-stat-num">2</div><div class="guide-stat-label">Idiomas</div></div>
+    </div>
+  </div>
+</section>
 
-  <script>
-    function toggleDrawer() {
-      const open = document.getElementById('drawer').classList.toggle('open');
-      document.getElementById('hamburger').classList.toggle('open', open);
-      document.getElementById('overlay').classList.toggle('open', open);
-    }
-    function closeDrawer() {
-      document.getElementById('drawer').classList.remove('open');
-      document.getElementById('hamburger').classList.remove('open');
-      document.getElementById('overlay').classList.remove('open');
-    }
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
-  </script>
+<section class="ca-section">
+  <p class="section-label">Dise&ntilde;ado para California</p>
+  <h2 class="section-title">Conoce la carretera antes de estar en ella.</h2>
+  <p class="ca-body">El examen escrito del DMV de California tiene <strong>46 preguntas</strong>. Necesitas responder correctamente <strong>38 para pasar</strong> &mdash; eso es 83%. La mayor&iacute;a de los j&oacute;venes que reprueban lo hacen porque estudiaron el material equivocado o se les acab&oacute; el tiempo. Passing Lane resuelve ambos problemas.</p>
+  <a href="https://apps.apple.com/app/passing-lane-ca-dmv-permit/id6762711447" class="btn-primary" target="_blank" rel="noopener">Empieza a estudiar gratis</a>
+</section>
+
+<div class="footer-cta">
+  <h2>&iquest;Listo para pasar?</h2>
+  <p>Gratis para descargar &mdash; las primeras 100 preguntas son tuyas.</p>
+  <div class="badge-row">
+    <a href="https://apps.apple.com/app/passing-lane-ca-dmv-permit/id6762711447" target="_blank" rel="noopener" aria-label="Download on the App Store"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" /></a>
+    <a href="https://apps.apple.com/app/passing-lane-ca-dmv-permit/id6762711447" target="_blank" rel="noopener" aria-label="Descargar en el App Store"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/es-mx?size=250x83" alt="Descargar en el App Store" /></a>
+  </div>
+</div>
+
+<footer>
+  <a href="/es/" class="footer-logo"><img src="/icon.png" alt="Passing Lane" /><span>Passing Lane</span></a>
+  <div class="footer-links">
+    <a href="/es/drivers-ed">Educaci&oacute;n Vial</a>
+    <a href="/es/driving-school">Escuelas de Manejo</a>
+    <a href="/es/insurance">Seguro y Manejo Defensivo</a>
+    <a href="/es/faq">Preguntas Frecuentes</a>
+    <a href="/es/about">Sobre Nosotros</a>
+    <a href="https://apps.apple.com/app/id6762711447?action=write-review" target="_blank" rel="noopener">Dejar una rese&ntilde;a</a>
+  </div>
+  <p class="footer-copy">&copy; 2026 Passing Lane Solutions LLC &middot; <a href="/es/privacy" style="color:inherit;">Privacidad</a> &middot; <a href="/es/terms" style="color:inherit;">T&eacute;rminos</a></p>
+</footer>
+
+<script>
+const SLIDES=[
+  {img:'/assets/screenshots/ss-home-light.jpeg',num:'01 \u2014 Ruta de Hoy',head:'Tu camino personalizado a la licencia',body:'La Ruta de Hoy te dice exactamente qu\u00e9 estudiar basado en tu progreso real \u2014 no una lista gen\u00e9rica.'},
+  {img:'/assets/screenshots/ss-study-insights.jpeg',num:'02 \u2014 An\u00e1lisis de Estudio',head:'Sabe exactamente d\u00f3nde est\u00e1s',body:'La Preparaci\u00f3n para el Examen rastrea cuatro criterios reales. El An\u00e1lisis de Estudio muestra tus m\u00f3dulos m\u00e1s fuertes y d\u00e9biles.'},
+  {img:'/assets/screenshots/ss-practice.jpeg',num:'03 \u2014 Pr\u00e1ctica',head:'350+ preguntas reales del DMV de CA',body:'Las 13 categor\u00edas del DMV con seguimiento de dominio, ejercicios de preguntas fallidas y una Simulaci\u00f3n del Examen completa.'},
+  {img:'/assets/screenshots/ss-leaderboard.jpeg',num:'04 \u2014 Rango',head:'Estudia con amigos',body:'Invita a amigos y familiares a comparar el progreso en la tabla de clasificaci\u00f3n de XP.'},
+  {img:'/assets/screenshots/ss-guide.jpeg',num:'05 \u2014 Gu\u00eda',head:'Paso a paso hasta tu licencia',body:'Cada etapa del proceso de licencia en California, con enlaces para inscribirse en los cursos requeridos.'},
+  {img:'/assets/screenshots/ss-profile.jpeg',num:'06 \u2014 Perfil',head:'Gana tu placa',body:'Ocho dise\u00f1os de placas de California se desbloquean conforme subes de nivel a trav\u00e9s del XP.'},
+  {img:'/assets/screenshots/ss-home-spanish.jpeg',num:'07 \u2014 Biling\u00fce',head:'Ingl\u00e9s y espa\u00f1ol completos',body:'Cada pantalla, cada pregunta \u2014 disponible en ingl\u00e9s y espa\u00f1ol.'},
+];
+let current=0;
+function setSlide(n){current=n;document.querySelectorAll('.phone-slide').forEach((el,i)=>el.classList.toggle('active',i===n));document.querySelectorAll('.step').forEach((el,i)=>el.classList.toggle('active',i===n));document.querySelectorAll('#desktopDots button').forEach((el,i)=>el.classList.toggle('active',i===n));updateMobile(n);}
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting&&e.intersectionRatio>0.5){const idx=parseInt(e.target.dataset.step);if(idx!==current)setSlide(idx);}});},{threshold:0.5,rootMargin:'-20% 0px -20% 0px'});
+document.querySelectorAll('.step').forEach(el=>obs.observe(el));
+function updateMobile(n){const s=SLIDES[n];const img=document.getElementById('mobileImg');img.style.opacity='0';setTimeout(()=>{img.src=s.img;img.alt=s.head;img.style.opacity='1';},180);document.getElementById('mobileNum').textContent=s.num;document.getElementById('mobileHead').textContent=s.head;document.getElementById('mobileBody').textContent=s.body;document.querySelectorAll('#mobileDots span').forEach((el,i)=>el.classList.toggle('active',i===n));}
+function mobileGo(dir){setSlide((current+dir+SLIDES.length)%SLIDES.length);}
+document.getElementById('mobileImg').style.transition='opacity .2s ease';
+function toggleDrawer(){const open=document.getElementById('drawer').classList.toggle('open');document.getElementById('hamburger').classList.toggle('open',open);document.getElementById('overlay').classList.toggle('open',open);}
+function closeDrawer(){document.getElementById('drawer').classList.remove('open');document.getElementById('hamburger').classList.remove('open');document.getElementById('overlay').classList.remove('open');}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();});
+</script>
 </body>
 </html>
