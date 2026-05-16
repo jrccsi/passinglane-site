@@ -36,8 +36,7 @@
     /* ── NAV ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      padding: 0 32px;
-      height: 64px;
+      padding: 0 32px; height: 64px;
       display: flex; align-items: center; justify-content: space-between;
       background: rgba(245,244,239,.88);
       backdrop-filter: blur(14px);
@@ -58,17 +57,9 @@
     .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
     .hamburger.open span:nth-child(2) { opacity: 0; }
     .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-
-    .nav-logo {
-      display: flex; align-items: center; gap: 9px;
-      text-decoration: none;
-    }
+    .nav-logo { display: flex; align-items: center; gap: 9px; text-decoration: none; }
     .nav-logo img { width: 30px; height: 30px; border-radius: 7px; }
-    .nav-logo span {
-      font-size: 16px; font-weight: 600;
-      color: var(--near-blk); letter-spacing: -.2px;
-    }
-
+    .nav-logo span { font-size: 16px; font-weight: 600; color: var(--near-blk); letter-spacing: -.2px; }
     .nav-right { display: flex; align-items: center; gap: 14px; }
     .lang-toggle {
       display: flex; align-items: center; gap: 2px;
@@ -82,16 +73,13 @@
       text-decoration: none; color: var(--muted);
       transition: background .15s, color .15s;
     }
-    .lang-toggle a.active {
-      background: var(--grn); color: #fff;
-    }
+    .lang-toggle a.active { background: var(--grn); color: #fff; }
     .nav-dl {
       display: inline-flex; align-items: center; gap: 7px;
       background: var(--grn); color: #fff;
       font-size: 13px; font-weight: 600;
       padding: 9px 18px; border-radius: 100px;
-      text-decoration: none; transition: background .18s;
-      white-space: nowrap;
+      text-decoration: none; transition: background .18s; white-space: nowrap;
     }
     .nav-dl:hover { background: var(--grn-mid); }
 
@@ -103,47 +91,44 @@
     }
     .drawer-overlay.open { display: block; }
     .nav-drawer {
-      position: fixed; top: 0; left: 0; width: 260px; height: 100vh;
+      position: fixed; top: 0; left: 0;
+      width: 240px; height: 100vh;
       background: var(--warm); border-right: 1px solid var(--border);
       z-index: 150; transform: translateX(-100%);
       transition: transform .28s cubic-bezier(.4,0,.2,1);
-      display: flex; flex-direction: column;
-      padding: 80px 12px 40px; gap: 2px;
+      padding: 76px 16px 32px;
     }
     .nav-drawer.open { transform: translateX(0); }
     .nav-drawer a {
-      display: flex; align-items: center; gap: 12px;
-      padding: 11px 14px; border-radius: 10px;
+      display: block;
+      padding: 9px 12px; border-radius: 8px;
       text-decoration: none; color: var(--muted);
       font-size: 14px; font-weight: 500;
       transition: background .15s, color .15s;
+      line-height: 1.3;
     }
     .nav-drawer a:hover, .nav-drawer a.active {
       background: rgba(26,74,58,.06); color: var(--grn);
     }
-    .nav-drawer-divider { height: 1px; background: var(--border); margin: 6px 2px; }
+    .nav-drawer-divider { height: 1px; background: var(--border); margin: 8px 0; }
 
     /* ── HERO ── */
     .hero {
       padding: 140px 32px 80px;
-      max-width: 780px; margin: 0 auto;
-      text-align: center;
+      max-width: 780px; margin: 0 auto; text-align: center;
     }
     .hero-eyebrow {
       display: inline-block;
       font-size: 11px; font-weight: 600;
       letter-spacing: .12em; text-transform: uppercase;
-      color: var(--grn);
-      background: rgba(26,74,58,.07);
-      padding: 5px 14px; border-radius: 100px;
-      margin-bottom: 24px;
+      color: var(--grn); background: rgba(26,74,58,.07);
+      padding: 5px 14px; border-radius: 100px; margin-bottom: 24px;
     }
     .hero h1 {
       font-family: 'DM Serif Display', serif;
       font-size: clamp(40px, 7vw, 72px);
       line-height: 1.06; letter-spacing: -.03em;
-      color: var(--near-blk);
-      margin-bottom: 20px;
+      color: var(--near-blk); margin-bottom: 20px;
     }
     .hero h1 em { font-style: italic; color: var(--grn); }
     .hero-sub {
@@ -151,10 +136,7 @@
       line-height: 1.65; color: var(--muted);
       max-width: 520px; margin: 0 auto 36px;
     }
-    .hero-cta {
-      display: flex; align-items: center;
-      justify-content: center; gap: 14px; flex-wrap: wrap;
-    }
+    .hero-cta { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
     .btn-primary {
       display: inline-flex; align-items: center; gap: 8px;
       background: var(--grn); color: #fff;
@@ -163,29 +145,17 @@
       text-decoration: none; transition: background .18s;
     }
     .btn-primary:hover { background: var(--grn-mid); }
-    .hero-note {
-      font-size: 13px; color: var(--muted);
-      margin-top: 14px; letter-spacing: .01em;
-    }
+    .hero-note { font-size: 13px; color: var(--muted); margin-top: 14px; }
 
     /* ── CAROUSEL ── */
-    .showcase-wrap {
-      max-width: 1100px; margin: 0 auto;
-      padding: 0 32px 120px;
-    }
-    .showcase-desktop {
-      display: flex; gap: 80px; align-items: flex-start;
-    }
-    .phone-sticky {
-      flex-shrink: 0; width: var(--phone-w);
-      position: sticky; top: 88px;
-    }
+    .showcase-wrap { max-width: 1100px; margin: 0 auto; padding: 0 32px 120px; }
+    .showcase-desktop { display: flex; gap: 80px; align-items: flex-start; }
+    .phone-sticky { flex-shrink: 0; width: var(--phone-w); position: sticky; top: 88px; }
     .phone-frame {
       width: var(--phone-w);
       height: calc(var(--phone-w) * 2.16);
       background: var(--near-blk);
-      border-radius: var(--phone-r);
-      border: 8px solid #111;
+      border-radius: var(--phone-r); border: 8px solid #111;
       position: relative; overflow: hidden;
       box-shadow:
         0 0 0 1px rgba(255,255,255,.06),
@@ -212,10 +182,7 @@
       width: 100%; height: 100%;
       object-fit: cover; object-position: top; display: block;
     }
-    .phone-dots {
-      display: flex; justify-content: center;
-      gap: 7px; margin-top: 18px;
-    }
+    .phone-dots { display: flex; justify-content: center; gap: 7px; margin-top: 18px; }
     .phone-dots button {
       width: 7px; height: 7px; border-radius: 50%;
       border: none; background: rgba(26,74,58,.18);
@@ -223,20 +190,16 @@
       transition: background .2s, transform .2s;
     }
     .phone-dots button.active { background: var(--grn); transform: scale(1.35); }
-
     .steps-col { flex: 1; padding-top: 16px; }
     .step {
       padding: 32px 0 32px 28px;
       border-left: 1.5px solid var(--border);
-      cursor: pointer; transition: border-color .2s;
-      position: relative;
+      cursor: pointer; transition: border-color .2s; position: relative;
     }
     .step::before {
-      content: ''; position: absolute;
-      left: -5px; top: 38px;
+      content: ''; position: absolute; left: -5px; top: 38px;
       width: 8px; height: 8px; border-radius: 50%;
-      background: var(--border);
-      transition: background .2s, transform .2s;
+      background: var(--border); transition: background .2s, transform .2s;
     }
     .step.active { border-color: var(--accent); }
     .step.active::before { background: var(--accent); transform: scale(1.4); }
@@ -259,7 +222,7 @@
     }
     .step.active .step-body { max-height: 220px; opacity: 1; }
 
-    /* ── MOBILE CAROUSEL ── */
+    /* ── MOBILE ── */
     .showcase-mobile { display: none; }
     .mobile-phone-wrap { width: 220px; margin: 0 auto 28px; }
     .mobile-phone-frame {
@@ -309,21 +272,13 @@
       font-size: 22px; line-height: 1.25;
       color: var(--near-blk); margin-bottom: 8px;
     }
-    .mobile-step-text .step-body {
-      font-size: 14px; line-height: 1.65; color: var(--muted);
-    }
+    .mobile-step-text .step-body { font-size: 14px; line-height: 1.65; color: var(--muted); }
 
     /* ── DIVIDER ── */
-    .section-divider {
-      height: 1px; background: var(--border);
-      max-width: 1100px; margin: 0 auto;
-    }
+    .section-divider { height: 1px; background: var(--border); max-width: 1100px; margin: 0 auto; }
 
     /* ── SERVICES ── */
-    .services {
-      padding: 80px 32px;
-      max-width: 1100px; margin: 0 auto;
-    }
+    .services { padding: 80px 32px; max-width: 1100px; margin: 0 auto; }
     .section-label {
       font-size: 10px; font-weight: 600;
       letter-spacing: .14em; text-transform: uppercase;
@@ -333,8 +288,7 @@
       font-family: 'DM Serif Display', serif;
       font-size: clamp(26px, 4vw, 38px);
       line-height: 1.15; letter-spacing: -.02em;
-      color: var(--near-blk); margin-bottom: 40px;
-      max-width: 480px;
+      color: var(--near-blk); margin-bottom: 40px; max-width: 480px;
     }
     .services-grid {
       display: grid;
@@ -342,12 +296,9 @@
       gap: 16px;
     }
     .service-card {
-      border: 1px solid var(--border);
-      border-radius: 16px; padding: 28px;
-      text-decoration: none; color: inherit;
-      background: #fff;
-      transition: border-color .2s, transform .2s, box-shadow .2s;
-      display: block;
+      border: 1px solid var(--border); border-radius: 16px; padding: 28px;
+      text-decoration: none; color: inherit; background: #fff;
+      transition: border-color .2s, transform .2s, box-shadow .2s; display: block;
     }
     .service-card:hover {
       border-color: rgba(26,74,58,.25);
@@ -359,35 +310,17 @@
       letter-spacing: .1em; text-transform: uppercase;
       color: var(--accent); margin-bottom: 10px;
     }
-    .service-card-title {
-      font-size: 17px; font-weight: 600;
-      color: var(--near-blk); margin-bottom: 6px;
-      line-height: 1.3;
-    }
-    .service-card-desc {
-      font-size: 14px; color: var(--muted); line-height: 1.55;
-    }
-    .service-card-arrow {
-      margin-top: 16px; font-size: 13px;
-      color: var(--grn); font-weight: 500;
-    }
+    .service-card-title { font-size: 17px; font-weight: 600; color: var(--near-blk); margin-bottom: 6px; line-height: 1.3; }
+    .service-card-desc { font-size: 14px; color: var(--muted); line-height: 1.55; }
+    .service-card-arrow { margin-top: 16px; font-size: 13px; color: var(--grn); font-weight: 500; }
 
     /* ── GUIDE CALLOUT ── */
-    .guide-callout {
-      padding: 100px 32px;
-      background: var(--grn);
-    }
-    .guide-inner {
-      max-width: 860px; margin: 0 auto;
-      display: flex; gap: 64px; align-items: center;
-    }
+    .guide-callout { padding: 100px 32px; background: var(--grn); }
+    .guide-inner { max-width: 860px; margin: 0 auto; display: flex; gap: 64px; align-items: center; }
     .guide-text { flex: 1; }
     .guide-callout .section-label { color: var(--accent); margin-bottom: 16px; }
     .guide-callout .section-title { color: #fff; max-width: none; margin-bottom: 20px; }
-    .guide-body {
-      font-size: 17px; color: rgba(255,255,255,.65);
-      line-height: 1.7; margin-bottom: 28px;
-    }
+    .guide-body { font-size: 17px; color: rgba(255,255,255,.65); line-height: 1.7; margin-bottom: 28px; }
     .guide-body strong { color: #fff; font-weight: 500; }
     .btn-ghost {
       display: inline-flex; align-items: center; gap: 8px;
@@ -397,16 +330,12 @@
       text-decoration: none; transition: border-color .18s, background .18s;
     }
     .btn-ghost:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.5); }
-    .guide-stats {
-      display: flex; flex-direction: column; gap: 28px;
-      flex-shrink: 0;
-    }
+    .guide-stats { display: flex; flex-direction: column; gap: 28px; flex-shrink: 0; }
     .guide-stat { text-align: center; }
     .guide-stat-num {
       font-family: 'DM Serif Display', serif;
-      font-size: 48px; line-height: 1;
-      color: var(--accent); letter-spacing: -.03em;
-      margin-bottom: 4px;
+      font-size: 48px; line-height: 1; color: var(--accent);
+      letter-spacing: -.03em; margin-bottom: 4px;
     }
     .guide-stat-label {
       font-size: 12px; color: rgba(255,255,255,.5);
@@ -414,19 +343,12 @@
     }
 
     /* ── CA SECTION ── */
-    .ca-section {
-      padding: 100px 32px;
-      max-width: 760px; margin: 0 auto;
-      text-align: center;
-    }
+    .ca-section { padding: 100px 32px; max-width: 760px; margin: 0 auto; text-align: center; }
     .ca-section .section-title { margin: 0 auto 20px; }
-    .ca-body {
-      font-size: 17px; color: var(--muted);
-      line-height: 1.7; max-width: 580px; margin: 0 auto 36px;
-    }
+    .ca-body { font-size: 17px; color: var(--muted); line-height: 1.7; max-width: 580px; margin: 0 auto 36px; }
     .ca-body strong { color: var(--near-blk); font-weight: 600; }
 
-    /* ── FOOTER ── */
+    /* ── FOOTER CTA ── */
     .footer-cta {
       padding: 80px 32px;
       background: var(--warm-dk);
@@ -436,45 +358,27 @@
     .footer-cta h2 {
       font-family: 'DM Serif Display', serif;
       font-size: clamp(28px, 4vw, 42px);
-      color: var(--near-blk); margin-bottom: 12px;
-      letter-spacing: -.02em;
+      color: var(--near-blk); margin-bottom: 12px; letter-spacing: -.02em;
     }
-    .footer-cta p {
-      font-size: 15px; color: var(--muted);
-      margin-bottom: 28px;
-    }
-    .badge-row {
-      display: flex; justify-content: center;
-      gap: 14px; flex-wrap: wrap;
-    }
-    .badge-row a img { height: 46px; }
+    .footer-cta p { font-size: 15px; color: var(--muted); margin-bottom: 28px; }
+    .badge-row { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .badge-row a { display: inline-block; transition: opacity .18s; }
+    .badge-row a:hover { opacity: .82; }
+    .badge-row a img { display: block; height: 46px; width: auto; }
 
+    /* ── FOOTER ── */
     footer {
-      padding: 36px 32px;
-      border-top: 1px solid var(--border);
+      padding: 36px 32px; border-top: 1px solid var(--border);
       display: flex; align-items: center;
       justify-content: space-between; flex-wrap: wrap; gap: 16px;
     }
-    .footer-logo {
-      display: flex; align-items: center; gap: 8px;
-      text-decoration: none;
-    }
+    .footer-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
     .footer-logo img { width: 26px; height: 26px; border-radius: 6px; }
-    .footer-logo span {
-      font-size: 14px; font-weight: 600; color: var(--near-blk);
-    }
-    .footer-links {
-      display: flex; gap: 20px; flex-wrap: wrap;
-      justify-content: center;
-    }
-    .footer-links a {
-      font-size: 13px; color: var(--muted);
-      text-decoration: none; transition: color .15s;
-    }
+    .footer-logo span { font-size: 14px; font-weight: 600; color: var(--near-blk); }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+    .footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color .15s; }
     .footer-links a:hover { color: var(--grn); }
-    .footer-copy {
-      font-size: 12px; color: var(--muted); opacity: .7;
-    }
+    .footer-copy { font-size: 12px; color: var(--muted); opacity: .7; }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 860px) {
@@ -498,10 +402,8 @@
 </head>
 <body>
 
-<!-- ── DRAWER OVERLAY ── -->
 <div class="drawer-overlay" id="overlay" onclick="closeDrawer()"></div>
 
-<!-- ── NAV DRAWER ── -->
 <nav class="nav-drawer" id="drawer">
   <a href="/" class="active">Home</a>
   <div class="nav-drawer-divider"></div>
@@ -513,7 +415,6 @@
   <a href="/about">About Us</a>
 </nav>
 
-<!-- ── NAV ── -->
 <nav>
   <div class="nav-left">
     <button class="hamburger" id="hamburger" onclick="toggleDrawer()" aria-label="Menu">
@@ -529,53 +430,33 @@
       <a href="/" class="active">EN</a>
       <a href="/es/">ES</a>
     </div>
-    <a href="https://apps.apple.com/app/passing-lane-ca-dmv-permit/id6762711447" class="nav-dl" target="_blank" rel="noopener">
-      Download
-    </a>
+    <a href="https://apps.apple.com/app/passing-lane-ca-dmv-permit/id6762711447" class="nav-dl" target="_blank" rel="noopener">Download</a>
   </div>
 </nav>
 
-<!-- ── HERO ── -->
 <section class="hero">
   <span class="hero-eyebrow">California Permit Test Prep</span>
   <h1>The fast lane to your<br><em>CA permit.</em></h1>
   <p class="hero-sub">Real DMV questions, personalized study insights, and full English and Spanish support &mdash; built for California teens who want to pass the first time.</p>
   <div class="hero-cta">
-    <a href="https://apps.apple.com/app/passing-lane-ca-dmv-permit/id6762711447" class="btn-primary" target="_blank" rel="noopener">
-      Download on the App Store
-    </a>
+    <a href="https://apps.apple.com/app/passing-lane-ca-dmv-permit/id6762711447" class="btn-primary" target="_blank" rel="noopener">Download on the App Store</a>
   </div>
   <p class="hero-note">Free to start &middot; California &middot; Florida &amp; Texas coming soon</p>
 </section>
 
-<!-- ── DESKTOP CAROUSEL ── -->
 <div class="showcase-wrap">
   <div class="showcase-desktop">
     <div class="phone-sticky">
       <div class="phone-frame">
         <div class="phone-notch"></div>
         <div class="phone-screen">
-          <div class="phone-slide active" data-slide="0">
-            <img src="assets/screenshots/ss-home-light.jpeg" alt="Passing Lane home screen with Today's Route" loading="eager" />
-          </div>
-          <div class="phone-slide" data-slide="1">
-            <img src="assets/screenshots/ss-study-insights.jpeg" alt="Study Insights with Exam Readiness tracker" loading="lazy" />
-          </div>
-          <div class="phone-slide" data-slide="2">
-            <img src="assets/screenshots/ss-practice.jpeg" alt="Practice modules" loading="lazy" />
-          </div>
-          <div class="phone-slide" data-slide="3">
-            <img src="assets/screenshots/ss-leaderboard.jpeg" alt="Friends leaderboard" loading="lazy" />
-          </div>
-          <div class="phone-slide" data-slide="4">
-            <img src="assets/screenshots/ss-guide.jpeg" alt="Road to a License guide" loading="lazy" />
-          </div>
-          <div class="phone-slide" data-slide="5">
-            <img src="assets/screenshots/ss-profile.jpeg" alt="Profile and plate skins" loading="lazy" />
-          </div>
-          <div class="phone-slide" data-slide="6">
-            <img src="assets/screenshots/ss-home-spanish.jpeg" alt="Home screen in Spanish" loading="lazy" />
-          </div>
+          <div class="phone-slide active" data-slide="0"><img src="assets/screenshots/ss-home-light.jpeg" alt="Passing Lane home screen" loading="eager" /></div>
+          <div class="phone-slide" data-slide="1"><img src="assets/screenshots/ss-study-insights.jpeg" alt="Study Insights" loading="lazy" /></div>
+          <div class="phone-slide" data-slide="2"><img src="assets/screenshots/ss-practice.jpeg" alt="Practice modules" loading="lazy" /></div>
+          <div class="phone-slide" data-slide="3"><img src="assets/screenshots/ss-leaderboard.jpeg" alt="Friends leaderboard" loading="lazy" /></div>
+          <div class="phone-slide" data-slide="4"><img src="assets/screenshots/ss-guide.jpeg" alt="Road to a License guide" loading="lazy" /></div>
+          <div class="phone-slide" data-slide="5"><img src="assets/screenshots/ss-profile.jpeg" alt="Profile and plate skins" loading="lazy" /></div>
+          <div class="phone-slide" data-slide="6"><img src="assets/screenshots/ss-home-spanish.jpeg" alt="Home in Spanish" loading="lazy" /></div>
         </div>
       </div>
       <div class="phone-dots" id="desktopDots">
@@ -588,7 +469,6 @@
         <button onclick="setSlide(6)" aria-label="Step 7"></button>
       </div>
     </div>
-
     <div class="steps-col">
       <div class="step active" data-step="0" onclick="setSlide(0)">
         <div class="step-num">01 &mdash; Today&rsquo;s Route</div>
@@ -629,7 +509,6 @@
   </div>
 </div>
 
-<!-- ── MOBILE CAROUSEL ── -->
 <div class="showcase-mobile">
   <div class="mobile-phone-wrap">
     <div class="mobile-phone-frame">
@@ -653,7 +532,6 @@
 
 <div class="section-divider"></div>
 
-<!-- ── SERVICES ── -->
 <section class="services">
   <p class="section-label">Ready to get started</p>
   <h2 class="section-title">Everything you need on the road to your license.</h2>
@@ -681,16 +559,13 @@
 
 <div class="section-divider"></div>
 
-<!-- ── GUIDE CALLOUT ── -->
 <section class="guide-callout">
   <div class="guide-inner">
     <div class="guide-text">
       <p class="section-label">More than a question bank</p>
       <h2 class="section-title">The full road to your license, mapped out.</h2>
       <p class="guide-body">Passing Lane walks teens and parents through every step &mdash; <strong>driver&rsquo;s education</strong>, the permit application, <strong>behind-the-wheel training</strong>, the road test, and provisional license rules. Both tracks. No guesswork.</p>
-      <a href="https://apps.apple.com/app/passing-lane-ca-dmv-permit/id6762711447" class="btn-ghost" target="_blank" rel="noopener">
-        Download free &rarr;
-      </a>
+      <a href="https://apps.apple.com/app/passing-lane-ca-dmv-permit/id6762711447" class="btn-ghost" target="_blank" rel="noopener">Download free &rarr;</a>
     </div>
     <div class="guide-stats">
       <div class="guide-stat">
@@ -709,31 +584,26 @@
   </div>
 </section>
 
-<!-- ── CA SECTION ── -->
 <section class="ca-section">
   <p class="section-label">Built for California</p>
   <h2 class="section-title">Know the road before you&rsquo;re on it.</h2>
   <p class="ca-body">The California DMV written test is <strong>46 questions</strong>. You need <strong>38 correct to pass</strong> &mdash; that&rsquo;s 83%. Most teens who fail do so because they studied the wrong material or ran out of time. Passing Lane fixes both.</p>
-  <a href="https://apps.apple.com/app/passing-lane-ca-dmv-permit/id6762711447" class="btn-primary" target="_blank" rel="noopener">
-    Start studying free
-  </a>
+  <a href="https://apps.apple.com/app/passing-lane-ca-dmv-permit/id6762711447" class="btn-primary" target="_blank" rel="noopener">Start studying free</a>
 </section>
 
-<!-- ── FOOTER CTA ── -->
 <div class="footer-cta">
   <h2>Ready to pass?</h2>
   <p>Free to download &mdash; first 100 questions on us.</p>
   <div class="badge-row">
     <a href="https://apps.apple.com/app/passing-lane-ca-dmv-permit/id6762711447" target="_blank" rel="noopener" aria-label="Download on the App Store">
-      <img src="assets/apple-badge-en.svg" alt="Download on the App Store" />
+      <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" />
     </a>
     <a href="https://apps.apple.com/app/passing-lane-ca-dmv-permit/id6762711447" target="_blank" rel="noopener" aria-label="Descargar en el App Store" lang="es">
-      <img src="assets/apple-badge-es.svg" alt="Descargar en el App Store" />
+      <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/es-mx?size=250x83" alt="Descargar en el App Store" />
     </a>
   </div>
 </div>
 
-<!-- ── FOOTER ── -->
 <footer>
   <a href="/" class="footer-logo">
     <img src="/icon.png" alt="Passing Lane" />
