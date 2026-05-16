@@ -16,150 +16,143 @@
   <meta name="twitter:title" content="Sobre Nosotros — Passing Lane" />
   <meta name="twitter:description" content="Una empresa familiar californiana que crea aplicaciones educativas para adolescentes y padres." />
   <meta name="twitter:image" content="https://passinglane.app/icon.png" />
+  <meta name="theme-color" content="#F5F4EF" />
   <link rel="icon" type="image/png" href="/icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
   <style>
+    :root { --warm:#F5F4EF; --grn:#1A4A3A; --grn-mid:#2A6A54; --accent:#3ECF6E; --near-blk:#0A2218; --muted:#5C6B63; --border:rgba(26,74,58,.10); }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --green-dark: #1a4a3a; --green-bright: #3ecf6e; --text: #f0f4f2; --text-muted: #8ab09a; --card-bg: rgba(255,255,255,0.07); --card-border: rgba(255,255,255,0.12); }
-    body { font-family: 'Inter', sans-serif; background: var(--green-dark); color: var(--text); min-height: 100vh; }
-    nav { padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--card-border); position: sticky; top: 0; z-index: 100; background: rgba(26,74,58,0.92); backdrop-filter: blur(12px); }
-    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .nav-logo img { width: 30px; height: 30px; border-radius: 7px; }
-    .nav-logo span { font-size: 16px; font-weight: 700; color: var(--text); }
-    .nav-back { font-size: 14px; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
-    .nav-back:hover { color: var(--text); }
+    html { scroll-behavior: smooth; }
+    body { background: var(--warm); font-family: 'DM Sans', sans-serif; color: var(--near-blk); -webkit-font-smoothing: antialiased; min-height: 100vh; }
+    .site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 32px; height: 64px; display: flex; align-items: center; justify-content: space-between; background: rgba(245,244,239,.90); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
+    .nav-left { display: flex; align-items: center; gap: 10px; }
     .hamburger { background: none; border: none; cursor: pointer; padding: 6px; display: flex; flex-direction: column; gap: 5px; z-index: 200; }
-    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.25s ease, opacity 0.25s ease; transform-origin: center; }
-    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger span { display: block; width: 20px; height: 1.5px; background: var(--grn); border-radius: 2px; transition: transform .25s ease, opacity .25s ease; transform-origin: center; }
+    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
     .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    .nav-drawer { position: fixed; top: 0; left: 0; width: 260px; height: 100vh; background: #112e25; border-right: 1px solid var(--card-border); z-index: 150; transform: translateX(-100%); transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1); display: flex; flex-direction: column; align-items: stretch; justify-content: flex-start; padding: 72px 12px 40px; gap: 2px; }
-    .nav-drawer.open { transform: translateX(0); }
-    .nav-drawer a { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 10px; text-decoration: none; color: var(--text-muted); font-size: 15px; font-weight: 500; transition: background 0.15s, color 0.15s; }
-    .nav-drawer a:hover, .nav-drawer a.active { background: rgba(255,255,255,0.07); color: var(--text); }
-    .nav-drawer a .icon { font-size: 18px; width: 24px; text-align: center; }
-    .nav-drawer-divider { height: 1px; background: var(--card-border); margin: 6px 2px; }
-    .drawer-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 140; backdrop-filter: blur(2px); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .nav-logo { display: flex; align-items: center; gap: 9px; text-decoration: none; }
+    .nav-logo img { width: 30px; height: 30px; border-radius: 7px; }
+    .nav-logo span { font-size: 16px; font-weight: 600; color: var(--near-blk); letter-spacing: -.2px; }
+    .nav-right { display: flex; align-items: center; gap: 14px; }
+    .lang-toggle { display: flex; align-items: center; gap: 2px; background: rgba(26,74,58,.06); border: 1px solid var(--border); border-radius: 20px; padding: 3px; font-size: 11px; font-weight: 600; }
+    .lang-toggle a { padding: 3px 10px; border-radius: 16px; text-decoration: none; color: var(--muted); transition: background .15s, color .15s; }
+    .lang-toggle a.active { background: var(--grn); color: #fff; }
+    .nav-dl { display: inline-flex; align-items: center; background: var(--grn); color: #fff; font-size: 13px; font-weight: 600; padding: 9px 18px; border-radius: 100px; text-decoration: none; transition: background .18s; white-space: nowrap; }
+    .nav-dl:hover { background: var(--grn-mid); }
+    .drawer-overlay { display: none; position: fixed; inset: 0; background: rgba(10,34,24,.25); z-index: 140; backdrop-filter: blur(2px); }
     .drawer-overlay.open { display: block; }
-    .page { max-width: 720px; margin: 0 auto; padding: 56px 24px 80px; }
-    .page-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green-bright); margin-bottom: 12px; }
-    h1 { font-size: clamp(28px, 5vw, 44px); font-weight: 800; letter-spacing: -1px; margin-bottom: 32px; line-height: 1.15; }
-    .photo-placeholder { width: 100%; aspect-ratio: 16/9; border-radius: 20px; background: var(--card-bg); border: 1px solid var(--card-border); display: flex; align-items: center; justify-content: center; margin-bottom: 48px; color: var(--text-muted); font-size: 14px; font-weight: 500; }
-    .body-text { font-size: 17px; color: var(--text-muted); line-height: 1.8; }
+    .nav-drawer { position: fixed; top: 0; left: 0; width: 240px; height: 100vh; background: var(--warm); border-right: 1px solid var(--border); z-index: 150; transform: translateX(-100%); transition: transform .28s cubic-bezier(.4,0,.2,1); padding: 76px 16px 32px; display: flex; flex-direction: column; gap: 0; }
+    .nav-drawer.open { transform: translateX(0); }
+    .nav-drawer a { display: block; padding: 9px 12px; border-radius: 8px; text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 500; transition: background .15s, color .15s; }
+    .nav-drawer a:hover, .nav-drawer a.active { background: rgba(26,74,58,.06); color: var(--grn); }
+    .nav-drawer-divider { height: 1px; background: var(--border); margin: 6px 0; }
+    .page { max-width: 720px; margin: 0 auto; padding: 104px 32px 100px; }
+    .page-eyebrow { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--grn); background: rgba(26,74,58,.07); padding: 4px 12px; border-radius: 100px; margin-bottom: 16px; }
+    h1 { font-family: 'DM Serif Display', serif; font-size: clamp(26px, 5vw, 46px); line-height: 1.1; letter-spacing: -.02em; color: var(--near-blk); margin-bottom: 32px; }
+    .family-photo { width: 100%; border-radius: 20px; display: block; margin-bottom: 52px; }
+    .body-text { font-size: 17px; color: var(--muted); line-height: 1.8; }
     .body-text p { margin-bottom: 24px; }
     .body-text p:last-child { margin-bottom: 0; }
-    .body-text strong { color: var(--text); font-weight: 700; }
-    .divider { height: 1px; background: var(--card-border); margin: 48px 0; }
+    .body-text strong { color: var(--near-blk); font-weight: 600; }
+    .divider { height: 1px; background: var(--border); margin: 56px 0; }
     .values { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 24px; }
-    .value-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 24px; }
-    .value-icon { font-size: 28px; margin-bottom: 12px; }
-    .value-title { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
-    .value-desc { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
-    footer { padding: 32px 24px; border-top: 1px solid var(--card-border); text-align: center; }
-    .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 16px; }
-    .footer-links a { font-size: 13px; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
-    .footer-links a:hover { color: var(--text); }
-    .footer-copy { font-size: 12px; color: var(--text-muted); opacity: 0.6; }
+    .value-card { background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 24px; }
+    .value-title { font-family: 'DM Serif Display', serif; font-size: 18px; color: var(--near-blk); margin-bottom: 10px; }
+    .value-desc { font-size: 14px; color: var(--muted); line-height: 1.65; }
+    footer { padding: 36px 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .footer-logo img { width: 26px; height: 26px; border-radius: 6px; }
+    .footer-logo span { font-size: 14px; font-weight: 600; color: var(--near-blk); }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+    .footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color .15s; }
+    .footer-links a:hover { color: var(--grn); }
+    .footer-copy { font-size: 12px; color: var(--muted); opacity: .7; }
+    @media (max-width: 720px) { .site-nav { padding: 0 20px; } .page { padding: 96px 20px 80px; } footer { flex-direction: column; text-align: center; padding: 28px 20px; } .nav-dl { display: none; } }
   </style>
 </head>
 <body>
 
-  <div class="drawer-overlay" id="overlay" onclick="closeDrawer()"></div>
-  <nav class="nav-drawer" id="drawer">
-    <a href="/es/"><span class="icon">🏠</span> Inicio</a>
-    <div class="nav-drawer-divider"></div>
-    <a href="/es/drivers-ed"><span class="icon">📚</span> Educación Vial</a>
-    <a href="/es/driving-school"><span class="icon">🚗</span> Escuelas de Manejo</a>
-    <a href="/es/insurance"><span class="icon">🛡</span> Seguro, Manejo Defensivo y Escuela de Tráfico</a>
-    <div class="nav-drawer-divider"></div>
-    <a href="/es/faq"><span class="icon">❓</span> Preguntas Frecuentes</a>
-    <a href="/es/about" class="active"><span class="icon">👨‍👩‍👧</span> Sobre Nosotros</a>
-  </nav>
+<div class="drawer-overlay" id="overlay" onclick="closeDrawer()"></div>
+<div class="nav-drawer" id="drawer">
+  <a href="/es/">Inicio</a>
+  <div class="nav-drawer-divider"></div>
+  <a href="/es/drivers-ed">Educaci&oacute;n Vial</a>
+  <a href="/es/driving-school">Escuelas de Manejo</a>
+  <a href="/es/insurance">Seguro y Manejo Defensivo</a>
+  <div class="nav-drawer-divider"></div>
+  <a href="/es/faq">Preguntas Frecuentes</a>
+  <a href="/es/about" class="active">Sobre Nosotros</a>
+</div>
 
-  <nav>
-    <button class="hamburger" id="hamburger" onclick="toggleDrawer()" aria-label="Menú">
-      <span></span><span></span><span></span>
-    </button>
-    <a href="/es/" class="nav-logo">
-      <img src="/icon.png" alt="Passing Lane" />
-      <span>Passing Lane</span>
-    </a>
-    <div style="display:flex;align-items:center;gap:12px;">
-      <div style="display:flex;align-items:center;gap:2px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:3px;font-size:12px;font-weight:600;">
-        <a href="/about" style="padding:3px 10px;border-radius:16px;text-decoration:none;color:var(--text-muted);">EN</a>
-        <a href="/es/about" style="padding:3px 10px;border-radius:16px;text-decoration:none;background:var(--green-bright);color:#0f2d22;">ES</a>
-      </div>
-      <a href="/es/" class="nav-back">← Inicio</a>
+<nav class="site-nav">
+  <div class="nav-left">
+    <button class="hamburger" id="hamburger" onclick="toggleDrawer()" aria-label="Men&uacute;"><span></span><span></span><span></span></button>
+    <a href="/es/" class="nav-logo"><img src="/icon.png" alt="Passing Lane" /><span>Passing Lane</span></a>
+  </div>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <a href="/about">EN</a>
+      <a href="/es/about" class="active">ES</a>
     </div>
-  </nav>
+    <a href="https://apps.apple.com/app/passing-lane-ca-dmv-permit/id6762711447" class="nav-dl" target="_blank" rel="noopener">Descargar</a>
+  </div>
+</nav>
 
-  <div class="page">
-    <p class="page-eyebrow">Nuestra Historia</p>
-    <h1>Una familia californiana, construyendo para familias californianas.</h1>
+<div class="page">
+  <span class="page-eyebrow">Nuestra Historia</span>
+  <h1>Una familia californiana, construyendo para familias californianas.</h1>
 
-    <div id="photo-section" style="margin-bottom:48px;"><img
-      src="/assets/images/family.png"
-      alt="The Passing Lane family — a California family building education apps for teens"
-      style="width:100%;border-radius:20px;display:block;"
-    /></div>
+  <img src="/assets/images/family.png" alt="La familia Passing Lane" class="family-photo" />
 
-    <div class="body-text">
-      <p>Passing Lane comenzó como comienzan las buenas ideas. Por la frustración con algo que debería funcionar mejor.</p>
-      <p>Somos una pequeña empresa familiar con base en California. Entre nuestros cinco hijos y varios sobrinos, hemos visto a más de uno sentarse a tomar el examen de permiso del DMV completamente sin preparación y salir sin aprobarlo. No es culpa de ellos. La realidad es que la tasa de reprobación del examen de permiso en California es alta, y la mayoría de las herramientas de estudio disponibles simplemente no están diseñadas para ayudar a los adolescentes a aprender de verdad.</p>
-      <p>Así que creamos una que sí lo hace.</p>
-      <p>California es hogar de una de las comunidades hispanas más grandes del país, y muchos de nuestros propios familiares y amigos navegan la vida diaria en inglés y en español. Crear Passing Lane en español completo no fue una idea de último momento. Fue una prioridad desde el primer día. Cada pregunta, cada pantalla y la guía completa para padres están disponibles en español, porque cada adolescente en California merece la misma oportunidad de aprobar ese examen, y cada padre merece ser parte del camino, sin importar el idioma que se habla en casa.</p>
-      <p>Passing Lane es nuestra primera aplicación y el comienzo de algo que nos importa mucho. Nuestro enfoque está en la educación: herramientas que hagan que las partes difíciles de crecer sean un poco más fáciles de navegar, tanto para los jóvenes como para los padres que tratan de guiarlos.</p>
-      <p>La app en sí está construida para adolescentes. La guía dentro de ella está construida para padres. Porque obtener una licencia no se trata solo de pasar un examen. Se trata de preparar a un nuevo conductor para estar seguro en la carretera. Quisimos crear un lugar donde las familias pudieran encontrar la preparación, los recursos y la orientación para lograrlo juntos.</p>
-      <p><strong>Apenas estamos comenzando.</strong></p>
-    </div>
-
-    <div class="divider"></div>
-
-    <p class="page-eyebrow">En lo que creemos</p>
-    <div class="values">
-      <div class="value-card">
-        <div class="value-icon">📚</div>
-        <div class="value-title">La educación primero</div>
-        <div class="value-desc">Cada función que creamos comienza con una pregunta: ¿esto realmente ayuda a un adolescente a aprender?</div>
-      </div>
-      <div class="value-card">
-        <div class="value-icon">👨‍👩‍👧</div>
-        <div class="value-title">Construido para familias</div>
-        <div class="value-desc">Los padres son parte del camino. Construimos herramientas para los dos lados del asiento delantero.</div>
-      </div>
-      <div class="value-card">
-        <div class="value-icon">🌎</div>
-        <div class="value-title">Todos son bienvenidos</div>
-        <div class="value-desc">Inglés y español completo desde el primer día. Construido para la comunidad de California.</div>
-      </div>
-    </div>
+  <div class="body-text">
+    <p>Passing Lane comenz&oacute; como comienzan las buenas ideas. Por la frustraci&oacute;n con algo que deber&iacute;a funcionar mejor.</p>
+    <p>Somos una peque&ntilde;a empresa familiar con base en California. Entre nuestros cinco hijos y varios sobrinos, hemos visto a m&aacute;s de uno sentarse a tomar el examen de permiso del DMV completamente sin preparaci&oacute;n y salir sin aprobarlo. No es culpa de ellos. La realidad es que la tasa de reprobaci&oacute;n del examen de permiso en California es alta, y la mayor&iacute;a de las herramientas de estudio disponibles simplemente no est&aacute;n dise&ntilde;adas para ayudar a los adolescentes a aprender de verdad.</p>
+    <p>As&iacute; que creamos una que s&iacute; lo hace.</p>
+    <p>California es hogar de una de las comunidades hispanas m&aacute;s grandes del pa&iacute;s, y muchos de nuestros propios familiares y amigos navegan la vida diaria en ingl&eacute;s y en espa&ntilde;ol. Crear Passing Lane en espa&ntilde;ol completo no fue una idea de &uacute;ltimo momento. Fue una prioridad desde el primer d&iacute;a. Cada pregunta, cada pantalla y la gu&iacute;a completa para padres est&aacute;n disponibles en espa&ntilde;ol porque cada adolescente en California merece la misma oportunidad de aprobar ese examen, y cada padre y madre merece ser parte del camino, sin importar el idioma que se habla en casa.</p>
+    <p>Passing Lane es nuestra primera aplicaci&oacute;n y el comienzo de algo que nos importa mucho. Nuestro enfoque est&aacute; en la educaci&oacute;n: herramientas que hagan que las partes dif&iacute;ciles de crecer sean un poco m&aacute;s f&aacute;ciles de navegar, tanto para los j&oacute;venes como para los padres que tratan de guiarlos.</p>
+    <p>La app en s&iacute; est&aacute; construida para adolescentes. La gu&iacute;a dentro de ella est&aacute; construida para padres. Porque obtener una licencia no se trata solo de pasar un examen. Se trata de preparar a un nuevo conductor para estar seguro en la carretera. Quisimos crear un lugar donde las familias pudieran encontrar la preparaci&oacute;n, los recursos y la orientaci&oacute;n para lograrlo juntos.</p>
+    <p><strong>Apenas estamos comenzando.</strong></p>
   </div>
 
-  <footer>
-    <div class="footer-links">
-      <a href="/es/">Inicio</a>
-      <a href="/es/drivers-ed">Educación Vial</a>
-      <a href="/es/driving-school">Escuelas de Manejo</a>
-      <a href="/es/insurance">Seguro</a>
-      <a href="/es/faq">Preguntas Frecuentes</a>
-      <a href="/es/about">Sobre Nosotros</a>
-    </div>
-    <p class="footer-copy">© 2026 Passing Lane Solutions LLC. Todos los derechos reservados. · passinglane.app</p>
-  </footer>
+  <div class="divider"></div>
 
-  <script>
-    function toggleDrawer() {
-      const open = document.getElementById('drawer').classList.toggle('open');
-      document.getElementById('hamburger').classList.toggle('open', open);
-      document.getElementById('overlay').classList.toggle('open', open);
-    }
-    function closeDrawer() {
-      document.getElementById('drawer').classList.remove('open');
-      document.getElementById('hamburger').classList.remove('open');
-      document.getElementById('overlay').classList.remove('open');
-    }
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
-  </script>
+  <span class="page-eyebrow">En lo que creemos</span>
+  <div class="values">
+    <div class="value-card">
+      <div class="value-title">La educaci&oacute;n primero</div>
+      <div class="value-desc">Cada funci&oacute;n que creamos comienza con una pregunta: &iquest;esto realmente ayuda a un adolescente a aprender?</div>
+    </div>
+    <div class="value-card">
+      <div class="value-title">Construido para familias</div>
+      <div class="value-desc">Los padres son parte del camino. Construimos herramientas para los dos lados del asiento delantero.</div>
+    </div>
+    <div class="value-card">
+      <div class="value-title">Todos son bienvenidos</div>
+      <div class="value-desc">Ingl&eacute;s y espa&ntilde;ol completo desde el primer d&iacute;a. Construido para la comunidad de California.</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <a href="/es/" class="footer-logo"><img src="/icon.png" alt="Passing Lane" /><span>Passing Lane</span></a>
+  <div class="footer-links">
+    <a href="/es/">Inicio</a>
+    <a href="/es/drivers-ed">Educaci&oacute;n Vial</a>
+    <a href="/es/driving-school">Escuelas de Manejo</a>
+    <a href="/es/insurance">Seguro y Manejo Defensivo</a>
+    <a href="/es/faq">Preguntas Frecuentes</a>
+    <a href="/es/about">Sobre Nosotros</a>
+  </div>
+  <p class="footer-copy">&copy; 2026 Passing Lane Solutions LLC &middot; <a href="/es/privacy" style="color:inherit;">Privacidad</a> &middot; <a href="/es/terms" style="color:inherit;">T&eacute;rminos</a></p>
+</footer>
+
+<script>
+function toggleDrawer(){const open=document.getElementById('drawer').classList.toggle('open');document.getElementById('hamburger').classList.toggle('open',open);document.getElementById('overlay').classList.toggle('open',open);}
+function closeDrawer(){document.getElementById('drawer').classList.remove('open');document.getElementById('hamburger').classList.remove('open');document.getElementById('overlay').classList.remove('open');}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();});
+</script>
 </body>
 </html>
