@@ -165,9 +165,10 @@
     .badge-row a img { display: block; height: 46px; width: auto; }
 
     /* REVIEW ROTATOR */
-    .review-rotator { max-width: 560px; margin: 0 auto 36px; min-height: 110px; position: relative; }
-    .review-slide { position: absolute; inset: 0; opacity: 0; transition: opacity .4s ease; pointer-events: none; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-    .review-slide.active { opacity: 1; pointer-events: auto; }
+    .review-rotator { max-width: 560px; margin: 0 auto 0; }
+    .review-slide { display: none; flex-direction: column; align-items: center; justify-content: center; animation: rfadeIn .4s ease; }
+    .review-slide.active { display: flex; }
+    @keyframes rfadeIn { from { opacity: 0; } to { opacity: 1; } }
     .review-quote { font-family: 'DM Serif Display', serif; font-style: italic; font-size: clamp(19px, 3vw, 24px); line-height: 1.35; color: var(--near-blk); margin-bottom: 14px; }
     .review-meta { display: flex; align-items: center; gap: 8px; justify-content: center; }
     .review-stars { color: var(--accent); font-size: 13px; letter-spacing: 1px; }
