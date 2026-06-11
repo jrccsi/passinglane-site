@@ -1,0 +1,26 @@
+# Passing Lane
+
+> Passing Lane is a California DMV permit test prep app for iOS. It covers all 350+ DMV tested questions across 13 categories, includes full permit test simulations, and adds XP, badges, streaks, plate skins, and a friends leaderboard. The first 100 questions are free; a one time $7.99 unlock gives full access with no subscription. The entire app and website are available in English and Spanish.
+
+Passing Lane is built by Passing Lane Solutions LLC, a California family business. The app is designed for California teens preparing for the DMV written permit test and for their parents, including Spanish speaking families. California requires 38 of 46 correct (under 18) or 30 of 36 (18 and older) to pass, roughly 83%, and Passing Lane uses 83% as its readiness benchmark.
+
+Download on the App Store: https://apps.apple.com/app/passing-lane-ca-dmv-permit/id6762711447
+
+## Main pages
+
+- [Home](https://passinglane.app/): What Passing Lane is, key features, and App Store download link
+- [FAQ](https://passinglane.app/faq/): How the app works, pricing, passing scores, XP, badges, plate skins, account and purchase help
+- [About](https://passinglane.app/about): The family business story behind Passing Lane
+- [California Driver's Education](https://passinglane.app/drivers-ed): DMV approved driver's ed courses, required for teens under 17½ before applying for a permit
+- [California Driving Schools](https://passinglane.app/driving-school): Licensed behind the wheel training, 6 hours required before the road test
+- [Teen Driver Insurance](https://passinglane.app/insurance): What California parents need to know about insuring a teen driver
+
+## Spanish (Español)
+
+- [Inicio](https://passinglane.app/es/): Página principal en español
+- [Preguntas Frecuentes](https://passinglane.app/es/faq/): Cómo funciona la app, precios, puntajes y ayuda con la cuenta
+
+## Legal
+
+- [Privacy Policy](https://passinglane.app/privacy)
+- [Terms of Service](https://passinglane.app/terms)
