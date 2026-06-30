@@ -149,12 +149,4 @@
     <priority>0.3</priority>
   </url>
 
-  <!-- Showcase — unlinked staging page, low priority -->
-  <url>
-    <loc>https://passinglane.app/showcase</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
-  </url>
-
 </urlset>
