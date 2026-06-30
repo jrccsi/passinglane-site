@@ -79,12 +79,11 @@
     .showcase-wrap { max-width: 1100px; margin: 0 auto; padding: 40px 32px 100px; }
     .showcase-desktop { display: flex; gap: 80px; align-items: flex-start; }
     .phone-sticky { flex-shrink: 0; width: var(--phone-w); position: sticky; top: 88px; }
-    .phone-frame { width: var(--phone-w); height: calc(var(--phone-w) * 2.16); background: var(--near-blk); border-radius: var(--phone-r); border: 8px solid #111; position: relative; overflow: hidden; box-shadow: 0 0 0 1px rgba(255,255,255,.06), 0 40px 80px -20px rgba(10,34,24,.30), 0 16px 32px -8px rgba(10,34,24,.15); }
-    .phone-notch { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 64px; height: 14px; background: #111; border-radius: 7px; z-index: 10; }
-    .phone-screen { position: absolute; inset: 0; border-radius: calc(var(--phone-r) - 8px); overflow: hidden; background: #0A2218; }
+    .phone-frame { width: var(--phone-w); height: calc(var(--phone-w) * 2.093); position: relative; }
+    .phone-screen { position: absolute; inset: 0; }
     .phone-slide { position: absolute; inset: 0; opacity: 0; transition: opacity .45s cubic-bezier(.4,0,.2,1); }
     .phone-slide.active { opacity: 1; }
-    .phone-slide img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+    .phone-slide img { width: 100%; height: 100%; object-fit: contain; display: block; filter: drop-shadow(0 26px 44px rgba(10,34,24,.26)); }
     .phone-dots { display: flex; justify-content: center; gap: 7px; margin-top: 18px; }
     .phone-dots button { width: 7px; height: 7px; border-radius: 50%; border: none; background: rgba(26,74,58,.18); cursor: pointer; padding: 0; transition: background .2s, transform .2s; }
     .phone-dots button.active { background: var(--grn); transform: scale(1.35); }
@@ -101,9 +100,8 @@
 
     .showcase-mobile { display: none; }
     .mobile-phone-wrap { width: 220px; margin: 0 auto 24px; }
-    .mobile-phone-frame { width: 220px; height: 475px; background: var(--near-blk); border-radius: 30px; border: 6px solid #111; overflow: hidden; position: relative; box-shadow: 0 24px 60px -12px rgba(10,34,24,.28); }
-    .mobile-phone-frame img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
-    .mobile-notch { position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 52px; height: 12px; background: #111; border-radius: 6px; z-index: 10; }
+    .mobile-phone-frame { width: 220px; height: calc(220px * 2.093); position: relative; }
+    .mobile-phone-frame img { width: 100%; height: 100%; object-fit: contain; display: block; filter: drop-shadow(0 18px 38px rgba(10,34,24,.24)); }
     .mobile-nav { display: flex; justify-content: center; align-items: center; gap: 20px; margin-bottom: 16px; }
     .mobile-nav button { background: none; border: 1px solid var(--border); border-radius: 100px; width: 36px; height: 36px; cursor: pointer; font-size: 15px; display: flex; align-items: center; justify-content: center; color: var(--grn); transition: border-color .2s, background .2s; }
     .mobile-nav button:hover { background: rgba(26,74,58,.06); border-color: var(--grn); }
@@ -276,15 +274,14 @@
   <div class="showcase-desktop">
     <div class="phone-sticky">
       <div class="phone-frame">
-        <div class="phone-notch"></div>
         <div class="phone-screen">
-          <div class="phone-slide active" data-slide="0"><img src="/assets/screenshots/ss-home-light.jpeg" alt="Pantalla de inicio" loading="eager" /></div>
-          <div class="phone-slide" data-slide="1"><img src="/assets/screenshots/ss-study-insights.jpeg" alt="Análisis de estudio" loading="lazy" /></div>
-          <div class="phone-slide" data-slide="2"><img src="/assets/screenshots/ss-practice.jpeg" alt="Módulos de práctica" loading="lazy" /></div>
-          <div class="phone-slide" data-slide="3"><img src="/assets/screenshots/ss-leaderboard.jpeg" alt="Tabla de clasificación" loading="lazy" /></div>
-          <div class="phone-slide" data-slide="4"><img src="/assets/screenshots/ss-guide.jpeg" alt="Guía de licencia" loading="lazy" /></div>
-          <div class="phone-slide" data-slide="5"><img src="/assets/screenshots/ss-profile.jpeg" alt="Perfil y placas" loading="lazy" /></div>
-          <div class="phone-slide" data-slide="6"><img src="/assets/screenshots/ss-home-spanish.jpeg" alt="Inicio en español" loading="lazy" /></div>
+          <div class="phone-slide active" data-slide="0"><img src="/assets/screenshots/ss-home-light-es.png" alt="Pantalla de inicio" loading="eager" /></div>
+          <div class="phone-slide" data-slide="1"><img src="/assets/screenshots/ss-study-insights-es.png" alt="Análisis de estudio" loading="lazy" /></div>
+          <div class="phone-slide" data-slide="2"><img src="/assets/screenshots/ss-practice-es.png" alt="Módulos de práctica" loading="lazy" /></div>
+          <div class="phone-slide" data-slide="3"><img src="/assets/screenshots/ss-leaderboard-es.png" alt="Tabla de clasificación" loading="lazy" /></div>
+          <div class="phone-slide" data-slide="4"><img src="/assets/screenshots/ss-guide-es.png" alt="Guía de licencia" loading="lazy" /></div>
+          <div class="phone-slide" data-slide="5"><img src="/assets/screenshots/ss-profile-es.png" alt="Perfil y placas" loading="lazy" /></div>
+          <div class="phone-slide" data-slide="6"><img src="/assets/screenshots/ss-home-light-es.png" alt="Inicio en español" loading="lazy" /></div>
         </div>
       </div>
       <div class="phone-dots" id="desktopDots">
@@ -310,7 +307,7 @@
 </div>
 
 <div class="showcase-mobile">
-  <div class="mobile-phone-wrap"><div class="mobile-phone-frame"><div class="mobile-notch"></div><img id="mobileImg" src="/assets/screenshots/ss-home-light.jpeg" alt="Captura de pantalla" /></div></div>
+  <div class="mobile-phone-wrap"><div class="mobile-phone-frame"><img id="mobileImg" src="/assets/screenshots/ss-home-light-es.png" alt="Captura de pantalla" /></div></div>
   <div class="mobile-nav">
     <button onclick="mobileGo(-1)" aria-label="Anterior">&#8592;</button>
     <div class="mobile-dots" id="mobileDots"><span class="active"></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
@@ -385,13 +382,13 @@
 
 <script>
 const SLIDES=[
-  {img:'/assets/screenshots/ss-home-light.jpeg',num:'01 \u2014 Ruta de Hoy',head:'Tu camino personalizado a la licencia',body:'La Ruta de Hoy te dice exactamente qu\u00e9 estudiar basado en tu progreso real \u2014 no una lista gen\u00e9rica.'},
-  {img:'/assets/screenshots/ss-study-insights.jpeg',num:'02 \u2014 An\u00e1lisis de Estudio',head:'Sabe exactamente d\u00f3nde est\u00e1s',body:'La Preparaci\u00f3n para el Examen rastrea cuatro criterios reales. El An\u00e1lisis de Estudio muestra tus m\u00f3dulos m\u00e1s fuertes y d\u00e9biles.'},
-  {img:'/assets/screenshots/ss-practice.jpeg',num:'03 \u2014 Pr\u00e1ctica',head:'350+ preguntas reales del DMV de CA',body:'Las 13 categor\u00edas del DMV con seguimiento de dominio, ejercicios de preguntas fallidas y una Simulaci\u00f3n del Examen completa.'},
-  {img:'/assets/screenshots/ss-leaderboard.jpeg',num:'04 \u2014 Rango',head:'Estudia con amigos',body:'Invita a amigos y familiares a comparar el progreso en la tabla de clasificaci\u00f3n de XP.'},
-  {img:'/assets/screenshots/ss-guide.jpeg',num:'05 \u2014 Gu\u00eda',head:'Paso a paso hasta tu licencia',body:'Cada etapa del proceso de licencia en California, con enlaces para inscribirse en los cursos requeridos.'},
-  {img:'/assets/screenshots/ss-profile.jpeg',num:'06 \u2014 Perfil',head:'Gana tu placa',body:'Ocho dise\u00f1os de placas de California se desbloquean conforme subes de nivel a trav\u00e9s del XP.'},
-  {img:'/assets/screenshots/ss-home-spanish.jpeg',num:'07 \u2014 Biling\u00fce',head:'Ingl\u00e9s y espa\u00f1ol completos',body:'Cada pantalla, cada pregunta \u2014 disponible en ingl\u00e9s y espa\u00f1ol.'},
+  {img:'/assets/screenshots/ss-home-light-es.png',num:'01 \u2014 Ruta de Hoy',head:'Tu camino personalizado a la licencia',body:'La Ruta de Hoy te dice exactamente qu\u00e9 estudiar basado en tu progreso real \u2014 no una lista gen\u00e9rica.'},
+  {img:'/assets/screenshots/ss-study-insights-es.png',num:'02 \u2014 An\u00e1lisis de Estudio',head:'Sabe exactamente d\u00f3nde est\u00e1s',body:'La Preparaci\u00f3n para el Examen rastrea cuatro criterios reales. El An\u00e1lisis de Estudio muestra tus m\u00f3dulos m\u00e1s fuertes y d\u00e9biles.'},
+  {img:'/assets/screenshots/ss-practice-es.png',num:'03 \u2014 Pr\u00e1ctica',head:'350+ preguntas reales del DMV de CA',body:'Las 13 categor\u00edas del DMV con seguimiento de dominio, ejercicios de preguntas fallidas y una Simulaci\u00f3n del Examen completa.'},
+  {img:'/assets/screenshots/ss-leaderboard-es.png',num:'04 \u2014 Rango',head:'Estudia con amigos',body:'Invita a amigos y familiares a comparar el progreso en la tabla de clasificaci\u00f3n de XP.'},
+  {img:'/assets/screenshots/ss-guide-es.png',num:'05 \u2014 Gu\u00eda',head:'Paso a paso hasta tu licencia',body:'Cada etapa del proceso de licencia en California, con enlaces para inscribirse en los cursos requeridos.'},
+  {img:'/assets/screenshots/ss-profile-es.png',num:'06 \u2014 Perfil',head:'Gana tu placa',body:'Ocho dise\u00f1os de placas de California se desbloquean conforme subes de nivel a trav\u00e9s del XP.'},
+  {img:'/assets/screenshots/ss-home-light-es.png',num:'07 \u2014 Biling\u00fce',head:'Ingl\u00e9s y espa\u00f1ol completos',body:'Cada pantalla, cada pregunta \u2014 disponible en ingl\u00e9s y espa\u00f1ol.'},
 ];
 let current=0;
 function setSlide(n){current=n;document.querySelectorAll('.phone-slide').forEach((el,i)=>el.classList.toggle('active',i===n));document.querySelectorAll('.step').forEach((el,i)=>el.classList.toggle('active',i===n));document.querySelectorAll('#desktopDots button').forEach((el,i)=>el.classList.toggle('active',i===n));updateMobile(n);}
