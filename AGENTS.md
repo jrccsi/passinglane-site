@@ -109,11 +109,12 @@ faq.html                  → causes redirect loop  ❌
 
 Paths with hyphens (e.g. `/drivers-ed`) do not have this problem and can use flat `.html` files.
 
-### Rule 2 — www must be added as a custom domain before any _redirects rule references it
+### Rule 2 — host redirects belong in Cloudflare dashboard rules
 
-If a `_redirects` rule sends traffic to `www.passinglane.app` but `www` has not been added as
-a custom domain inside Cloudflare Pages (Workers & Pages → Custom Domains), the result is a
-redirect loop. Always add the custom domain first, then add the redirect rule.
+Cloudflare Pages `_redirects` does not support host-level redirects such as
+`passinglaneapp.com/* → passinglane.app/:splat`. Use Cloudflare Redirect Rules or Bulk Redirects
+for apex, www, and alternate-domain canonicalization. If an alternate hostname should serve the
+Pages project directly before redirecting, add it as a custom domain inside Cloudflare Pages first.
 
 ### Rule 3 — Renaming a file does not remove it from deployment
 
@@ -144,9 +145,6 @@ One rule per line. No comments inside active rules. 301 for permanent, 302 for t
 ## Current _redirects Rules
 
 ```
-https://www.passinglane.app/* https://passinglane.app/:splat 301
-https://passinglaneapp.com/* https://passinglane.app/:splat 301
-https://www.passinglaneapp.com/* https://passinglane.app/:splat 301
 /driving-school-guide /driving-school 301
 /faq-page /faq 301
 /drivingschool /driving-school 301
