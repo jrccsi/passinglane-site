@@ -34,13 +34,13 @@ This applies to every change, every time, without exception.
 
 ## Repository
 
-**Local path:** `/Users/joshua/Documents/passinglane-site`
+**Local path:** `/Users/joshua/Development/passinglane-site`
 **GitHub:** `jrccsi/passinglane-site`
 **Hosting:** Cloudflare Pages (auto-deploys on push to main)
 **Domains:** `passinglane.app`, `passinglaneapp.com`
 **DNS / CDN:** Cloudflare
 
-The app repo is separate: `/Users/joshua/Documents/PassingLane` (GitHub: `jrccsi/PassingLane`)
+The app repo is separate: `/Users/joshua/Development/PassingLane` (GitHub: `jrccsi/PassingLane`)
 
 ---
 
@@ -144,6 +144,9 @@ One rule per line. No comments inside active rules. 301 for permanent, 302 for t
 ## Current _redirects Rules
 
 ```
+https://www.passinglane.app/* https://passinglane.app/:splat 301
+https://passinglaneapp.com/* https://passinglane.app/:splat 301
+https://www.passinglaneapp.com/* https://passinglane.app/:splat 301
 /driving-school-guide /driving-school 301
 /faq-page /faq 301
 /drivingschool /driving-school 301
@@ -232,17 +235,22 @@ nav must link to the correct counterpart path.
 ### index.html — Main landing page
 Primary conversion page. Structure:
 1. Nav
-2. Hero — headline, subheadline, coming soon pill
+2. Hero — headline, subheadline, App Store CTA
 3. Features grid — 6 feature cards
 4. Stats section
 5. California section (state-specific callout)
 6. Footer
 
-The "Coming Soon" pill should be updated to an App Store download button once the app is live on
-the App Store. **This has not been done yet.**
+The App Store download button is live. Keep the App Store URL aligned with the live listing:
+`https://apps.apple.com/app/passing-lane-ca-dmv-permit/id6762711447`.
 
-App screenshots section is planned between the hero and features. Images will go in `/assets/images/`
-when added. Images can live anywhere under the root and be referenced with relative paths.
+The app screenshots carousel is live between the hero and features. Current screenshot assets
+live in `/assets/screenshots/`.
+
+### Monthly App Store rating refresh
+The homepage JSON-LD includes `aggregateRating` for the live App Store listing. Refresh
+`ratingValue` and `ratingCount` monthly from the App Store before editing or deploying the site.
+As of July 9, 2026, the live value is 5.0 from 12 ratings.
 
 ### faq/index.html — FAQ page
 Linked directly from inside the app. Do not break this route. Content includes:
@@ -321,10 +329,9 @@ There is no staging environment. Changes go live immediately on push.
 
 ## On the Horizon (Active)
 
-- **App screenshots section** on index.html — between hero and features. Images go in
-  `/assets/images/`. 3-up layout showing Home, Practice, and Guide screens.
-- **App Store download button** — replace "Coming Soon" pill with real App Store link
-  once the app is live.
+- **App screenshots** — live on index.html as a carousel under the hero. Future screenshot
+  updates go in `/assets/screenshots/`.
+- **App Store download button** — live. Keep all download links aligned with the live App Store URL.
 - **Affiliate tracking** — parked until COPPA/AADC compliance is resolved.
 
 ---

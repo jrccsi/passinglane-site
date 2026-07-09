@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="apple-itunes-app" content="app-id=6762711447" />
   <title>CA DMV Permit Practice Test &amp; Licensing Guide | Passing Lane</title>
   <meta name="description" content="Free CA DMV permit practice test app for teens. 350+ real questions, test simulations, and a full licensing guide in English and Spanish. No subscription." />
   <link rel="canonical" href="https://passinglane.app/" />
@@ -13,12 +14,16 @@
   <meta property="og:url" content="https://passinglane.app/" />
   <meta property="og:title" content="Passing Lane — CA DMV Permit Practice Test Prep" />
   <meta property="og:description" content="350+ real CA DMV questions, permit test simulations, and a complete licensing guide. Free to try. Full English and Spanish support." />
-  <meta property="og:image" content="https://passinglane.app/icon.png" />
+  <meta property="og:image" content="https://passinglane.app/assets/og/og-en.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:site_name" content="Passing Lane" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="es_US" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Passing Lane — CA DMV Permit Practice Test Prep" />
   <meta name="twitter:description" content="350+ real CA DMV questions, permit test simulations, and a complete licensing guide. Free to try. Full English and Spanish support." />
-  <meta name="twitter:image" content="https://passinglane.app/icon.png" />
+  <meta name="twitter:image" content="https://passinglane.app/assets/og/og-en.png" />
   <meta name='impact-site-verification' value='7c1258ec-b26b-4e77-8eb1-09c7c1467410' />
   <meta name='impact-site-verification' value='6141bfbf-adcd-47e1-9832-2d1a94b70e7c' />
   <meta name="theme-color" content="#F5F4EF" />
@@ -168,6 +173,18 @@
     .ca-section .section-title { margin: 0 auto 20px; }
     .ca-body { font-size: 17px; color: var(--muted); line-height: 1.7; max-width: 580px; margin: 0 auto 36px; }
     .ca-body strong { color: var(--near-blk); font-weight: 600; }
+    .facts-section { padding: 96px 32px; background: #fff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .facts-inner { max-width: 1040px; margin: 0 auto; }
+    .facts-section .section-title { max-width: 620px; margin-bottom: 32px; }
+    .facts-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+    .fact-item { border-top: 1px solid var(--border); padding-top: 18px; }
+    .fact-item h3 { font-size: 16px; line-height: 1.35; color: var(--near-blk); margin-bottom: 8px; }
+    .fact-item p { font-size: 14px; color: var(--muted); line-height: 1.65; }
+    .fact-item a { color: var(--grn); text-decoration: none; font-weight: 600; }
+    .fact-item a:hover { text-decoration: underline; }
+    .facts-source { margin-top: 28px; font-size: 13px; color: var(--muted); }
+    .facts-source a { color: var(--grn); text-decoration: none; font-weight: 600; }
+    .facts-source a:hover { text-decoration: underline; }
 
     /* FOOTER CTA */
     .footer-cta { padding: 80px 32px; background: var(--warm-dk); border-top: 1px solid var(--border); text-align: center; }
@@ -202,7 +219,7 @@
     .footer-copy { font-size: 12px; color: var(--muted); opacity: .7; }
 
     /* RESPONSIVE */
-    @media (max-width: 860px) { .guide-inner { flex-direction: column; gap: 40px; } .guide-stats { flex-direction: row; justify-content: center; } }
+    @media (max-width: 860px) { .guide-inner { flex-direction: column; gap: 40px; } .guide-stats { flex-direction: row; justify-content: center; } .facts-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 720px) {
       .showcase-desktop { display: none; }
       .showcase-mobile { display: block; }
@@ -211,6 +228,8 @@
       .hero { padding: 110px 20px 32px; }
       .services { padding: 60px 20px; }
       .guide-callout { padding: 64px 20px; }
+      .facts-section { padding: 64px 20px; }
+      .facts-grid { grid-template-columns: 1fr; gap: 18px; }
       .ca-section { padding: 64px 20px; }
       .footer-cta { padding: 60px 20px; }
       footer { flex-direction: column; text-align: center; padding: 28px 20px; }
@@ -228,19 +247,35 @@
   "applicationCategory": "EducationApplication",
   "operatingSystem": "iOS",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free to start. One-time $7.99 unlock for full access." },
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "ratingCount": "4", "bestRating": "5", "worstRating": "1" },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "ratingCount": "12", "bestRating": "5", "worstRating": "1" },
   "inLanguage": ["en","es"],
   "publisher": { "@type": "Organization", "name": "Passing Lane Solutions LLC", "url": "https://passinglane.app" },
   "downloadUrl": "https://apps.apple.com/app/passing-lane-ca-dmv-permit/id6762711447",
   "installUrl": "https://apps.apple.com/app/passing-lane-ca-dmv-permit/id6762711447"
 }
 </script>
+<script type="application/ld+json" data-schema="organization">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://passinglane.app/#organization",
+  "name": "Passing Lane Solutions LLC",
+  "alternateName": "Passing Lane",
+  "url": "https://passinglane.app",
+  "logo": "https://passinglane.app/icon.png",
+  "sameAs": [
+    "https://apps.apple.com/app/passing-lane-ca-dmv-permit/id6762711447"
+  ]
+}
+</script>
+<!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;27be5198e01a46e5a3ef5b1d447590a4&quot;}"></script><!-- End Cloudflare Web Analytics -->
 </head>
 <body>
 
 <div class="drawer-overlay" id="overlay" onclick="closeDrawer()"></div>
 <div class="nav-drawer" id="drawer">
   <a href="/" class="active">Home</a>
+  <a href="/guides">Guides</a>
   <div class="nav-drawer-divider"></div>
   <a href="/drivers-ed">Driver&rsquo;s Ed</a>
   <a href="/driving-school">Driving Schools</a>
@@ -296,7 +331,7 @@
   <div class="hero-cta">
     <a href="https://apps.apple.com/app/passing-lane-ca-dmv-permit/id6762711447" class="btn-primary" target="_blank" rel="noopener">Download on the App Store</a>
   </div>
-  <p class="hero-note">Free to start &middot; California &middot; Florida &amp; Texas coming soon</p>
+  <p class="hero-note">Free to start &middot; California only &middot; English and Spanish</p>
 </section>
 
 <!-- SUMMER SALE BANNER — temporary, remove when sale ends -->
@@ -373,6 +408,7 @@
   <p class="section-label">Ready to get started</p>
   <h2 class="section-title">Everything you need on the road to your license.</h2>
   <div class="services-grid">
+    <a href="/guides" class="service-card"><p class="service-card-label">Study smarter</p><p class="service-card-title">Permit Test Guides</p><p class="service-card-desc">Clear answers for the questions families ask before the California permit test, from document checklists to study strategy.</p><p class="service-card-arrow">Read guides &rarr;</p></a>
     <a href="/drivers-ed" class="service-card"><p class="service-card-title">Driver&rsquo;s Education</p><p class="service-card-desc">California requires 30 hours of DMV-approved driver&rsquo;s ed before your permit. Find and enroll in certified online or classroom courses.</p><p class="service-card-arrow">Find courses &rarr;</p></a>
     <a href="/driving-school" class="service-card"><p class="service-card-title">Behind-the-Wheel Training</p><p class="service-card-desc">Six hours of professional behind-the-wheel instruction required. Connect with licensed driving schools near you.</p><p class="service-card-arrow">Find schools &rarr;</p></a>
     <a href="/insurance" class="service-card"><p class="service-card-label">After the test</p><p class="service-card-title">Insurance &amp; Defensive Driving</p><p class="service-card-desc">Compare teen driver insurance rates, defensive driving courses, and traffic school options for new California drivers.</p><p class="service-card-arrow">Learn more &rarr;</p></a>
@@ -397,6 +433,32 @@
   </div>
 </section>
 
+<section class="facts-section" aria-labelledby="facts-title">
+  <div class="facts-inner">
+    <p class="section-label">California DMV facts</p>
+    <h2 class="section-title" id="facts-title">The numbers families ask for most.</h2>
+    <div class="facts-grid">
+      <article class="fact-item">
+        <h3>Permit test passing score</h3>
+        <p>The DMV lists the knowledge test passing score as 80 percent. Passing Lane uses 83 percent because 38 of 46 and 30 of 36 round to about 83 percent. <a href="/guides/how-many-questions-ca-permit-test/">See the guide</a>.</p>
+      </article>
+      <article class="fact-item">
+        <h3>Under 18 permit basics</h3>
+        <p>Teens need to be at least 15 and a half, complete or enroll in driver education, bring identity and residency documents, and have a parent or guardian sign the application. <a href="/guides/what-to-bring-dmv-permit-test/">See the checklist</a>.</p>
+      </article>
+      <article class="fact-item">
+        <h3>Before the road test</h3>
+        <p>Teens must hold the permit for at least six months, complete six hours of professional driver training, and practice 50 hours with 10 at night. <a href="/guides/behind-the-wheel-requirements-ca/">See requirements</a>.</p>
+      </article>
+      <article class="fact-item">
+        <h3>First year license limits</h3>
+        <p>During the first 12 months, provisional drivers cannot drive from 11 p.m. to 5 a.m. or carry passengers under 20 unless a qualifying adult is with them. <a href="/guides/parents-guide-provisional-license/">See parent guide</a>.</p>
+      </article>
+    </div>
+    <p class="facts-source">Sources: <a href="https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/learners-permits/" target="_blank" rel="noopener">California DMV learner permits</a>, <a href="https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/driver-licenses-dl/" target="_blank" rel="noopener">driver licenses</a>, and <a href="https://www.dmv.ca.gov/portal/file/ffdl_19-pdf/" target="_blank" rel="noopener">provisional licensing</a>.</p>
+  </div>
+</section>
+
 <section class="ca-section">
   <p class="section-label">Built for California</p>
   <h2 class="section-title">Know the road before you&rsquo;re on it.</h2>
@@ -417,6 +479,7 @@
 <footer>
   <a href="/" class="footer-logo"><img src="/icon.png" alt="Passing Lane" /><span>Passing Lane</span></a>
   <div class="footer-links">
+    <a href="/guides">Guides</a>
     <a href="/drivers-ed">Driver&rsquo;s Ed</a>
     <a href="/driving-school">Driving Schools</a>
     <a href="/insurance">Insurance &amp; Defensive Driving</a>

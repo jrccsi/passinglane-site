@@ -1,0 +1,431 @@
+# Passing Lane Full Guide Text
+
+Generated 2026-07-09. This file gives AI crawlers a plain text version of the Passing Lane California permit test guide hub. Passing Lane is for California only.
+
+## English Guides
+
+# How many questions are on the California permit test?
+
+URL: https://passinglane.app/guides/how-many-questions-ca-permit-test/
+
+If you are under 18, plan for 46 questions and 38 correct answers to pass. If you are 18 or older, plan for 36 questions and 30 correct answers. The California DMV lists the passing score as 80 percent, and Passing Lane uses 83 percent as the practical readiness target because those required correct answer counts round to about 83 percent.
+
+## What score do I need to pass?
+
+The DMV states that the California knowledge test has multiple choice questions based on the California Driver Handbook and that a passing score is 80 percent. In practice, teens should study for 38 correct answers out of 46, while adults should study for 30 correct answers out of 36.
+
+## Why does Passing Lane use 83 percent?
+
+Thirty eight out of 46 and 30 out of 36 both round to about 83 percent. That is why Passing Lane shows 83 percent as the readiness benchmark in study insights and permit test simulations.
+
+## What happens if I miss too many?
+
+A missed question is useful data. Review the category you missed, drill weak questions, then take a full simulation again when your category scores are stable.
+
+## What should I study first?
+
+Start with traffic signs, right of way, safe driving, lane usage, speed limits, and alcohol and drugs. These topics show up often and also build the judgment you need after the test.
+
+Sources:
+- California DMV Learner's Permits: https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/learners-permits/
+- California Driver Handbook: https://www.dmv.ca.gov/portal/handbook/california-driver-handbook/
+
+# What should I bring to the DMV for the California permit test?
+
+URL: https://passinglane.app/guides/what-to-bring-dmv-permit-test/
+
+For a California instruction permit, bring proof of identity and California residency, be ready to pay the application fee, pass a vision exam, take a photo, and take the knowledge test. If you are under 18, you also need a parent or guardian signature and proof of driver education completion or enrollment.
+
+## What does every applicant need?
+
+Every applicant should complete the California Driver License or ID Card Application, bring acceptable identity and residency documents, pay the application fee, pass a vision exam, take a photo, and take the knowledge test.
+
+## What extra items do teens need?
+
+Applicants under 18 need a parent or guardian to sign the application. Teens also need a certificate showing completion or enrollment in driver education before getting an instruction permit, unless they are over 17 and a half and willing to wait until 18 for the driving test.
+
+## Should I make an appointment?
+
+Yes. A DMV appointment reduces stress and gives you a cleaner plan for the day. The DMV also says in office knowledge tests must be started before 4:30 p.m., so avoid cutting the visit close.
+
+## What should I prepare before I go?
+
+Study the handbook, take sample tests, and run full permit test simulations. Bring glasses or contacts if you use them, and make sure your documents use your current legal name.
+
+Sources:
+- California DMV Learner's Permits: https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/learners-permits/
+- California DMV Teen Driver Tips: https://www.dmv.ca.gov/portal/driver-education-and-safety/special-interest-driver-guides/teen-drivers/
+
+# How should I study for the California permit test?
+
+URL: https://passinglane.app/guides/ca-permit-test-study-guide/
+
+Study the California Driver Handbook first, then practice by topic until every category is above the passing benchmark. Passing Lane organizes the 350 plus question bank into 13 categories, then uses missed question review and full simulations to show whether you are ready.
+
+## What are the 13 categories?
+
+Passing Lane covers Alcohol and Drugs, Collisions and Emergencies, Financial Responsibility, Lane Usage, Licensing and DMV, Parking, Right of Way, Safe Driving, Sharing the Road, Speed Limits, Traffic Laws, Traffic Signs, and Vehicle Equipment.
+
+## Which topics should I study first?
+
+Start with traffic signs, right of way, safe driving, speed limits, lane usage, and alcohol and drugs. These topics shape both test answers and real driving decisions.
+
+## How do I know I am ready?
+
+Aim for full question coverage, at least 83 percent overall accuracy, no weak modules, and a recent passed simulation. That is the same readiness logic Passing Lane uses in Study Insights.
+
+## Should I use sample tests?
+
+Yes. DMV sample tests are useful for the style of questions, but a complete study plan should also drill weak categories and retake missed questions so you do not memorize only one sample set.
+
+Sources:
+- California Driver Handbook: https://www.dmv.ca.gov/portal/handbook/california-driver-handbook/
+- California DMV Teen Driver Tips: https://www.dmv.ca.gov/portal/driver-education-and-safety/special-interest-driver-guides/teen-drivers/
+- California DMV Online Learning and Tests: https://www.dmv.ca.gov/portal/driver-education-and-safety/online-learning-and-tests/
+
+# Can I take the California permit test in Spanish?
+
+URL: https://passinglane.app/guides/permit-test-in-spanish/
+
+Yes. The California DMV offers Spanish learning and testing resources, including Spanish sample knowledge tests and Spanish online learning options. Passing Lane also supports English and Spanish across the full app, including questions, explanations, study insights, and the licensing guide.
+
+## Where can I practice in Spanish?
+
+The DMV publishes Spanish sample knowledge tests and offers online learning in Spanish. Passing Lane adds a complete Spanish study path with the same question categories and readiness tracking as the English version.
+
+## Is Spanish only for parents?
+
+No. Many teens prefer English at school and Spanish at home, so a bilingual plan helps the whole family understand the same rules and next steps.
+
+## Can I switch languages?
+
+Yes. Passing Lane lets you switch between English and Spanish from your profile, so you can study in the language that helps the rule make sense.
+
+## What should Spanish speaking families focus on?
+
+Start with the official handbook topics, then use practice questions to learn DMV wording. Parents should also review permit documents, driver education, behind the wheel training, insurance, and provisional license rules.
+
+Sources:
+- California DMV Online Learning and Tests: https://www.dmv.ca.gov/portal/driver-education-and-safety/online-learning-and-tests/
+- California DMV Teen Driver Tips: https://www.dmv.ca.gov/portal/driver-education-and-safety/special-interest-driver-guides/teen-drivers/
+
+# What should I do if I failed the California permit test?
+
+URL: https://passinglane.app/guides/failed-permit-test-what-next/
+
+If you are under 18 and fail the California knowledge test, the DMV says you must wait 7 days, not including the day you failed, before taking it again. The DMV also says you are allowed three law test attempts before a new application fee is required. Use the wait as a focused reset: review missed topics, practice weak categories, and take a full simulation before booking your retake.
+
+## How long do I have to wait before retaking it?
+
+For minors, the DMV says you must wait one week before taking the law test again. The Fast Facts provisional licensing guide states the same rule as 7 days, not including the day the test was failed.
+
+## How many attempts do I get?
+
+The DMV teen guide says you are allowed to take three law tests before a new application fee must be paid. The adult driver license page also says applicants get three attempts to pass each required knowledge test before the application is no longer valid.
+
+## What should I study after failing?
+
+Do not start over from zero. Write down what felt hardest, then drill the related categories: signs, right of way, speed limits, safe driving, lane usage, alcohol and drugs, and licensing rules are common trouble spots.
+
+## Should I retake the test as soon as possible?
+
+Only retake when your practice is steady. A good target is 83 percent or better on a full simulation, no weak categories, and at least one calm review session the day before the DMV visit.
+
+Sources:
+- California DMV Teen Driver Tips: https://www.dmv.ca.gov/portal/driver-education-and-safety/special-interest-driver-guides/teen-drivers/
+- California DMV Fast Facts 19, Provisional Licensing: https://www.dmv.ca.gov/portal/file/ffdl_19-pdf/
+- California DMV Driver's Licenses: https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/driver-licenses-dl/
+
+# Do adults need driver's ed for the California permit test?
+
+URL: https://passinglane.app/guides/ca-permit-test-adults-18-plus/
+
+Adults 18 and older do not need driver's ed to apply for a California instruction permit. The DMV says adults must complete the driver license application, visit a DMV office, bring identity and residency documents, pay the fee, pass vision, take a photo, and pass the knowledge test. If you have never had a license, the DMV says you may hold an instruction permit until you are ready for the driving test.
+
+## What changes when I am 18 or older?
+
+You are applying for an instruction permit, not a provisional instruction permit. The teen driver education requirement does not apply the same way it does for applicants under 18.
+
+## Do adults still need a permit?
+
+If you are over 18 and have never had a driver license in any state or country, the DMV says you may obtain an instruction permit until you are ready to take your driving test.
+
+## What score do adults need on the knowledge test?
+
+The DMV lists the passing score as 80 percent. Passing Lane recommends studying for 30 correct answers out of 36, which is the practical adult benchmark used in the app.
+
+## What if I already have a license from another state or country?
+
+The DMV has separate steps for people with an out of state license or a license from another country. In many cases you still complete the application, prove identity and residency, pay the fee, pass vision, take a photo, and pass any required knowledge test.
+
+Sources:
+- California DMV Learner's Permits: https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/learners-permits/
+- California DMV Driver's Licenses: https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/driver-licenses-dl/
+
+# What should parents know about California provisional license rules?
+
+URL: https://passinglane.app/guides/parents-guide-provisional-license/
+
+California parents should track four things: the permit application, the six month permit holding period, the required practice hours, and the first year provisional license limits. The DMV says teens must complete driver education, six hours of professional driver training, and 50 hours of practice with an adult 25 or older, including 10 hours at night. During the first 12 months after licensing, teens cannot drive from 11 p.m. to 5 a.m. or carry passengers under 20 unless a qualifying adult is with them.
+
+## What do parents sign for?
+
+A parent or guardian signs the permit application for applicants under 18. The DMV also notes that when parents or guardians sign for a minor to get a driver license, they accept financial responsibility for that minor.
+
+## What practice hours are required?
+
+Before the driving test, a teen must hold the permit for at least six months, complete driver education, complete six hours of professional driver training, and complete 50 hours of practice with an adult 25 or older. At least 10 of those practice hours must be at night.
+
+## What are the first year driving limits?
+
+During the first 12 months, a provisional license holder cannot drive between 11 p.m. and 5 a.m. and cannot transport passengers under 20 unless accompanied by a California licensed parent or guardian, driver 25 or older, or certified driving instructor.
+
+## What should parents plan before the road test?
+
+Plan the driving school hours, keep a simple practice log, confirm insurance, and make sure the teen can explain real driving decisions, not just memorize test answers.
+
+Sources:
+- California DMV Learner's Permits: https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/learners-permits/
+- California DMV Driver's Licenses: https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/driver-licenses-dl/
+- California DMV Fast Facts 19, Provisional Licensing: https://www.dmv.ca.gov/portal/file/ffdl_19-pdf/
+
+# What are California behind the wheel requirements for teens?
+
+URL: https://passinglane.app/guides/behind-the-wheel-requirements-ca/
+
+Before a teen can take the California driving test, the DMV says they must hold a provisional instruction permit for at least six months, complete driver education, complete six hours of professional driver training, and practice 50 hours with an adult 25 or older. At least 10 of the 50 practice hours must be at night.
+
+## When can my teen start practicing?
+
+A provisional instruction permit is not valid until driver training begins and the instructor signs the permit. The permit lets a teen practice only with a licensed parent or guardian, a California driver 25 or older, or a certified driving instructor.
+
+## How many professional hours are required?
+
+The DMV driver license page lists six hours of professional driver training as a requirement for applicants under 18 before the driving test.
+
+## How many family practice hours are required?
+
+The DMV lists 50 hours of practice with an adult 25 or older who has a valid California driver license. At least 10 of those hours must be night driving.
+
+## Can a teen drive alone with a permit?
+
+No. The DMV Fast Facts guide says an instruction permit does not allow a teen to drive alone at any time, not even to a DMV office for the driving test.
+
+Sources:
+- California DMV Driver's Licenses: https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/driver-licenses-dl/
+- California DMV Learner's Permits: https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/learners-permits/
+- California DMV Fast Facts 19, Provisional Licensing: https://www.dmv.ca.gov/portal/file/ffdl_19-pdf/
+
+## Guías en Español
+
+# ¿Cuántas preguntas tiene el examen de permiso de California?
+
+URL: https://passinglane.app/es/guias/how-many-questions-ca-permit-test/
+
+Si tienes menos de 18 años, prepárate para 46 preguntas y 38 respuestas correctas para aprobar. Si tienes 18 años o más, prepárate para 36 preguntas y 30 respuestas correctas. El DMV de California indica que el puntaje para aprobar es 80 por ciento, y Passing Lane usa 83 por ciento como meta práctica porque esos números redondean a casi 83 por ciento.
+
+## ¿Qué puntaje necesito para aprobar?
+
+El DMV dice que el examen de conocimiento de California tiene preguntas de opción múltiple basadas en el Manual del Conductor de California y que el puntaje para aprobar es 80 por ciento. En la práctica, los jóvenes deben estudiar para responder 38 de 46 correctamente, y los adultos 30 de 36.
+
+## ¿Por qué Passing Lane usa 83 por ciento?
+
+Treinta y ocho de 46 y 30 de 36 redondean a casi 83 por ciento. Por eso Passing Lane muestra 83 por ciento como la meta de preparación en las estadísticas de estudio y en las simulaciones.
+
+## ¿Qué pasa si fallo demasiadas preguntas?
+
+Cada pregunta fallada te muestra qué tema debes repasar. Revisa la categoría, practica tus preguntas débiles y vuelve a tomar una simulación cuando tus resultados estén más estables.
+
+## ¿Qué debo estudiar primero?
+
+Empieza con señales de tráfico, derecho de paso, manejo seguro, uso de carriles, límites de velocidad, alcohol y drogas. Estos temas aparecen con frecuencia y también te preparan para manejar después del examen.
+
+Sources:
+- California DMV Learner's Permits: https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/learners-permits/
+- California Driver Handbook: https://www.dmv.ca.gov/portal/handbook/california-driver-handbook/
+
+# ¿Qué debo llevar al DMV para el examen de permiso de California?
+
+URL: https://passinglane.app/es/guias/what-to-bring-dmv-permit-test/
+
+Para solicitar un permiso de instrucción en California, lleva prueba de identidad y residencia en California, prepárate para pagar la cuota de solicitud, pasar el examen de vista, tomarte la foto y tomar el examen de conocimiento. Si tienes menos de 18 años, también necesitas la firma de tu padre, madre o tutor y prueba de educación vial completada o en curso.
+
+## ¿Qué necesita cualquier solicitante?
+
+Todo solicitante debe completar la solicitud de licencia o identificación de California, llevar documentos aceptables de identidad y residencia, pagar la cuota, pasar el examen de vista, tomarse la foto y tomar el examen de conocimiento.
+
+## ¿Qué necesitan los jóvenes además?
+
+Los solicitantes menores de 18 necesitan la firma de su padre, madre o tutor. También necesitan un certificado de educación vial completada o inscripción en educación vial antes de recibir el permiso, salvo que tengan más de 17 años y medio y esperen hasta los 18 para hacer el examen de manejo.
+
+## ¿Debo hacer cita?
+
+Sí. Una cita del DMV baja el estrés y te da un plan más claro para el día. El DMV también dice que los exámenes de conocimiento en oficina deben empezar antes de las 4:30 p.m., así que no conviene llegar tarde.
+
+## ¿Qué debo preparar antes de ir?
+
+Estudia el manual, practica con ejemplos y toma simulaciones completas. Lleva lentes o contactos si los usas, y revisa que tus documentos tengan tu nombre legal actual.
+
+Sources:
+- California DMV Learner's Permits: https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/learners-permits/
+- California DMV Teen Driver Tips: https://www.dmv.ca.gov/portal/driver-education-and-safety/special-interest-driver-guides/teen-drivers/
+
+# ¿Cómo debo estudiar para el examen de permiso de California?
+
+URL: https://passinglane.app/es/guias/ca-permit-test-study-guide/
+
+Estudia primero el Manual del Conductor de California y luego practica por tema hasta que cada categoría esté sobre la meta para aprobar. Passing Lane organiza más de 350 preguntas en 13 categorías y usa repaso de errores y simulaciones completas para mostrar si estás listo.
+
+## ¿Cuáles son las 13 categorías?
+
+Passing Lane cubre Alcohol y Drogas, Colisiones y Emergencias, Responsabilidad Financiera, Uso de Carriles, Licencias y DMV, Estacionamiento, Derecho de Paso, Manejo Seguro, Compartir la Vía, Límites de Velocidad, Leyes de Tráfico, Señales de Tráfico y Equipo del Vehículo.
+
+## ¿Qué temas debo estudiar primero?
+
+Empieza con señales de tráfico, derecho de paso, manejo seguro, límites de velocidad, uso de carriles, alcohol y drogas. Estos temas ayudan tanto en el examen como al manejar de verdad.
+
+## ¿Cómo sé si estoy listo?
+
+Busca cobertura completa de preguntas, al menos 83 por ciento de precisión general, ningún módulo débil y una simulación aprobada recientemente. Esa es la misma lógica que Passing Lane usa en el Análisis de Estudio.
+
+## ¿Debo usar exámenes de muestra?
+
+Sí. Los exámenes de muestra del DMV ayudan a entender el estilo de preguntas, pero un buen plan también debe reforzar categorías débiles y repetir preguntas falladas para no memorizar solo un ejemplo.
+
+Sources:
+- California Driver Handbook: https://www.dmv.ca.gov/portal/handbook/california-driver-handbook/
+- California DMV Teen Driver Tips: https://www.dmv.ca.gov/portal/driver-education-and-safety/special-interest-driver-guides/teen-drivers/
+- California DMV Online Learning and Tests: https://www.dmv.ca.gov/portal/driver-education-and-safety/online-learning-and-tests/
+
+# ¿Puedo tomar el examen de permiso de California en español?
+
+URL: https://passinglane.app/es/guias/permit-test-in-spanish/
+
+Sí. El DMV de California ofrece recursos de aprendizaje y examen en español, incluyendo exámenes de muestra y opciones de aprendizaje en línea. Passing Lane también funciona completamente en inglés y español, con preguntas, explicaciones, análisis de estudio y guía de licencia.
+
+## ¿Dónde puedo practicar en español?
+
+El DMV publica exámenes de muestra en español y ofrece aprendizaje en línea en español. Passing Lane agrega una ruta completa de estudio en español con las mismas categorías y seguimiento de preparación que la versión en inglés.
+
+## ¿El español es solo para padres?
+
+No. Muchos jóvenes usan inglés en la escuela y español en casa, así que un plan bilingüe ayuda a toda la familia a entender las mismas reglas y los siguientes pasos.
+
+## ¿Puedo cambiar de idioma?
+
+Sí. Passing Lane te permite cambiar entre inglés y español desde tu perfil, para que estudies en el idioma que te ayude a entender mejor la regla.
+
+## ¿En qué deben enfocarse las familias que hablan español?
+
+Empiecen con los temas del manual oficial y luego practiquen preguntas para acostumbrarse al estilo del DMV. Los padres también deben revisar documentos del permiso, educación vial, entrenamiento práctico, seguro y reglas de licencia provisional.
+
+Sources:
+- California DMV Online Learning and Tests: https://www.dmv.ca.gov/portal/driver-education-and-safety/online-learning-and-tests/
+- California DMV Teen Driver Tips: https://www.dmv.ca.gov/portal/driver-education-and-safety/special-interest-driver-guides/teen-drivers/
+
+# ¿Qué hago si fallé el examen de permiso de California?
+
+URL: https://passinglane.app/es/guias/failed-permit-test-what-next/
+
+Si tienes menos de 18 años y fallas el examen de conocimiento de California, el DMV dice que debes esperar 7 días, sin contar el día en que fallaste, antes de tomarlo de nuevo. El DMV también dice que tienes tres intentos del examen de leyes antes de pagar una nueva cuota de solicitud. Usa la espera como un reinicio enfocado: repasa temas fallados, practica categorías débiles y toma una simulación completa antes de reservar tu nuevo intento.
+
+## ¿Cuánto debo esperar antes de repetirlo?
+
+Para menores de edad, el DMV dice que debes esperar una semana antes de tomar de nuevo el examen de leyes. La guía Fast Facts de licencia provisional dice la misma regla como 7 días, sin contar el día en que se falló el examen.
+
+## ¿Cuántos intentos tengo?
+
+La guía para jóvenes del DMV dice que puedes tomar tres exámenes de leyes antes de pagar una nueva cuota. La página de licencias para adultos también dice que los solicitantes tienen tres intentos para aprobar cada examen de conocimiento requerido antes de que la solicitud deje de ser válida.
+
+## ¿Qué debo estudiar después de fallar?
+
+No empieces desde cero. Anota qué se sintió más difícil y practica esas categorías: señales, derecho de paso, límites de velocidad, manejo seguro, uso de carriles, alcohol y drogas, y reglas de licencia suelen causar problemas.
+
+## ¿Debo repetir el examen lo antes posible?
+
+Solo repítelo cuando tu práctica sea estable. Una buena meta es 83 por ciento o más en una simulación completa, ninguna categoría débil y al menos una sesión tranquila de repaso el día antes de ir al DMV.
+
+Sources:
+- California DMV Teen Driver Tips: https://www.dmv.ca.gov/portal/driver-education-and-safety/special-interest-driver-guides/teen-drivers/
+- California DMV Fast Facts 19, Provisional Licensing: https://www.dmv.ca.gov/portal/file/ffdl_19-pdf/
+- California DMV Driver's Licenses: https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/driver-licenses-dl/
+
+# ¿Los adultos necesitan educación vial para el examen de permiso de California?
+
+URL: https://passinglane.app/es/guias/ca-permit-test-adults-18-plus/
+
+Los adultos de 18 años o más no necesitan educación vial para solicitar un permiso de instrucción de California. El DMV dice que los adultos deben completar la solicitud de licencia, visitar una oficina del DMV, llevar documentos de identidad y residencia, pagar la cuota, pasar el examen de vista, tomarse la foto y aprobar el examen de conocimiento. Si nunca has tenido licencia, el DMV dice que puedes tener un permiso de instrucción hasta que estés listo para el examen de manejo.
+
+## ¿Qué cambia cuando tengo 18 años o más?
+
+Solicitas un permiso de instrucción, no un permiso provisional de instrucción. El requisito de educación vial para jóvenes no aplica de la misma manera que para solicitantes menores de 18.
+
+## ¿Los adultos todavía necesitan permiso?
+
+Si tienes más de 18 años y nunca has tenido licencia en ningún estado o país, el DMV dice que puedes obtener un permiso de instrucción hasta que estés listo para tomar el examen de manejo.
+
+## ¿Qué puntaje necesitan los adultos en el examen de conocimiento?
+
+El DMV indica que el puntaje para aprobar es 80 por ciento. Passing Lane recomienda estudiar para responder 30 de 36 correctamente, que es la meta práctica para adultos usada en la app.
+
+## ¿Qué pasa si ya tengo licencia de otro estado o país?
+
+El DMV tiene pasos separados para personas con licencia de otro estado o de otro país. En muchos casos aún debes completar la solicitud, probar identidad y residencia, pagar la cuota, pasar vista, tomarte la foto y aprobar cualquier examen de conocimiento requerido.
+
+Sources:
+- California DMV Learner's Permits: https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/learners-permits/
+- California DMV Driver's Licenses: https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/driver-licenses-dl/
+
+# ¿Qué deben saber los padres sobre las reglas de licencia provisional en California?
+
+URL: https://passinglane.app/es/guias/parents-guide-provisional-license/
+
+Los padres en California deben seguir cuatro cosas: la solicitud del permiso, los seis meses con permiso, las horas de práctica requeridas y los límites del primer año con licencia provisional. El DMV dice que los jóvenes deben completar educación vial, seis horas de entrenamiento profesional y 50 horas de práctica con un adulto de 25 años o más, incluyendo 10 horas de noche. Durante los primeros 12 meses con licencia, no pueden manejar de 11 p.m. a 5 a.m. ni llevar pasajeros menores de 20 años sin un adulto que califique.
+
+## ¿Qué firman los padres?
+
+Un padre, madre o tutor firma la solicitud de permiso para solicitantes menores de 18. El DMV también indica que cuando los padres o tutores firman para que un menor obtenga licencia, aceptan responsabilidad financiera por ese menor.
+
+## ¿Qué horas de práctica se requieren?
+
+Antes del examen de manejo, el joven debe tener el permiso por al menos seis meses, completar educación vial, completar seis horas de entrenamiento profesional y completar 50 horas de práctica con un adulto de 25 años o más. Al menos 10 de esas horas deben ser de noche.
+
+## ¿Cuáles son los límites del primer año?
+
+Durante los primeros 12 meses, una persona con licencia provisional no puede manejar entre 11 p.m. y 5 a.m. ni transportar pasajeros menores de 20 años, salvo que vaya acompañada por un padre, madre o tutor con licencia de California, un conductor de 25 años o más, o un instructor certificado.
+
+## ¿Qué deben planear los padres antes del examen de manejo?
+
+Planifiquen las horas de escuela de manejo, lleven un registro sencillo de práctica, confirmen el seguro y asegúrense de que el joven pueda explicar decisiones reales de manejo, no solo memorizar respuestas.
+
+Sources:
+- California DMV Learner's Permits: https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/learners-permits/
+- California DMV Driver's Licenses: https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/driver-licenses-dl/
+- California DMV Fast Facts 19, Provisional Licensing: https://www.dmv.ca.gov/portal/file/ffdl_19-pdf/
+
+# ¿Cuáles son los requisitos de manejo práctico en California para jóvenes?
+
+URL: https://passinglane.app/es/guias/behind-the-wheel-requirements-ca/
+
+Antes de que un joven pueda tomar el examen de manejo en California, el DMV dice que debe tener un permiso provisional de instrucción por al menos seis meses, completar educación vial, completar seis horas de entrenamiento profesional y practicar 50 horas con un adulto de 25 años o más. Al menos 10 de las 50 horas de práctica deben ser de noche.
+
+## ¿Cuándo puede empezar a practicar mi joven?
+
+Un permiso provisional de instrucción no es válido hasta que empieza el entrenamiento de manejo y el instructor firma el permiso. El permiso permite practicar solo con un padre, madre o tutor con licencia, un conductor de California de 25 años o más, o un instructor certificado.
+
+## ¿Cuántas horas profesionales se requieren?
+
+La página de licencias del DMV indica seis horas de entrenamiento profesional como requisito para solicitantes menores de 18 antes del examen de manejo.
+
+## ¿Cuántas horas de práctica familiar se requieren?
+
+El DMV indica 50 horas de práctica con un adulto de 25 años o más que tenga una licencia válida de California. Al menos 10 de esas horas deben ser de manejo nocturno.
+
+## ¿Puede un joven manejar solo con permiso?
+
+No. La guía Fast Facts del DMV dice que un permiso de instrucción no permite manejar solo en ningún momento, ni siquiera para ir a una oficina del DMV a tomar el examen de manejo.
+
+Sources:
+- California DMV Driver's Licenses: https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/driver-licenses-dl/
+- California DMV Learner's Permits: https://www.dmv.ca.gov/portal/driver-licenses-identification-cards/learners-permits/
+- California DMV Fast Facts 19, Provisional Licensing: https://www.dmv.ca.gov/portal/file/ffdl_19-pdf/

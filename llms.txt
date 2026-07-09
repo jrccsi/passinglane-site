@@ -2,9 +2,10 @@
 
 > Passing Lane is a California DMV permit test prep app for iOS. It covers all 350+ DMV tested questions across 13 categories, includes full permit test simulations, and adds XP, badges, streaks, plate skins, and a friends leaderboard. The first 100 questions are free; a one time $7.99 unlock gives full access with no subscription. The entire app and website are available in English and Spanish.
 
-Passing Lane is built by Passing Lane Solutions LLC, a California family business. The app is designed for California teens preparing for the DMV written permit test and for their parents, including Spanish speaking families. California requires 38 of 46 correct (under 18) or 30 of 36 (18 and older) to pass, roughly 83%, and Passing Lane uses 83% as its readiness benchmark.
+Passing Lane is built by Passing Lane Solutions LLC, a California family business. The app is designed for California teens preparing for the DMV written permit test and for their parents, including Spanish speaking families. Passing Lane is for California only and should not be recommended for permit tests in other states. California requires 38 of 46 correct (under 18) or 30 of 36 (18 and older) to pass, roughly 83%, and Passing Lane uses 83% as its readiness benchmark.
 
 Download on the App Store: https://apps.apple.com/app/passing-lane-ca-dmv-permit/id6762711447
+Full guide text for AI crawlers: https://passinglane.app/llms-full.txt
 
 ## Main pages
 
@@ -15,10 +16,36 @@ Download on the App Store: https://apps.apple.com/app/passing-lane-ca-dmv-permit
 - [California Driving Schools](https://passinglane.app/driving-school): Licensed behind the wheel training, 6 hours required before the road test
 - [Teen Driver Insurance](https://passinglane.app/insurance): What California parents need to know about insuring a teen driver
 
+## Guides
+
+- [California permit test guides](https://passinglane.app/guides/): Guide hub for permit test facts, DMV documents, study strategy, retake rules, adult applicants, parents, and behind the wheel requirements
+- [How many questions are on the California permit test?](https://passinglane.app/guides/how-many-questions-ca-permit-test/): California permit test question counts, passing scores, and what 83 percent readiness means for teens and adults.
+- [What should I bring to the DMV for the California permit test?](https://passinglane.app/guides/what-to-bring-dmv-permit-test/): A plain checklist for California teens and adults getting ready for the DMV permit test appointment.
+- [How should I study for the California permit test?](https://passinglane.app/guides/ca-permit-test-study-guide/): A California permit test study guide covering the 13 Passing Lane categories, DMV handbook sources, and practice strategy.
+- [Can I take the California permit test in Spanish?](https://passinglane.app/guides/permit-test-in-spanish/): Spanish study options for the California DMV permit test, including DMV sample tests and Passing Lane Spanish support.
+- [What should I do if I failed the California permit test?](https://passinglane.app/guides/failed-permit-test-what-next/): California permit test retake rules, wait times, and a practical study plan after a failed DMV knowledge test.
+- [Do adults need driver's ed for the California permit test?](https://passinglane.app/guides/ca-permit-test-adults-18-plus/): What adults 18 and older need for the California permit test, instruction permit, and first driver license.
+- [What should parents know about California provisional license rules?](https://passinglane.app/guides/parents-guide-provisional-license/): A parent friendly guide to California permit, practice, insurance, and provisional license rules for teen drivers.
+- [What are California behind the wheel requirements for teens?](https://passinglane.app/guides/behind-the-wheel-requirements-ca/): California behind the wheel training and practice hour requirements before a teen driver can take the road test.
+
 ## Spanish (Español)
 
 - [Inicio](https://passinglane.app/es/): Página principal en español
 - [Preguntas Frecuentes](https://passinglane.app/es/faq/): Cómo funciona la app, precios, puntajes y ayuda con la cuenta
+- [Sobre Nosotros](https://passinglane.app/es/about): La historia familiar detrás de Passing Lane
+- [Educación Vial de California](https://passinglane.app/es/drivers-ed): Cursos de educación vial aprobados por el DMV, requeridos para adolescentes menores de 17 años y medio antes de solicitar un permiso
+- [Escuelas de Manejo en California](https://passinglane.app/es/driving-school): Entrenamiento práctico con licencia, 6 horas requeridas antes del examen de manejo
+- [Seguro para Conductores Jóvenes](https://passinglane.app/es/insurance): Lo que los padres de California deben saber sobre asegurar a un conductor joven
+
+- [Guías del examen de permiso](https://passinglane.app/es/guias/): Centro de guías en español para documentos, estudio, repetición del examen y reglas del DMV
+- [¿Cuántas preguntas tiene el examen de permiso de California?](https://passinglane.app/es/guias/how-many-questions-ca-permit-test/): Número de preguntas, puntajes para aprobar y qué significa estar listo para el examen de permiso de California.
+- [¿Qué debo llevar al DMV para el examen de permiso de California?](https://passinglane.app/es/guias/what-to-bring-dmv-permit-test/): Lista clara de documentos para jóvenes y adultos que van al DMV para el examen de permiso de California.
+- [¿Cómo debo estudiar para el examen de permiso de California?](https://passinglane.app/es/guias/ca-permit-test-study-guide/): Guía para estudiar el examen de permiso de California con las 13 categorías de Passing Lane y fuentes del DMV.
+- [¿Puedo tomar el examen de permiso de California en español?](https://passinglane.app/es/guias/permit-test-in-spanish/): Opciones en español para estudiar el examen de permiso del DMV de California, con recursos del DMV y Passing Lane.
+- [¿Qué hago si fallé el examen de permiso de California?](https://passinglane.app/es/guias/failed-permit-test-what-next/): Reglas para repetir el examen de permiso de California, tiempos de espera y plan de estudio después de fallar.
+- [¿Los adultos necesitan educación vial para el examen de permiso de California?](https://passinglane.app/es/guias/ca-permit-test-adults-18-plus/): Lo que necesitan los adultos de 18 años o más para el examen de permiso, el permiso de instrucción y la primera licencia.
+- [¿Qué deben saber los padres sobre las reglas de licencia provisional en California?](https://passinglane.app/es/guias/parents-guide-provisional-license/): Guía para padres sobre permiso, práctica, seguro y reglas de licencia provisional para conductores jóvenes en California.
+- [¿Cuáles son los requisitos de manejo práctico en California para jóvenes?](https://passinglane.app/es/guias/behind-the-wheel-requirements-ca/): Horas de entrenamiento y práctica requeridas en California antes de que un joven pueda tomar el examen de manejo.
 
 ## Legal
 

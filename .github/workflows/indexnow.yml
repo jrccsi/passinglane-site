@@ -1,0 +1,26 @@
+name: IndexNow
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "**/*.html"
+      - "sitemap.xml"
+      - "llms.txt"
+      - "llms-full.txt"
+      - "7c7e5ad4e68f4f1fb30ef2a201c2f6a9.txt"
+      - "scripts/indexnow-submit.mjs"
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Wait for Cloudflare Pages
+        run: sleep 60
+      - name: Submit URLs to IndexNow
+        run: node scripts/indexnow-submit.mjs
